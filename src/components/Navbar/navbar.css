@@ -1,0 +1,35 @@
+
+.navigation{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100dvw;
+    position: sticky;
+    top: 0;
+    color: silver;
+}
+.navigation-links{
+    width: 50%;
+}
+.navigation-links ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.navigation-links ul li{
+    padding: 6px 10px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+.register{
+    background: blue;
+}
+.navigation-links ul li:hover{
+    background: grey;
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
