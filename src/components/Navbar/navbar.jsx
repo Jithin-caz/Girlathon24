@@ -9,7 +9,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav>
+    <header>
       <section className="navigation">
         <div className="logo">LOGO</div>
         <i
@@ -22,15 +22,15 @@ export default function Navbar() {
         ></i>
         <div className="navigation-links">
           <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Speakers</li>
-            <li>Sponsers</li>
-            <li>Contact</li>
+            <li className="lin">Home</li>
+            <li className="lin">About</li>
+            <li className="lin">Speakers</li>
+            <li className="lin">Sponsers</li>
+            <li className="lin">Contact</li>
             <li className="register">Register</li>
           </ul>
         </div>
       </section>
-    </nav>
+    </header>
   );
 }

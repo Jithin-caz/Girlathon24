@@ -1,9 +1,19 @@
+@font-face {
+    font-family: hanson;
+    src: url('/fonts/hanson/Hanson-Bold.ttf');
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Montserrat';
     --clr-primary:#000;
+    color: white;
+}
+
+::-webkit-scrollbar{
+    width: 0;
 }
 
 a{
@@ -13,6 +23,7 @@ a{
 
 ul{
     list-style: none;
+    margin: 0;
 }
 
 h1{
@@ -22,3 +33,4 @@ h1{
 .section{
     padding: 0rem 4rem;
 }
+

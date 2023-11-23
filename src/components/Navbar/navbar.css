@@ -1,23 +1,17 @@
-nav{
+header{
     display: flex;
     justify-content: center;
     position: sticky;
-    top: 2dvh;
 }
 .navigation{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 90dvw;
-    height: 8dvh;
-    color: silver;
-    background: linear-gradient(92deg, rgba(54, 54, 54, 0.19) -16.12%, rgba(218, 218, 218, 0.18) 35.91%, rgba(218, 218, 218, 0.19) 67%, rgba(54, 54, 54, 0.19) 107.97%);
-    box-shadow: 6px 6px 10px 2px rgba(18, 18, 18, 0.50);
-    opacity: 0.85;
+    width: 100dvw;
+    background: rgba(32, 30, 30, 0.4);
     backdrop-filter: blur(5px);
-    padding: 10px;
-    border-radius: 4dvh;
+    padding: 0.75rem 2rem;
 }
 .navigation-links{
     width: 50%;
@@ -29,19 +23,38 @@ nav{
     justify-content: space-evenly;
     width: 100%;
 }
-.navigation-links ul li{
-    padding: 6px 10px;
-    font-size: 1.2rem;
-    border-radius: 10px;
+.navigation-links .lin{
+    position: relative;
+    padding: 0.25rem 0.8rem;
+    border-radius: 1vh;
+    transform-origin: center;
+    transition: 1s;
+    z-index: 10;
 }
+
+.navigation-links .lin::after{
+    z-index: -1;
+    transition: 600ms;
+    transform-origin: center;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(92deg, rgba(54, 54, 54, 0.19) -16.12%, rgba(218, 218, 218, 0.18) 35.91%, rgba(218, 218, 218, 0.19) 67%, rgba(54, 54, 54, 0.19) 107.97%);
+    width: 100%;
+    height: 100%;
+    transform: scale(0);
+    border-radius: 100vh;
+    display: block;
+}
+
+.navigation-links .lin:hover::after{
+    transform: scale(1);
+    border-radius: 1vh;
+}
+
 .register{
     background: #1db21d;
-}
-.navigation-links ul li:hover{
-    background: grey;
-    position: relative;
-    top: 2px;
-    left: 2px;
 }
 .register:hover{
     background: #36ad36;
