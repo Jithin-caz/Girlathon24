@@ -24,7 +24,7 @@ export default function Navbar() {
         </div>
       </section>
       <div className="navigation-mobile-menu">
-        <div className="logo">LOGO</div>
+        <div className="logo-mobile">LOGO</div>
         <i
           className={`bi bi-list ${Nav ? "active" : ""}`}
           onClick={setNavigation}
