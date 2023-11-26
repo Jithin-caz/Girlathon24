@@ -9,7 +9,7 @@ export default function Navbar() {
   };
 
   return (
-    <>
+    <div >
       <section className="navigation row">
         <div className="logo col">LOGO</div>
         <div className="navigation-links col">
@@ -48,6 +48,6 @@ export default function Navbar() {
           <li className="register">Register</li>
         </ul>
       </section>
-    </>
+    </div>
   );
 }
