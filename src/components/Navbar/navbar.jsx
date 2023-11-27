@@ -9,7 +9,7 @@ export default function Navbar() {
   };
 
   return (
-    <div >
+    <div>
       <section className="navigation row">
         <div className="logo col">LOGO</div>
         <div className="navigation-links col">
