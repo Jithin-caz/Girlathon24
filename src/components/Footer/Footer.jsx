@@ -25,7 +25,7 @@ export default function Footer() {
       </div>
       <div className="Footer-Bottom">
         <p>
-          &#169;Copyright GDSC MACE. All Rights Reserved <br />
+          &#169;Copyright GDSC MACE. All Rights Reserved. <br />
           Designed by Team Girlathon
         </p>
       </div>
