@@ -26,11 +26,11 @@ export default function Navbar() {
       <div className="navigation-mobile-menu">
         <div className="logo-mobile">LOGO</div>
         <i
-          className={`bi bi-list ${Nav ? "active" : ""}`}
+          className={`bi bi-list list${Nav ? "active" : ""}`}
           onClick={setNavigation}
         ></i>
         <i
-          className={`bi bi-x ${Nav ? "" : "active"}`}
+          className={`bi bi-x close${Nav ? "" : "active"}`}
           onClick={setNavigation}
         ></i>
       </div>

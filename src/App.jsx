@@ -3,18 +3,20 @@ import "./App.css";
 import Hero from "./components/hero";
 import Navbar from "./components/Navbar/navbar";
 import About from "./components/about";
-import { useEffect } from 'react';
-import ScrollReveal from 'scrollreveal';
+import { useEffect } from "react";
+import ScrollReveal from "scrollreveal";
 import Previous from "./components/previous_year";
+import Footer from "./components/Footer/Footer";
+
 function App() {
   useEffect(() => {
-    ScrollReveal().reveal('.fade-up', {
+    ScrollReveal().reveal(".fade-up", {
       delay: 300,
-      distance: '50px',
-      origin: 'bottom',
+      distance: "50px",
+      origin: "bottom",
       opacity: 0,
       duration: 1000,
-      easing: 'cubic-bezier(0.5, 0, 0, 1)',
+      easing: "cubic-bezier(0.5, 0, 0, 1)",
     });
   }, []);
   return (
@@ -22,7 +24,8 @@ function App() {
       <Navbar />
       <Hero />
       <About />
-      <Previous/>
+      <Previous />
+      <Footer />
     </>
   );
 }
