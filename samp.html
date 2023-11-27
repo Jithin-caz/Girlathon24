@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Animated Circles</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: rgb(31, 31, 31);
+    }
+
+    .circle {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(200px);
+      opacity: 60%;
+      animation: move 5s infinite linear;
+    }
+
+    #circle1 { background-color: #3498db; }
+    #circle2 { background-color: #e74c3c; }
+    #circle3 { background-color: #2ecc71; }
+    #circle4 { background-color: #f39c12; }
+    #circle5 { background-color: #9b59b6; }
+    #circle6 { background-color: #1abc9c; }
+  </style>
+</head>
+<body>
+
+<div id="circle1" class="circle"></div>
+<div id="circle2" class="circle"></div>
+<div id="circle3" class="circle"></div>
+<div id="circle4" class="circle"></div>
+<div id="circle5" class="circle"></div>
+<div id="circle6" class="circle"></div>
+
+<script>
+  function getRandomDirection() {
+    return Math.random() < 0.5 ? -1 : 1;
+  }
+
+  function moveCircle(circle) {
+    const maxX = window.innerWidth - circle.clientWidth;
+    const maxY = window.innerHeight - circle.clientHeight;
+
+    let x = Math.random() * maxX;
+    let y = Math.random() * maxY;
+    let directionX = getRandomDirection();
+    let directionY = getRandomDirection();
+
+    const move = () => {
+      x += directionX * (Math.random() * 5);
+      y += directionY * (Math.random() * 5);
+
+      circle.style.transform = `translate(${x}px, ${y}px)`;
+
+      if (x < 0 || x > maxX) {
+        directionX *= -1;
+      }
+
+      if (y < 0 || y > maxY) {
+        directionY *= -1;
+      }
+
+      requestAnimationFrame(move);
+    };
+
+    move();
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const circles = document.querySelectorAll(".circle");
+    circles.forEach(circle => moveCircle(circle));
+  });
+</script>
+
+</body>
+</html>
