@@ -53,6 +53,10 @@
 .social a i{
     color: #01297080;
 }
+.social a i:hover
+{
+    color: #114195;
+}
 .Footer-Bottom{
     display: flex;
     justify-content: center;

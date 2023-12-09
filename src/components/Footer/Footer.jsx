@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="Footer">
+    <div className="Footer row" style={{ margin:'0px' }}>
       <div className="Footer-Top">
         <a href="#">
           <img src="/images/GDSC.png" alt="" />
@@ -23,9 +23,9 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <div className="Footer-Bottom">
-        <p>
-          &#169;Copyright GDSC MACE. All Rights Reserved. <br />
+      <div className="Footer-Bottom"  >
+        <p >
+          Copyright GDSC MACE. All Rights Reserved. <br />
           Designed by Team Girlathon
         </p>
       </div>

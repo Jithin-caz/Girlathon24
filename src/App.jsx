@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import ScrollReveal from "scrollreveal";
 import Previous from "./components/previous_year";
 import Footer from "./components/Footer/Footer";
+import Contact from "./components/contact/contact";
 
 function App() {
   useEffect(() => {
@@ -15,7 +16,7 @@ function App() {
       distance: "50px",
       origin: "bottom",
       opacity: 0,
-      duration: 1000,
+      duration: 900,
       easing: "cubic-bezier(0.5, 0, 0, 1)",
     });
   }, []);
@@ -25,6 +26,7 @@ function App() {
       <Hero />
       <About />
       <Previous />
+      <Contact/>
       <Footer />
     </>
   );
