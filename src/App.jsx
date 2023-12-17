@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/navbar";
 import About from "./components/about";
 import { useEffect } from "react";
 import ScrollReveal from "scrollreveal";
-import Previous from "./components/previous_year";
+import Previous from "./components/previous/previous_year";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/contact/contact";
 

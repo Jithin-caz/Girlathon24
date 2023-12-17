@@ -3,9 +3,9 @@ import './contact.css'
 export default function Contact()
 {
     return(<section style={{ width:'100dvw',paddingTop:'4rem'}}>
-     <h1 style={{ paddingLeft:'3rem' }}>Contact us</h1> 
+     <h1 style={{ paddingLeft:'3rem' }}>Get in touch</h1> 
     <div className='row' style={{ display:'flex',justifyContent:'center',alignItems:'center',marginRight:'1rem',marginLeft:'1rem',marginTop:'2rem' }}>
-    <div className='fade-up col-md-6'><div className='con-box ' style={{ textAlign:'center',paddingTop:'2rem',paddingBottom:'2rem',minHeight:'11rem' }}><i><img src='/images/icons8-call-64.png'/></i><br></br>
+    <div className='fade-up scale-up col-md-6'><div className='con-box ' style={{ textAlign:'center',paddingTop:'2rem',paddingBottom:'2rem',minHeight:'11rem' }}><i><img src='/images/icons8-call-64.png'/></i><br></br>
 Annmary Vinod : 9656638238 <br></br>
 Sivanie Nejukumar: 8590282979</div>
 <div className='con-box ' style={{ textAlign:'center',marginTop:'3rem',minHeight:'11rem',display:'flex',justifyContent:'center',alignItems:'center' }}><div><i><img src='/images/icons8-email-50.png'/></i><br></br>

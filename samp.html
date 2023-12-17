@@ -1,81 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Animated Circles</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: rgb(31, 31, 31);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
 
-    .circle {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      filter: blur(200px);
-      opacity: 60%;
-      animation: move 5s infinite linear;
-    }
+        #content {
+            padding: 20px;
+            text-align: center;
+            order: 1;
+        }
 
-    #circle1 { background-color: #3498db; }
-    #circle2 { background-color: #e74c3c; }
-    #circle3 { background-color: #2ecc71; }
-    #circle4 { background-color: #f39c12; }
-    #circle5 { background-color: #9b59b6; }
-    #circle6 { background-color: #1abc9c; }
-  </style>
+        #bigText {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        #carousel-container {
+            position: relative;
+            width: 100%;
+            height: 50vh; /* Adjusted size */
+            overflow: hidden;
+            margin: 20px;
+            margin-bottom: 6rem; /* Gap between carousel and thumbnails */
+            order: 2;
+        }
+
+        #carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%; /* Adjusted size */
+            height: 50vh; /* Adjusted size */
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .image-container {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #thumbnails {
+            position: fixed;
+            bottom: 10px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .thumbnail {
+            width: 110px; /* Adjusted size */
+            height: 110px; /* Adjusted size */
+            background-color: #ddd;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbnail:hover {
+            background-color: #bbb;
+        }
+
+        @media only screen and (min-width: 600px) {
+            /* Adjust styles for larger screens */
+            body {
+                flex-direction: row;
+            }
+
+            #content {
+                width: 50%;
+                order: 1;
+            }
+
+            #carousel-container {
+                width: 50%;
+                order: 2;
+                margin-bottom: 0; /* No gap for larger screens */
+            }
+        }
+    </style>
 </head>
 <body>
 
-<div id="circle1" class="circle"></div>
-<div id="circle2" class="circle"></div>
-<div id="circle3" class="circle"></div>
-<div id="circle4" class="circle"></div>
-<div id="circle5" class="circle"></div>
-<div id="circle6" class="circle"></div>
+<div id="content">
+    <div id="bigText">
+      <h1>Girlathon @2022</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam molestias eos eaque quidem, 
+          culpa nostrum magni illum quibusdam velit id, enim, quam minima esse quae reiciendis placeat deserunt ad. Voluptates.</p>
+    </div>
+</div>
+
+<div id="carousel-container">
+    <div id="carousel">
+        <div class="carousel-item">
+            <div class="image-container">
+                <img src="hero.png" alt="Image 1">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="image-container">
+                <img src="girl.jpg" alt="Image 2">
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="image-container">
+                <img src="mace.png" alt="Image 3">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="thumbnails">
+    <div class="thumbnail" onclick="goToSlide(0)">
+        <img src="hero.png" alt="Thumbnail 1">
+    </div>
+    <div class="thumbnail" onclick="goToSlide(1)">
+        <img src="girl.jpg" alt="Thumbnail 2">
+    </div>
+    <div class="thumbnail" onclick="goToSlide(2)">
+        <img src="mace.png" alt="Thumbnail 3">
+    </div>
+</div>
 
 <script>
-  function getRandomDirection() {
-    return Math.random() < 0.5 ? -1 : 1;
-  }
+    let currentIndex = 0;
+    const totalSlides = document.querySelectorAll('.carousel-item').length;
+    const carousel = document.getElementById('carousel');
 
-  function moveCircle(circle) {
-    const maxX = window.innerWidth - circle.clientWidth;
-    const maxY = window.innerHeight - circle.clientHeight;
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+    }
 
-    let x = Math.random() * maxX;
-    let y = Math.random() * maxY;
-    let directionX = getRandomDirection();
-    let directionY = getRandomDirection();
+    function updateCarousel() {
+        const translateValue = -currentIndex * 100 + '%'; /* Adjusted size */
+        carousel.style.transform = 'translateX(' + translateValue + ')';
+    }
 
-    const move = () => {
-      x += directionX * (Math.random() * 5);
-      y += directionY * (Math.random() * 5);
-
-      circle.style.transform = `translate(${x}px, ${y}px)`;
-
-      if (x < 0 || x > maxX) {
-        directionX *= -1;
-      }
-
-      if (y < 0 || y > maxY) {
-        directionY *= -1;
-      }
-
-      requestAnimationFrame(move);
-    };
-
-    move();
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const circles = document.querySelectorAll(".circle");
-    circles.forEach(circle => moveCircle(circle));
-  });
+    // Automatically move to the next slide every 3 seconds
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+    }, 3000);
 </script>
 
 </body>

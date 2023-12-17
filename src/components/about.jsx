@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function About()
 {
   
-    return(<section style={{position:'relative'}}>
+    return(<section className='about' style={{position:'relative'}}>
    
         <div style={{position:'absolute',width:'100%',height:'100dvh',display:'flex',justifyContent:'center',alignItems:'center',color:'white' }}><h1 className='about-bg-text'>about</h1> </div>
         <Container  style={{ color:'white',paddingTop:'5rem' }}>
