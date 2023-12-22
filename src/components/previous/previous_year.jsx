@@ -28,7 +28,6 @@ const Previous = () => {
     setCurrentImageIndex(index);
     document.getElementById(`card${index}`).style.opacity = 0;
 
-    // Reset opacity for other cards
     repeatedImages.forEach((_, i) => {
       if (i !== index) {
         document.getElementById(`card${i}`).style.opacity = 1;
@@ -45,7 +44,16 @@ const Previous = () => {
             style={{ textAlign: "center", gap: "2rem", color: "black" }}
           >
             <h2 style={{ fontSize: "4rem" }}>Girlathon @2022</h2>
-            <p style={{ color: "black" }}>{/* Your text content here */}</p>
+            <p style={{ color: "black" }}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
+              minus amet officia consequatur deserunt suscipit nesciunt, nostrum
+              voluptatibus optio laudantium saepe, placeat tempora velit
+              assumenda id tenetur sequi ad alias. Reprehenderit repellat sit
+              ipsa corporis tempora. Delectus vero labore alias quis voluptatum
+              exercitationem debitis nam totam placeat quo nulla corporis
+              veritatis incidunt a hic, fugiat nobis quaerat quidem! Voluptatum
+              libero eligendi aut, tempora dolorum quae optio nostrum maxime
+            </p>
             <div
               style={{
                 display: "flex",
