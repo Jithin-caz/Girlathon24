@@ -1,0 +1,9 @@
+.previous_section{
+    background: #F3E4FA;
+    margin-top: 3rem; 
+    padding: 3rem;
+}
+
+.cards-inner{
+    transition: all 0.2s ease-in-out;
+}
