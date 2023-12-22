@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container, Col, Row, Carousel } from "react-bootstrap";
 import "./previous.css";
 
 const images = ["girl.jpg", "mace.png", "hero.png"];
@@ -112,7 +112,7 @@ const Previous = () => {
                         left: 0,
                         width: "100%",
                         height: "100%",
-                        backgroundColor: "rgba(255, 165, 0, 0.7)",
+                        backgroundColor: "rgba(19, 15, 52, 0.7)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
@@ -147,10 +147,18 @@ const Previous = () => {
             className="image-right"
             style={{ marginTop: "2rem", overflow: "hidden" }}
           >
-            <img
-              src={`images/${repeatedImages[currentImageIndex]}`}
-              style={{ width: "100%", height: "100%", zIndex: "-1" }}
-            />
+            <Carousel interval={hoveredIndex==null?1000:100000} >
+              {repeatedImages.map((imageName, index) => (
+                <Carousel.Item key={index} style={{ height: "100%",width:'100%' }}>
+                  <img
+                    className="d-block w-100 h-100"
+                    src={hoveredIndex==null? `images/${imageName}`:`images/${repeatedImages[currentImageIndex]}`}
+                    alt={`Slide ${index + 1}`}
+                    style={{ height: "100%" }}
+                  />
+                </Carousel.Item>
+              ))}
+            </Carousel>
           </Col>
         </Row>
       </Container>
