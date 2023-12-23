@@ -1,5 +1,6 @@
 .hero-bg{
-    background: url('/images/hero.png');
+    position: relative;
+    background: url('/images/hero3.png');
     background-size: cover;
     height: 100dvh;
     width: 100dvw;
@@ -10,31 +11,52 @@
     height: 100%;
     display: flex;
     align-items: center;
+    position: relative;
+
 }
 
-.left{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.hero::before{
+    overflow: hidden;
+    position: absolute;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: url('/images/hero2.png') no-repeat;
+    background-size: clamp(35rem,50%,100rem);
+    background-position: -10% 100%;
+    opacity: 0.7;
 }
 
 .right{
-    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+
 }
+
+.left{
+    padding: 0rem;
+    height: 100%;
+
+    opacity: 0.7;
+}
+
+
 .timer{
     padding: 0em 0em 0em;
-    width: fit-content;
+    width: 100%;
 }
 
 .timer h4{
     line-height: 0;
     font-size: clamp(1rem,3vw,1.5rem);
-    width: fit-content;
+    
 }
 
 .clock{
     font-size: clamp(0.5rem,2vw,1.1rem);
-    width: fit-content;
+    
 }
 
 .digit{
@@ -80,12 +102,56 @@ line-height: 30px; /* 6.494% */
 letter-spacing: -10px;
 }  
 
-@media(max-width: 768px){
-    .right{
+@media(max-width: 1024px){
+    .hero{
+        width: 100dvw;
+    }
+    .left{
         display: none;
+    }
+    .right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
     }
     .about-bg-text
     {
         display: none;
     }
+    .hero::before{
+        background-position: 50% 100%;
+    }
 }
+
+.hex-grid {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hexagon {
+    position: relative;
+    width: 7vw; 
+    height: 8.08vw; 
+    background-color: rgba(255, 255, 255, 0); 
+    clip-path: polygon(
+      50% 0%,
+      100% 25%,
+      100% 75%,
+      50% 100%,
+      0% 75%,
+      0% 25%
+    );
+    transition: background-color 1s ease-in-out;
+  }
+  
+  .hexagon:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+    transition: background-color 0.2s ease-in-out;
+  }
