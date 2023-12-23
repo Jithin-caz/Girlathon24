@@ -1,9 +1,14 @@
 .previous_section{
-    background: #F3E4FA;
+    background:#383737;
     margin-top: 3rem; 
     padding: 3rem;
 }
 
 .cards-inner{
     transition: all 0.2s ease-in-out;
+}
+.square-letters
+{
+    font-size: clamp(1.5rem,11dvw,8rem);
+   
 }
