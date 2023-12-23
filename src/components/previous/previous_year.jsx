@@ -41,10 +41,10 @@ const Previous = () => {
         <Row style={{ rowGap: "8rem" }}>
           <Col
             md={6}
-            style={{ textAlign: "center", gap: "2rem", color: "black" }}
+            style={{ textAlign: "center", gap: "2rem", color: "white" }}
           >
             <h2 style={{ fontSize: "4rem" }}>Girlathon @2022</h2>
-            <p style={{ color: "black" }}>
+            <p style={{ color: "white",textAlign:'left' }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
               minus amet officia consequatur deserunt suscipit nesciunt, nostrum
               voluptatibus optio laudantium saepe, placeat tempora velit
@@ -127,10 +127,9 @@ const Previous = () => {
                         ).style.opacity = 1;
                       }}
                     >
-                      <span
+                      <span className="square-letters"
                         style={{
                           color: "white",
-                          fontSize: "4rem",
                           fontWeight: "bold",
                         }}
                       >
@@ -147,7 +146,7 @@ const Previous = () => {
             className="image-right"
             style={{ marginTop: "2rem", overflow: "hidden" }}
           >
-            <Carousel interval={hoveredIndex==null?1000:100000} >
+            <Carousel interval={hoveredIndex!=null?10000:1000}>
               {repeatedImages.map((imageName, index) => (
                 <Carousel.Item key={index} style={{ height: "100%",width:'100%' }}>
                   <img
