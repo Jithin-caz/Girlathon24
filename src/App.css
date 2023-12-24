@@ -164,6 +164,10 @@ letter-spacing: -10px;
     justify-content: center;
     align-items: center;
     z-index: 20;
+    animation: parallax linear;
+    --parallax-val:4;
+    --parallax-valX:0;
+    animation-timeline:scroll();
   }
 
 
