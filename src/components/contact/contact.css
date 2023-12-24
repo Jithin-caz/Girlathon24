@@ -1,11 +1,38 @@
 section h1{
     font-size: clamp(3rem,6vw,5rem);
 }
+.contact-bg-text
+{
+  color: rgba(255, 255, 255, 0.03);
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+  font-family: Montserrat;
+  font-size: clamp(5rem,26dvw,60rem);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 30px; /* 6.494% */
+  letter-spacing: -18px;
+}
+.getTouch
+{
+  opacity:0;
+}
+@media(max-width: 1024px){
+  .contact-bg-text
+  {
+      display: none;
+  }
+  .getTouch
+  {
+    opacity:1 !important;
+  }
+}
 .form-container {
     width: 35rem;
     background: linear-gradient(#212121, #212121) padding-box,
                 linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
     border: 2px solid transparent;
+    opacity: .7;
     padding: 32px 24px;
     font-size: 14px;
     font-family: inherit;
