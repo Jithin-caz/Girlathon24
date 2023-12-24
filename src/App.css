@@ -175,3 +175,35 @@ letter-spacing: -10px;
     background-color: rgba(255, 255, 255, 0.2); 
     transition: background-color 0.2s ease-in-out;
   }
+
+  .desc{
+    padding-top: 1em;
+    width:fit-content;
+  }
+
+  .text-Gdsc{
+    font-size: larger;
+    font-weight: bold;
+    color: transparent;
+    background: url("/images/g.png");
+    background-size: contain;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+  }
+
+  .typing-animation {
+    overflow: hidden; 
+    border-right: 2px solid; 
+    white-space: nowrap; 
+    animation: typing 7s steps(60) infinite;
+  }
+
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+    90%,100% {
+      width: 100%;
+    }
+  }

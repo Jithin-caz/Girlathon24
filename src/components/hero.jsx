@@ -81,6 +81,13 @@ function Hero() {
             <h1>GIRLATHON</h1>
             <h2>2023</h2>
           </div>
+          <div className="desc">
+            <h6 className="typing-animation">
+              3 week long learning and hackathon organized by{" "}
+              <span className="text-Gdsc">GDSC MACE {"  "}</span>
+              {"  "}
+            </h6>
+          </div>
         </div>
         {
           //<iframe title='J' src='https://my.spline.design/readyplayermelookingaround-0c0f2a2232256d31c16ec20f9e01ab2c/' frameborder='0' width='100%' height='100%'></iframe>
