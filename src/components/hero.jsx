@@ -7,14 +7,14 @@ function Hero() {
 
   const generateHexGrid = () => {
     const hexGrid = document.getElementById("hexGrid");
-    const numColumns = 14; // Adjust the number of columns
-    const numRows = 3; // Adjust the number of rows
+    const numColumns = 14;
+    const numRows = 3;
 
     for (let row = 0; row < numRows; row++) {
       for (let col = 0; col < numColumns; col++) {
         const hexagon = document.createElement("div");
         hexagon.classList.add("hexagon");
-        hexagon.style.marginTop = row % 2 === 0 ? "0" : "0vw"; // Adjust the vertical spacing
+        hexagon.style.marginTop = row % 2 === 0 ? "0" : "0vw";
 
         hexGrid.appendChild(hexagon);
       }
@@ -56,13 +56,14 @@ function Hero() {
 
   return (
     <section className="hero-bg fade-up">
-     <img className="hero-image"  src='images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png'/>
+      <img
+        className="hero-image"
+        src="images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png"
+      />
       <div class="hex-grid" id="hexGrid"></div>
 
       <div className="hero row fade-up">
-        <div className="left col-lg-6">
-          {/* <img src="/images/hero2.png" alt="" /> */}
-        </div>
+        <div className="left col-lg-6"></div>
         <div className="right col-lg-6">
           <div className="timer">
             <h4 className="fade-up">Time Left</h4>
@@ -92,6 +93,14 @@ function Hero() {
         {
           //<iframe title='J' src='https://my.spline.design/readyplayermelookingaround-0c0f2a2232256d31c16ec20f9e01ab2c/' frameborder='0' width='100%' height='100%'></iframe>
         }
+      </div>
+      <div className="reg-btn-cont row">
+        <div className="col-6 oth"></div>
+        <div className="col-6 reg">
+          <a href="" className="reg-btn">
+            Register &#x2197;
+          </a>
+        </div>
       </div>
     </section>
   );

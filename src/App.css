@@ -35,7 +35,7 @@
     z-index: 1;
     animation: parallax linear;
     --parallax-val:5;
-    --parallax-valX:-2;
+    --parallax-valX:0;
     animation-timeline:scroll();
 }
 
@@ -118,31 +118,10 @@ font-family: Montserrat;
 font-size: clamp(9rem,32dvw,60rem);
 font-style: normal;
 font-weight: 600;
-line-height: 30px; /* 6.494% */
+line-height: 30px;
 letter-spacing: -10px;
 }  
 
-@media(max-width: 1024px){
-    .hero{
-        width: 100dvw;
-    }
-    .left{
-        display: none;
-    }
-    .right{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    .about-bg-text
-    {
-        display: none;
-    }
-    .hero::before{
-        background-position: 50% 100%;
-    }
-}
 
 .hex-grid {
     z-index: 10;
@@ -176,6 +155,33 @@ letter-spacing: -10px;
     transition: background-color 0.2s ease-in-out;
   }
 
+  .reg-btn-cont{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+  }
+
+
+  .reg{
+    display: flex;
+  }
+
+  .reg-btn{
+    padding: 0.5em 1em;
+    background: #0057E7;
+    border-radius: 1vh;
+    font-size: clamp(0.75rem,1vw,1rem);
+  }
+
+  .reg-btn:hover{
+    background-color: #0060fb;
+  }
+
   .desc{
     padding-top: 1em;
     width:fit-content;
@@ -193,10 +199,11 @@ letter-spacing: -10px;
   }
 
   .typing-animation {
+    font-size: clamp(0.6rem,1.2vw,1.2rem);
     overflow: hidden; 
     border-right: 2px solid; 
     white-space: nowrap; 
-    animation: typing 7s steps(60) infinite;
+    animation: typing 4s steps(40) infinite;
   }
 
   @keyframes typing {
@@ -207,3 +214,35 @@ letter-spacing: -10px;
       width: 100%;
     }
   }
+
+  @media(max-width: 1024px){
+
+    .oth{
+        display: none;
+    }
+
+    .reg{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero{
+        width: 100dvw;
+    }
+    .left{
+        display: none;
+    }
+    .right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .about-bg-text
+    {
+        display: none;
+    }
+    .hero::before{
+        background-position: 50% 100%;
+    }
+}
