@@ -35,7 +35,7 @@
     z-index: 1;
     animation: parallax linear;
     --parallax-val:5;
-    --parallax-valX:0;
+    --parallax-valX:-3;
     animation-timeline:scroll();
 }
 
