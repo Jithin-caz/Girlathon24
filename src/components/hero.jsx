@@ -55,17 +55,18 @@ function Hero() {
   };
 
   return (
-    <section className="hero-bg">
+    <section className="hero-bg fade-up">
+     <img className="hero-image"  src='images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png'/>
       <div class="hex-grid" id="hexGrid"></div>
 
-      <div className="hero row">
+      <div className="hero row fade-up">
         <div className="left col-lg-6">
           {/* <img src="/images/hero2.png" alt="" /> */}
         </div>
         <div className="right col-lg-6">
           <div className="timer">
-            <h4>Time Left</h4>
-            <h6 className="clock">
+            <h4 className="fade-up">Time Left</h4>
+            <h6 className="clock fade-up">
               <span className="digit">{formatTime(timeLeft.days)}</span>
               {"    "}days:{" "}
               <span className="digit">{formatTime(timeLeft.hours)}</span>
@@ -76,7 +77,7 @@ function Hero() {
               {"    "}secs
             </h6>
           </div>
-          <div className="title">
+          <div className="title fade-up">
             <h1>GIRLATHON</h1>
             <h2>2023</h2>
           </div>

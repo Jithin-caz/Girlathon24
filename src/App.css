@@ -14,7 +14,13 @@
     position: relative;
 
 }
-
+.hero-image
+{
+    position:absolute;height:100%;opacity:.8;width:100%; 
+    --parallax-val:-3;
+    --parallax-valX:0;
+    animation-timeline:scroll();
+}
 .hero::before{
     overflow: hidden;
     position: absolute;
@@ -26,13 +32,22 @@
     background-size: clamp(35rem,50%,100rem);
     background-position: -10% 100%;
     opacity: 0.7;
+    z-index: 1;
+    animation: parallax linear;
+    --parallax-val:5;
+    --parallax-valX:-2;
+    animation-timeline:scroll();
 }
 
 .right{
     display: flex;
     flex-direction: column;
     z-index: 2;
-
+    z-index: 1;
+    animation: parallax linear;
+    --parallax-val:4;
+    --parallax-valX:2;
+    animation-timeline:scroll();
 }
 
 .left{
@@ -88,6 +103,11 @@
     line-height: 0.1;
     font-weight: bold;
     color:#5B5B5B;
+}
+@keyframes parallax {
+    to{
+      transform:scale(1) translate(calc(var(--parallax-valX)*5rem) , calc(var(--parallax-val)*20rem));  
+    } 
 }
 .about-bg-text
 {

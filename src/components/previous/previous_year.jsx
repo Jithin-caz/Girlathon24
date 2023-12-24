@@ -36,15 +36,16 @@ const Previous = () => {
   };
 
   return (
-    <section className="previous_section">
-      <Container style={{ height: "fit-content" }}>
+    <section className="previous_section" >
+    <img style={{ position:'absolute',height:'100%',opacity:'.6',width:'100%' }} src='images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png'/>
+      <Container style={{ height: "fit-content",padding:'3rem' }}>
         <Row style={{ rowGap: "8rem" }}>
           <Col
             md={6}
             style={{ textAlign: "center", gap: "2rem", color: "white" }}
           >
-            <h2 style={{ fontSize: "4rem" }}>Girlathon @2022</h2>
-            <p style={{ color: "white",textAlign:'left' }}>
+            <h2 className="fade-up" style={{ fontSize: "4rem" }}>Girlathon @2022</h2>
+            <p className="fade-up" style={{ color: "white",textAlign:'left' }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
               minus amet officia consequatur deserunt suscipit nesciunt, nostrum
               voluptatibus optio laudantium saepe, placeat tempora velit
@@ -62,7 +63,7 @@ const Previous = () => {
               }}
             >
               <div
-                className="row"
+                className="row fade-up"
                 style={{
                   display: "flex",
                   flexWrap: "wrap",
@@ -143,7 +144,7 @@ const Previous = () => {
           </Col>
           <Col
             md={6}
-            className="image-right"
+            className="image-right fade-up"
             style={{ marginTop: "2rem", overflow: "hidden" }}
           >
             <Carousel interval={hoveredIndex!=null?10000:1000}>
