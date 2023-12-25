@@ -35,7 +35,7 @@
     z-index: 1;
     animation: parallax linear;
     --parallax-val:5;
-    --parallax-valX:0;
+    --parallax-valX:-3;
     animation-timeline:scroll();
 }
 
@@ -164,6 +164,10 @@ letter-spacing: -10px;
     justify-content: center;
     align-items: center;
     z-index: 20;
+    animation: parallax linear;
+    --parallax-val:4;
+    --parallax-valX:0;
+    animation-timeline:scroll();
   }
 
 
@@ -214,7 +218,6 @@ letter-spacing: -10px;
       width: 100%;
     }
   }
-
   @media(max-width: 1024px){
 
     .oth{
@@ -246,3 +249,4 @@ letter-spacing: -10px;
         background-position: 50% 100%;
     }
 }
+
