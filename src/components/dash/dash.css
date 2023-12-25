@@ -147,7 +147,7 @@
 
 
 
-  button {
+  .save {
     font-family: inherit;
     font-size: 20px;
     background:  #2d6bd5;
@@ -162,39 +162,39 @@
     font-weight: 1000;
   }
   
-  button span {
+  .save span {
     display: block;
     margin-left: 0.3em;
     transition: all 0.3s ease-in-out;
   }
   
-  button svg {
+  .save svg {
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
   }
   
-  button:hover {
+  .save:hover {
     background: #2d6bd5;
     bor
   }
   
-  button:hover .svg-wrapper {
+  .save:hover .svg-wrapper {
     transform: scale(1.25);
     transition: .5s linear;
   }
   
-  button:hover svg {
+  .save:hover svg {
     transform: translateX(1.2em) scale(1.1);
     fill: #fff;
   }
   
-  button:hover span {
+  .save:hover span {
     opacity: 0;
     transition: .5s linear;
   }
   
-  button:active {
+  .save:active {
     transform: scale(0.95);
   }
   

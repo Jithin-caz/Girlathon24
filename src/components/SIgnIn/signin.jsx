@@ -7,8 +7,8 @@ export default function Signin() {
         <p className="title">Login</p>
         <form className="form">
           <div className="input-group">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" placeholder="" />
+            <label for="email">email</label>
+            <input type="text" name="email" id="email" placeholder="" />
           </div>
           <div className="input-group">
             <label for="password">Password</label>
