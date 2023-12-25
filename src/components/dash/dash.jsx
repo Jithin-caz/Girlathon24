@@ -11,7 +11,7 @@ export default function Dash()
     <div style={{ maxWidth:'18rem' }}>
     <div class="input-container fade-up">
   <input name='teamname' placeholder="Team name" class="input-field" type="text"/>
-  <label for="input-field" class="input-label">Give a cool name</label>
+  <label for="input-field" class="input-label">Give a cool name for your team</label>
   <span class="input-highlight"></span>
 </div> </div>
 
