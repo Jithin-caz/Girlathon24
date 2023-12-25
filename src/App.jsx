@@ -9,6 +9,7 @@ import Previous from "./components/previous/previous_year";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/contact/contact";
 import Dash from "./components/dash/dash";
+import Signin from "./components/signin/signin";
 
 function App() {
   useEffect(() => {
@@ -27,9 +28,10 @@ function App() {
       <Hero />
       <About />
       <Previous />
-      <Contact/>
+      <Contact />
       <Footer />
-      <Dash/>
+      <Signin />
+      <Dash />
     </>
   );
 }

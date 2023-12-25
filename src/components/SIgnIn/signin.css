@@ -1,6 +1,5 @@
 .form-container {
-    width: 320px;
-    border-radius: 0.75rem;
+    border-radius: 1vh;
     background-color: rgba(17, 24, 39, 1);
     padding: 2rem;
     color: rgba(243, 244, 246, 1);
@@ -119,4 +118,8 @@
     line-height: 1rem;
     color: rgba(156, 163, 175, 1);
   }
-  
+
+  .login{
+    display: flex;
+    justify-content: center;
+  }
