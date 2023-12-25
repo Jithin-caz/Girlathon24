@@ -218,7 +218,6 @@ letter-spacing: -10px;
       width: 100%;
     }
   }
-
   @media(max-width: 1024px){
 
     .oth{
@@ -250,3 +249,4 @@ letter-spacing: -10px;
         background-position: 50% 100%;
     }
 }
+
