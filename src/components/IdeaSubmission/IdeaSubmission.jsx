@@ -8,7 +8,7 @@ export default function IdeaSubmission() {
       <div className="SubmissionContent">
         <div className="IdeaTeamDetails">
           <div style={{ width: "80%", height: "80%" }}>
-            <div class="card">
+            <div class="idea-card">
               <div class="first-content">
                 <h5>Team Name</h5>
                 <p>**Team Name**</p>
