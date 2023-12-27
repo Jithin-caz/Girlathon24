@@ -1,10 +1,20 @@
-
 import React from "react";
 import "./contact.css";
 export default function Contact() {
   return (
-    <section style={{ width: "100dvw", position: "relative" }}>
-    <div style={{ position:'absolute',width:'100%' ,height:'50%',display:'flex',justifyContent:'center',alignItems:'center'}}><h1 className="contact-bg-text">contact</h1></div>
+    <section id="CONTACT" style={{ width: "100dvw", position: "relative" }}>
+      <div
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "50%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h1 className="contact-bg-text">contact</h1>
+      </div>
       <img
         style={{
           position: "absolute",
@@ -14,7 +24,12 @@ export default function Contact() {
         }}
         src="images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png"
       />
-      <h1 style={{ paddingLeft: "3rem", paddingTop: "4rem" }} className="getTouch">Get in touch</h1>
+      <h1
+        style={{ paddingLeft: "3rem", paddingTop: "4rem" }}
+        className="getTouch"
+      >
+        Get in touch
+      </h1>
       <div
         className="row"
         style={{
@@ -26,7 +41,7 @@ export default function Contact() {
           marginTop: "2rem",
         }}
       >
-        <div className="fade-up scale-up col-md-6" style={{ zIndex:'5' }}>
+        <div className="fade-up scale-up col-md-6" style={{ zIndex: "5" }}>
           <div
             className="con-box "
             style={{
@@ -34,7 +49,7 @@ export default function Contact() {
               paddingTop: "2rem",
               paddingBottom: "2rem",
               minHeight: "11rem",
-              zIndex:'5'
+              zIndex: "5",
             }}
           >
             <i>
@@ -53,7 +68,7 @@ export default function Contact() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              zIndex:'5'
+              zIndex: "5",
             }}
           >
             <div>
@@ -73,10 +88,10 @@ export default function Contact() {
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
-              zIndex:'5'
+              zIndex: "5",
             }}
           >
-            <div style={{ zIndex:'5' }}>
+            <div style={{ zIndex: "5" }}>
               <i>
                 <img src="/images/lc.png" />
               </i>
@@ -88,7 +103,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div class="fade-up form-container col-md-6" style={{ zIndex:'5' }}>
+        <div class="fade-up form-container col-md-6" style={{ zIndex: "5" }}>
           <form class="form">
             <div class="form__group field">
               <input
