@@ -1,0 +1,30 @@
+.faq-container {
+  padding-top: 5rem;
+  
+  }
+  
+  
+  .FAQ-bg-text
+  {
+    color: rgba(255, 255, 255, 0.033);
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.04);
+    font-family: Montserrat;
+    font-size: clamp(5rem,40dvw,80rem);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px; /* 6.494% */
+    letter-spacing: -18px;
+    z-index:1;
+  }
+
+  @media(max-width:600px){
+    .FAQ-bg-text
+    {
+        display: none;
+    }
+    .faq-container h1
+    {
+      display: inline !important;
+    }
+  }

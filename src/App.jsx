@@ -11,6 +11,7 @@ import Contact from "./components/contact/contact";
 import Dash from "./components/dash/dash";
 import Signin from "./components/signin/signin";
 import IdeaSubmission from "./components/IdeaSubmission/IdeaSubmission";
+import FAQPage from "./components/FAQ/FAQ";
 
 function App() {
   useEffect(() => {
@@ -29,6 +30,7 @@ function App() {
       <Hero />
       <About />
       <Previous />
+      <FAQPage/>
       <Contact />
       <Footer />
       <Signin />

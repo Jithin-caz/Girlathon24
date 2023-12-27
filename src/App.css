@@ -232,6 +232,12 @@ letter-spacing: -10px;
     .hero{
         width: 100dvw;
     }
+
+    .hero::before
+    {
+      --parallax-val:8;
+      --parallax-valX:-7;
+    }
     .left{
         display: none;
     }
@@ -240,6 +246,8 @@ letter-spacing: -10px;
         justify-content: center;
         align-items: center;
         text-align: center;
+        --parallax-val:8;
+    --parallax-valX:0;
     }
     .about-bg-text
     {
