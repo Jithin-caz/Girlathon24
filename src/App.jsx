@@ -14,6 +14,7 @@ import IdeaSubmission from "./components/IdeaSubmission/IdeaSubmission";
 import FAQPage from "./components/FAQ/FAQ";
 
 function App() {
+ 
   useEffect(() => {
     ScrollReveal().reveal(".fade-up", {
       delay: 300,
@@ -22,7 +23,8 @@ function App() {
       opacity: 0,
       duration: 800,
       easing: "cubic-bezier(0.5, 0, 0, 1)",
-    });
+    }
+    );
   }, []);
   return (
     <>
