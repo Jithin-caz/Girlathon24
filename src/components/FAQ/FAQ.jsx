@@ -36,6 +36,18 @@ const FAQPage = () => {
       question: 'What is the virtual DOM?',
       answer: 'The virtual DOM is a lightweight copy of the real DOM for better performance.',
     },
+    {
+      question: 'What is the virtual DOM?',
+      answer: 'The virtual DOM is a lightweight copy of the real DOM for better performance.',
+    },
+    {
+      question: 'What is the virtual DOM?',
+      answer: 'The virtual DOM is a lightweight copy of the real DOM for better performance.',
+    },
+    {
+      question: 'What is the virtual DOM?',
+      answer: 'The virtual DOM is a lightweight copy of the real DOM for better performance.',
+    },
   ];
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -43,7 +55,7 @@ const FAQPage = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <section style={{ position:'relative',overflow:'hidden',minHeight:'100dvh'}}>
+    <section style={{ position:'relative',overflow:'hidden',minHeight:'80dvh'}}>
     <div style={{ position:'absolute',width:'100%',height:'100%',display:'flex',justifyContent:'center',alignItems:'center',zIndex:'2' }}><h1 className="FAQ-bg-text">FAQ</h1></div> 
     <img
         style={{
@@ -55,7 +67,7 @@ const FAQPage = () => {
         }}
         src="images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png"
       />
-    <div className="faq-container" >
+    <div className="faq-container" style={{ marginTop:'3rem' }}>
     <h1 style={{ padding:'2rem',display:'none' }}>FAQs</h1>
     <div className='row' style={{ rowGap:'2rem',padding:'3rem' }}>
     
