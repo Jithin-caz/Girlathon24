@@ -55,7 +55,7 @@ function Hero() {
   };
 
   return (
-    <section className="hero-bg fade-up">
+    <section className="hero-bg fade-up" id="HERO">
       <img
         className="hero-image"
         src="images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png"

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import { Nav } from "react-bootstrap";
 
 export default function Navbar() {
   const [Nav, setNav] = useState(true);
@@ -14,11 +13,21 @@ export default function Navbar() {
         <div className="logo col">LOGO</div>
         <div className="navigation-links col">
           <ul>
-            <li className="lin">Home</li>
-            <li className="lin">About</li>
-            <li className="lin">Speakers</li>
-            <li className="lin">Sponsors</li>
-            <li className="lin">Contact</li>
+            <li className="lin">
+              <a href="">Home</a>
+            </li>
+            <li className="lin">
+              <a href="#ABOUT">About</a>
+            </li>
+            <li className="lin">
+              <a href="">Speakers</a>
+            </li>
+            <li className="lin">
+              <a href="">Sponsors</a>
+            </li>
+            <li className="lin">
+              <a href="#CONTACT">Contact</a>
+            </li>
             <li className="register">Register</li>
           </ul>
         </div>
@@ -40,12 +49,24 @@ export default function Navbar() {
         }`}
       >
         <ul>
-          <li className="lin">Home</li>
-          <li className="lin">About</li>
-          <li className="lin">Speakers</li>
-          <li className="lin">Sponsors</li>
-          <li className="lin">Contact</li>
-          <li className="register">Register</li>
+          <li className="lin">
+            <a href="#">Home</a>
+          </li>
+          <li className="lin">
+            <a href="#ABOUT">About</a>
+          </li>
+          <li className="lin">
+            <a href="">Speakers</a>
+          </li>
+          <li className="lin">
+            <a href="">Sponsors</a>
+          </li>
+          <li className="lin">
+            <a href="#CONTACT">Contact</a>
+          </li>
+          <li className="register">
+            <a href="">Register</a>
+          </li>
         </ul>
       </section>
     </div>
