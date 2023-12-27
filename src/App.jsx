@@ -10,6 +10,7 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./components/contact/contact";
 import Dash from "./components/dash/dash";
 import Signin from "./components/signin/signin";
+import IdeaSubmission from "./components/IdeaSubmission/IdeaSubmission";
 
 function App() {
   useEffect(() => {
@@ -32,6 +33,7 @@ function App() {
       <Footer />
       <Signin />
       <Dash />
+      <IdeaSubmission />
     </>
   );
 }
