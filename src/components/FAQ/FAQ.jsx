@@ -55,7 +55,7 @@ const FAQPage = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <section style={{ position:'relative',overflow:'hidden',minHeight:'80dvh'}}>
+    <section style={{ position:'relative',overflow:'hidden',minHeight:'80dvh'}} id='FAQ'>
     <div style={{ position:'absolute',width:'100%',height:'100%',display:'flex',justifyContent:'center',alignItems:'center',zIndex:'2' }}><h1 className="FAQ-bg-text">FAQ</h1></div> 
     <img
         style={{

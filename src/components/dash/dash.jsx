@@ -1,6 +1,7 @@
 import React from 'react'
 import './dash.css'
 import { Card } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 export default function Dash()
 {
     return(<section >
@@ -109,7 +110,7 @@ export default function Dash()
 </div>
     </div>
     <div className='idea-submission fade-up'>
-<a class="continue-application">
+<NavLink to='/ideaSumbit' class="continue-application">
     <div>
         <div class="pencil"></div>
         <div class="folder">
@@ -122,7 +123,7 @@ export default function Dash()
         </div>
     </div>
    idea submission
-</a>
+</NavLink>
 </div>
     </div>
     </section>);

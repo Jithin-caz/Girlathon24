@@ -1,17 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Hero from "./components/hero";
+
 import Navbar from "./components/Navbar/navbar";
-import About from "./components/about";
 import { useEffect } from "react";
 import ScrollReveal from "scrollreveal";
-import Previous from "./components/previous/previous_year";
-import Footer from "./components/Footer/Footer";
-import Contact from "./components/contact/contact";
 import Dash from "./components/dash/dash";
 import Signin from "./components/signin/signin";
 import IdeaSubmission from "./components/IdeaSubmission/IdeaSubmission";
-import FAQPage from "./components/FAQ/FAQ";
+import {BrowserRouter,Route,Routes} from 'react-router-dom'
+import landing from "./components/landing";
 
 function App() {
  
@@ -28,16 +25,15 @@ function App() {
   }, []);
   return (
     <>
-      <Navbar />
-      <Hero />
-      <About />
-      <Previous />
-      <FAQPage/>
-      <Contact />
-      <Footer />
-      <Signin />
-      <Dash />
-      <IdeaSubmission />
+    <BrowserRouter>
+    <Navbar />
+      <Routes>
+      <Route path="/" exact Component={landing}/>
+        <Route path="/Signin" exact Component={Signin}/>
+        <Route path="/dash/:Id" exact Component={Dash}/>
+        <Route path="/ideaSumbit" exact Component={IdeaSubmission}/>
+      </Routes>
+    </BrowserRouter>
     </>
   );
 }
