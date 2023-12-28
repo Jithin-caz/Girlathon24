@@ -63,7 +63,7 @@ function Hero() {
       />
       <div class="hex-grid" id="hexGrid"></div>
 
-      <div className="hero row fade-up">
+      <div className="hero row fade-up" >
         <div className="left col-lg-6"></div>
         <div className="right col-lg-6">
           <div className="timer">
@@ -98,7 +98,7 @@ function Hero() {
       <div className="reg-btn-cont row">
         <div className="col-6 oth"></div>
         <div className="col-6 reg">
-          <Link to="/Signin" className="reg-btn">
+          <Link to="/Signin" className="reg-btn" >
             Register &#x2197;
           </Link>
         </div>
