@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavL, NavLinkink } from "react-router-dom";
+import {  NavLink,Link } from "react-router-dom";
 import "./navbar.css";
 
 export default function Navbar() {
@@ -30,7 +30,7 @@ export default function Navbar() {
               <a href="#CONTACT">Contact</a>
             </li>
             <li className="register">
-           <NavLink to='/Signin'>Register</NavLink></li>
+           <Link to='/Signin'>Register</Link></li>
           </ul>
         </div>
       </section>

@@ -67,16 +67,16 @@ const FAQPage = () => {
         }}
         src="images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png"
       />
-    <div className="faq-container" style={{ marginTop:'3rem' }}>
+    <div className="faq-container" style={{ marginTop:'3rem'}}>
     <h1 style={{ padding:'2rem',display:'none' }}>FAQs</h1>
-    <div className='row' style={{ rowGap:'2rem',padding:'3rem' }}>
-    
+    <div className='row' style={{ rowGap:'2rem',padding:'3rem'}}>
     {faqData.map((item, index) => (
         <div key={index} className="col-lg-6"  style={{ zIndex:'5' }}>
-          <Button
+          <Button className='drop-down-button'
             onClick={() => handleToggle(index)}
             aria-controls={`collapse-${index}`}
             aria-expanded={openIndex === index}
+            style={{ background:'none',border:'white solid .1rem' }}
           >
             {item.question}
           </Button>
@@ -92,7 +92,8 @@ const FAQPage = () => {
         </div>
       ))}
       </div>
-    </div>
+      </div>
+    
     </section>
   );
 };

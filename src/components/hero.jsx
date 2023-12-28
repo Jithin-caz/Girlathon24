@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import {Link } from "react-router-dom";
 
 function Hero() {
   useEffect(() => {
@@ -98,9 +98,9 @@ function Hero() {
       <div className="reg-btn-cont row">
         <div className="col-6 oth"></div>
         <div className="col-6 reg">
-          <NavLink to="/Signin" className="reg-btn">
+          <Link to="/Signin" className="reg-btn">
             Register &#x2197;
-          </NavLink>
+          </Link>
         </div>
       </div>
     </section>
