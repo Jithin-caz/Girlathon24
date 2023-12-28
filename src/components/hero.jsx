@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import {Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Hero() {
   useEffect(() => {
@@ -61,7 +61,7 @@ function Hero() {
         className="hero-image"
         src="images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png"
       />
-      <div class="hex-grid" id="hexGrid"></div>
+      <div className="hex-grid" id="hexGrid"></div>
 
       <div className="hero row fade-up">
         <div className="left col-lg-6"></div>

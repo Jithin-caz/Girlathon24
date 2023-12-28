@@ -3,22 +3,59 @@ import { useState } from "react";
 
 export default function Signin() {
   const [state, setState] = useState(true);
+
+  // login variables
+  const [user, setUser] = useState("");
+  const [password, setPassword] = useState("");
+
+  const loginEvent = (e) => {
+    e.preventDefault();
+    console.log(user);
+    console.log(password);
+  };
+
+  //signup variables
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
+
+  const registerEvent = (e) => {
+    e.preventDefault();
+    console.log(name);
+    console.log(email);
+    console.log(phone);
+    console.log(password1);
+    console.log(password2);
+  };
+
   const login = (
     <div className="section login">
       <div className="form-container">
         <p className="title">Login</p>
-        <form className="form">
+        <form className="form" onSubmit={loginEvent}>
           <div className="input-group">
-            <label for="email">email</label>
-            <input type="text" name="email" id="email" placeholder="" />
+            <label htmlFor="email">email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder=""
+              value={user}
+              onChange={(e) => setUser(e.target.value)}
+            />
           </div>
           <div className="input-group">
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
               id="password"
               placeholder=""
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <div className="forgot">
               <a rel="noopener noreferrer" href="#">
@@ -82,35 +119,60 @@ export default function Signin() {
     <div className="section login">
       <div className="form-container">
         <p className="title">Register</p>
-        <form className="form">
+        <form className="form" onSubmit={registerEvent}>
           <div className="input-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" placeholder="" />
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder=""
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
           <div className="input-group">
-            <label for="phone">Phone No.</label>
-            <input type="tel" name="phone" id="phone" placeholder="" />
+            <label htmlFor="phone">Phone No.</label>
+            <input
+              type="tel"
+              name="phone"
+              id="phone"
+              placeholder=""
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
           </div>
           <div className="input-group">
-            <label for="email">email</label>
-            <input type="text" name="email" id="email" placeholder="" />
+            <label htmlFor="email">email</label>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder=""
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <div className="input-group">
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               name="password"
               id="password"
               placeholder=""
+              value={password1}
+              onChange={(e) => setPassword1(e.target.value)}
             />
           </div>
           <div className="input-group">
-            <label for="confirmpassword">Confirm Password</label>
+            <label htmlFor="confirmpassword">Confirm Password</label>
             <input
               type="password"
               name="confirmpassword"
               id="confirmpassword"
               placeholder=""
+              value={password2}
+              onChange={(e) => setPassword2(e.target.value)}
             />
           </div>
           <button className="sign">Register</button>
