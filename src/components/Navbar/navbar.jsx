@@ -99,22 +99,36 @@ export default function Navbar() {
       >
         <ul>
           <li className="lin">
-            <a href="#">Home</a>
+            <NavLink to="/">
+              <a href="#HERO" onClick={setNavigation}>
+                Home
+              </a>
+            </NavLink>
           </li>
           <li className="lin">
-            <a href="#ABOUT">About</a>
+            <a href="#ABOUT" onClick={setNavigation}>
+              About
+            </a>
           </li>
           <li className="lin">
-            <a href="">Speakers</a>
+            <a href="" onClick={setNavigation}>
+              FAQ
+            </a>
           </li>
           <li className="lin">
-            <a href="">Sponsors</a>
+            <a href="" onClick={setNavigation}>
+              Sponsors
+            </a>
           </li>
           <li className="lin">
-            <a href="#CONTACT">Contact</a>
+            <a href="#CONTACT" onClick={setNavigation}>
+              Contact
+            </a>
           </li>
           <li className="register">
-            <a href="">Register</a>
+            <Link to="/Signin" onClick={setNavigation}>
+              Register
+            </Link>
           </li>
         </ul>
       </section>
