@@ -34,7 +34,7 @@
     opacity: 0.7;
     z-index: 1;
     animation: parallax linear;
-    --parallax-val:5;
+    --parallax-val:6;
     --parallax-valX:-3;
     animation-timeline:scroll();
 }

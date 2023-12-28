@@ -77,7 +77,6 @@ const FAQPage = () => {
             onClick={() => handleToggle(index)}
             aria-controls={`collapse-${index}`}
             aria-expanded={openIndex === index}
-            variant="outline-success"
           >
             {item.question}
           </Button>
