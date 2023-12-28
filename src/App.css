@@ -198,6 +198,7 @@ letter-spacing: -10px;
     background: url("/images/g.png");
     background-size: contain;
     background-clip: text;
+   
     -webkit-background-clip: text;
     -moz-background-clip: text;
   }

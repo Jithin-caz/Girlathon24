@@ -7,7 +7,8 @@ export default function Signin() {
     <div className="section login">
       <div className="form-container">
         <p className="title">Login</p>
-        <form className="form">
+        <div style={{ color:'yellow',fontSize:'1rem',display:'none' }}>Incorrect username or password</div>
+        <form className="form" name="form-data">
           <div className="input-group">
             <label for="email">email</label>
             <input type="text" name="email" id="email" placeholder="" />
@@ -26,7 +27,8 @@ export default function Signin() {
               </a>
             </div>
           </div>
-          <button className="sign">Sign in</button>
+          <button type="submit" className="sign"
+          >Sign in</button>
         </form>
         <div className="social-message">
           <div className="line"></div>
@@ -63,17 +65,16 @@ export default function Signin() {
           </button>
         </div>
         <p className="signup">
-          Haven't registered yet?
-          <span
+          Haven't registered yet? {" "}
+          <button  style={{ background:'none',border:'none' }}
             rel="noopener noreferrer"
             onClick={() => {
               setState(false);
             }}
             className=""
           >
-            {" "}
             Register
-          </span>
+          </button>
         </p>
       </div>
     </div>
@@ -150,17 +151,17 @@ export default function Signin() {
           </button>
         </div>
         <p className="signup">
-          Already Registered?
-          <span
+          Already Registered? {" "}
+          <button style={{ background:'none',border:'none' }}
             rel="noopener noreferrer"
             onClick={() => {
               setState(true);
             }}
             className=""
           >
-            {" "}
+           
             login
-          </span>
+          </button>
         </p>
       </div>
     </div>
