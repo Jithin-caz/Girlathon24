@@ -6,7 +6,7 @@ export default function About() {
     <section
       className="about"
       id="ABOUT"
-      style={{ position: "relative", zIndex: "2", background: "#2b2b2b" }}
+      style={{ position: "relative", zIndex: "20", background: "#2b2b2b" }}
     >
       <img
         style={{

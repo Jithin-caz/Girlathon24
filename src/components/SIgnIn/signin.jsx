@@ -63,7 +63,9 @@ export default function Signin() {
               </a>
             </div>
           </div>
-          <button className="sign">Sign in</button>
+          <button type="submit" className="sign">
+            Sign in
+          </button>
         </form>
         <div className="social-message">
           <div className="line"></div>
@@ -100,17 +102,17 @@ export default function Signin() {
           </button>
         </div>
         <p className="signup">
-          Haven't registered yet?
-          <span
+          Haven't registered yet?{" "}
+          <button
+            style={{ background: "none", border: "none" }}
             rel="noopener noreferrer"
             onClick={() => {
               setState(false);
             }}
             className=""
           >
-            {" "}
             Register
-          </span>
+          </button>
         </p>
       </div>
     </div>
@@ -212,17 +214,17 @@ export default function Signin() {
           </button>
         </div>
         <p className="signup">
-          Already Registered?
-          <span
+          Already Registered?{" "}
+          <button
+            style={{ background: "none", border: "none" }}
             rel="noopener noreferrer"
             onClick={() => {
               setState(true);
             }}
             className=""
           >
-            {" "}
             login
-          </span>
+          </button>
         </p>
       </div>
     </div>

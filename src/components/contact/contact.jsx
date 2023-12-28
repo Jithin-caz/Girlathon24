@@ -104,13 +104,14 @@ export default function Contact() {
           </div>
         </div>
         <div class="fade-up form-container col-md-6" style={{ zIndex: "5" }}>
-          <form class="form">
+          <form class="form"  target="_blank" action="https://formsubmit.co/5f13444c1842d27eb7f86259849af44b" method="POST">
             <div class="form__group field">
               <input
                 type="input"
+                name="name"
                 class="form__field"
                 placeholder="Name"
-                required=""
+                required
               />
               <label for="name" class="form__label">
                 Name
@@ -121,7 +122,8 @@ export default function Contact() {
                 type="input"
                 class="form__field"
                 placeholder="Email"
-                required=""
+                required
+                name="email"
               />
               <label for="email" class="form__label">
                 Email
@@ -132,7 +134,8 @@ export default function Contact() {
                 type="input"
                 class="form__field"
                 placeholder="subject"
-                required=""
+                name="subject"
+                required
                 style={{ maxWidth: "25rem" }}
               />
               <label for="subject" class="form__label">
@@ -147,9 +150,9 @@ export default function Contact() {
                 style={{ maxWidth: "25rem", minHeight: "15rem" }}
                 class="form__field"
                 placeholder="content"
-                required=""
+                required
                 id="textarea"
-                name="textarea"
+                name="content"
               ></textarea>
               <label for="textarea" class="form__label">
                 Content
