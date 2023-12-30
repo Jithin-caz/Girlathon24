@@ -90,7 +90,7 @@ const FAQPage = () => {
         <h1 style={{ padding: "2rem", display: "none" }}>FAQs</h1>
         <div className="row" style={{ rowGap: "2rem", padding: "3rem" }}>
           {faqData.map((item, index) => (
-            <div key={index} className="col-lg-6" style={{ zIndex: "5" }}>
+            <div key={index} className="col-lg-6 fade-up" style={{ zIndex: "5" }}>
               <Button
                 className="drop-down-button"
                 onClick={() => handleToggle(index)}

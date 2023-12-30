@@ -44,12 +44,22 @@ export default function Navbar() {
         <div className="logo col">LOGO</div>
         <div className="navigation-links col">
           <ul>
-            <li
+          <li id="hero-a"
               className={`lin ${
                 activeSection === "HERO" ? "link-active" : "link-passive"
               }`}
             >
-              <NavLink to="/">Home</NavLink>
+              <a href="#HERO">Home</a>
+            </li>
+            <li id="hero-nav" style={{ display:'none' }}
+              className={`lin ${
+                activeSection === "HERO" ? "link-active" : "link-passive"
+              }`}
+            >
+              <NavLink to="/"  onClick={()=>{
+                document.getElementById('hero-nav').style.display='none'
+                document.getElementById('hero-a').style.display='block'
+              } }>Home</NavLink>
             </li>
             <li
               className={`lin ${
@@ -76,7 +86,10 @@ export default function Navbar() {
               <a href="#CONTACT">Contact</a>
             </li>
             <li className="register">
-              <Link to="/Signin">Register</Link>
+              <Link to="/Signin" onClick={()=>{
+                document.getElementById('hero-nav').style.display='block'
+                document.getElementById('hero-a').style.display='none'
+              } }>Register</Link>
             </li>
           </ul>
         </div>
