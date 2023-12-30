@@ -88,6 +88,7 @@ export default function Navbar() {
             <li className="register">
               <Link to="/Signin" onClick={()=>{
                 document.getElementById('hero-nav').style.display='block'
+                document.getElementById('hero-nav').classList.remove('link-active')
                 document.getElementById('hero-a').style.display='none'
               } }>Register</Link>
             </li>
