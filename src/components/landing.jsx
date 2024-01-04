@@ -5,6 +5,8 @@ import Previous from './previous/previous_year';
 import FAQPage from './FAQ/FAQ';
 import Contact from './contact/contact';
 import Footer from './Footer/Footer';
+import Dash from './dash/dash';
+import DashInd from './dash/dashInd';
 export default function landing()
 {
     return(<>
@@ -14,6 +16,6 @@ export default function landing()
       <FAQPage/>
       <Contact />
       <Footer />
-  
+      <DashInd/>
     </>);
 }

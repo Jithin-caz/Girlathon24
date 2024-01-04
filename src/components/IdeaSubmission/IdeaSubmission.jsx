@@ -3,7 +3,7 @@ import "./IdeaSubmission.css";
 
 export default function IdeaSubmission() {
   return (
-    <section className="IdeaSubmission">
+    <section className="IdeaSubmission" style={{ paddingTop:'6rem' }}>
       <h2>Idea Submission</h2>
       <div className="SubmissionContent">
         <div className="IdeaTeamDetails">

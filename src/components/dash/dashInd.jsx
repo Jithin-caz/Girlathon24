@@ -1,21 +1,62 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './dash.css'
 import { Card } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-export default function Dash()
+
+
+export default function DashInd()
 {
-    return(<section >
-    <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'#45f3ff' }} className='fade-up'>Dash Board</h1>
+    const [team,setTeam]=useState(true)
+    const [mate,setMate]=useState(false)
+    return(<section style={{ paddingTop:'1rem' }}>
+    <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'#45f3ff' }} className='fade-up dash-heading'>Dash Board</h1>
     <div className='dashContainer'>
     <div className='dash-left' >
-    <form >
-    <div style={{ maxWidth:'18rem' }}>
+    {team &&(
+        <>
+        <h3>Guidelines</h3>
+        <ol>
+        <li style={{ paddingTop:'.5rem' }}>jvxzss cgvd d sb dns dns dns dn dnbzs nddsn zdsnd dsdasdns ns dnas adn Sndnb d as dasdbas da d ad adsnbd a 
+    fadnfnad fnbad fnb adfnb adnf adnf adsn asnd adnbfd adnbf adbnf adbn fnbad fbnad fbnd fbd fbnda f</li>
+    <li  style={{ paddingTop:'.5rem' }}>jvxzss cgvd d sb dns dns dns dn dnbzs nddsn zdsnd dsdasdns ns dnas adn Sndnb d as dasdbas da d ad adsnbd a 
+    fadnfnad fnbad fnb adfnb adnf adnf adsn asnd adnbfd adnbf adbnf adbn fnbad fbnad fbnd fbd fbnda f</li>
+    <li  style={{ paddingTop:'.5rem' }}>jvxzss cgvd d sb dns dns dns dn dnbzs nddsn zdsnd dsdasdns ns dnas adn Sndnb d as dasdbas da d ad adsnbd a 
+    fadnfnad fnbad fnb adfnb adnf adnf adsn asnd adnbfd adnbf adbnf adbn fnbad fbnad fbnd fbd fbnda f</li>
+        </ol>
+       <hr></hr>
+       <br></br>
+        <form >
+    <div style={{ maxWidth:'18rem',minWidth:'13rem' }}>
     <div class="input-container fade-up">
   <input name='teamname' placeholder="Team name" class="input-field" type="text"/>
   <label for="input-field" class="input-label">Give a cool name for your team</label>
   <span class="input-highlight"></span>
 </div> </div>
-<div className='row' style={{gap:'2rem' }}>
+  <div className='fade-up' style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
+      <button className='save' type='submit' onClick={()=>{setTeam(false)
+        setMate(true)
+      }}>
+  <div class="svg-wrapper-1">
+    <div class="svg-wrapper">
+      <svg class="icon" height="30" width="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z">
+        </path>
+        </svg>
+    </div>
+  </div>
+  <span>next</span>
+</button>
+
+      </div>
+      <p style={{ color:'white' }}>this team already exists!!</p>
+    </form>
+    </>
+    ) 
+    }
+    {
+        mate&&(
+            <form >
+            <h3>Enter team details</h3>
+            <div className='row' style={{gap:'2rem' }}>
 <div className='team-mate col fade-up'>
     <h5>Team mate 1</h5>
     <div class="inputbox">
@@ -72,6 +113,9 @@ export default function Dash()
 </div>
 </div>
       </div> 
+      <div>
+        
+      </div>
       <div className='fade-up' style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
       <button className='save' type='submit'>
   <div class="svg-wrapper-1">
@@ -85,6 +129,9 @@ export default function Dash()
 </button>
       </div>
     </form>
+    
+        )
+    }
     </div>
     <div className='dash-right fade-up'>
     <div class="card">
@@ -109,7 +156,7 @@ export default function Dash()
   </div>
 </div>
     </div>
-    <div className='idea-submission fade-up'>
+   {mate&&(<div className='idea-submission fade-up'>
     <NavLink to='/ideaSumbit' >
     <button class="continue-application">
     <div>
@@ -123,11 +170,12 @@ export default function Dash()
             <div class="paper"></div>
         </div>
     </div>
-    Continue Application
+   idea sumbission
 </button>
     
 </NavLink>
-</div>
+</div>)} 
     </div>
+    
     </section>);
 }
