@@ -84,7 +84,7 @@ const FAQPage = () => {
           width: "100%",
           zIndex: "2",
         }}
-        src="images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png"
+        src="images/backgroundAbstarct.png"
       />
       <div className="faq-container" style={{ marginTop: "3rem" }}>
         <h1 style={{ padding: "2rem", display: "none" }}>FAQs</h1>

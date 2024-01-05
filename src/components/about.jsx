@@ -15,7 +15,8 @@ export default function About() {
           opacity: ".4",
           width: "100%",
         }}
-        src="images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png"
+        src="images/backgroundAbstarct.png"
+
       />
       <div
         style={{

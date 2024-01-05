@@ -37,7 +37,9 @@ const Previous = () => {
 
   return (
     <section className="previous_section" >
-    <img style={{ position:'absolute',height:'100%',opacity:'.6',width:'100%' }} src='images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png'/>
+    <img style={{ position:'absolute',height:'100%',opacity:'.6',width:'100%' }} 
+       src="images/backgroundAbstarct.png"
+    />
       <Container style={{ height: "fit-content",padding:'3rem' }}>
         <Row style={{ rowGap: "8rem" }}>
           <Col

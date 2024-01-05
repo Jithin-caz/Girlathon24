@@ -22,7 +22,7 @@ export default function Contact() {
           opacity: ".3",
           width: "100%",
         }}
-        src="images/Abstract extruded voronoi blocks background. minimal light clean corporate wall. 3d geometric surface illustration. polygonal elements displacement..png"
+        src="images/backgroundAbstarct.png"
       />
       <h1
         style={{ paddingLeft: "3rem", paddingTop: "4rem" }}
