@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <div>
       <section className="navigation row">
-        <div className="logo col">LOGO</div>
+        <div className="logo col" style={{height:'2rem',display:'flex',alignItems:'center' }}><img src="/images/GDSC.png" style={{ height:'190%' }} alt=""  /></div>
         <div className="navigation-links col">
           <ul>
           <li id="hero-a"
@@ -61,42 +61,43 @@ export default function Navbar() {
                 document.getElementById('hero-a').style.display='block'
               } }>Home</NavLink>
             </li>
-            <li
+            <a href="#ABOUT"> <li
               className={`lin ${
                 activeSection === "ABOUT" ? "link-active" : "link-passive"
               }`}
             >
-              <a href="#ABOUT">About</a>
-            </li>
-            <li
+             About
+            </li></a>
+            <a href="#FAQ"> <li
               className={`lin ${
                 activeSection === "FAQ" ? "link-active" : "link-passive"
               }`}
             >
-              <a href="#FAQ">FAQ</a>
-            </li>
+             FAQ
+            </li></a>
             <li className="lin">
               <a href="">Sponsors</a>
             </li>
-            <li
+            <a href="#CONTACT"> <li
               className={`lin ${
                 activeSection === "CONTACT" ? "link-active" : "link-passive"
               }`}
             >
-              <a href="#CONTACT">Contact</a>
-            </li>
-            <li className="register">
-              <Link to="/Signin" onClick={()=>{
+              Contact
+            </li></a>
+            <Link to="/Signin" onClick={()=>{
                 document.getElementById('hero-nav').style.display='block'
                 document.getElementById('hero-nav').classList.remove('link-active')
                 document.getElementById('hero-a').style.display='none'
-              } }>Register</Link>
-            </li>
+                console.log("Jithin")
+              } }> <li className="register">
+              Register
+            </li></Link>
           </ul>
         </div>
       </section>
       <div className="navigation-mobile-menu">
-        <div className="logo-mobile">LOGO</div>
+      <div className="logo col" style={{height:'2rem',display:'flex',alignItems:'center' }}><img src="/images/GDSC.png" style={{ height:'190%' }} alt=""  /></div>
         <i
           className={`bi bi-list list${Nav ? "nav-active" : ""}`}
           onClick={setNavigation}
