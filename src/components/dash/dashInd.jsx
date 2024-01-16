@@ -2,12 +2,40 @@ import React, { useState } from 'react'
 import './dash.css'
 import { Card } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 
 
 export default function DashInd()
 {
+  const [count,setCount]=useState(0)
     const [team,setTeam]=useState(true)
     const [mate,setMate]=useState(false)
+    const [teamname,setTeamname]=useState('')
+    const [teammatename,setTeammatename]=useState('')
+    const [teammateemail,setTeammateemail]=useState('')
+    const [teammatenum,setTeammatenum]=useState('')
+   
+    const setTeammate=(event)=>
+    {
+      event.preventDefault();
+      setCount(count+1)
+      console.log(teammatename)
+      console.log(teammateemail)
+      console.log(teammatenum)
+    }
+
+    function checkTeamName(event)
+    {
+      event.preventDefault();
+      if(teamname==="ddd")
+      {
+        document.getElementById('team-exist').style.display='block'
+      }
+      else{
+        setTeam(false)
+        setMate(true)
+      }
+    }
     return(<section style={{ paddingTop:'1rem' }}>
     <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'#45f3ff' }} className='fade-up dash-heading'>Dash Board</h1>
     <div className='dashContainer'>
@@ -25,17 +53,68 @@ export default function DashInd()
         </ol>
        <hr></hr>
        <br></br>
-        <form >
+        <form onSubmit={checkTeamName}>
     <div style={{ maxWidth:'18rem',minWidth:'13rem' }}>
     <div class="input-container fade-up">
-  <input name='teamname' placeholder="Team name" class="input-field" type="text"/>
+  <input value={teamname} name='teamname' placeholder="Team name" class="input-field" type="text"
+    onChange={(e)=>setTeamname(e.target.value)}
+  />
   <label for="input-field" class="input-label">Give a cool name for your team</label>
   <span class="input-highlight"></span>
 </div> </div>
   <div className='fade-up' style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
-      <button className='save' type='submit' onClick={()=>{setTeam(false)
-        setMate(true)
-      }}>
+      <button className='save' type='submit'>
+  <div class="svg-wrapper-1">
+    <div class="svg-wrapper">
+      <svg class="icon" height="30" width="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z">
+        </path>
+        </svg>
+    </div>
+  </div>
+  <span>save</span>
+</button>
+
+      </div>
+      <p id='team-exist' style={{ color:'yellow',display:'none' }}>this team already exists!!</p>
+    </form>
+    </>
+    ) 
+    }
+    {
+        mate&&(
+            <form onSubmit={setTeammate}>
+            <h3>Enter team details</h3>
+            <div className='row' style={{gap:'2rem' }}>
+<div className='team-mate col fade-up'>
+    <h5>Team mate {count} </h5>
+    <div class="inputbox">
+    <input value={teammatename} name='teammateName' required="required" type="text"
+      onChange={(e)=>setTeammatename(e.target.value)}
+    />
+    <span> name</span>
+    <i></i>
+</div>
+ <div class="inputbox">
+    <input value={teammateemail} name='teammateEmail' required="required" type="email"
+      onChange={(e)=>setTeammateemail(e.target.value)}
+    />
+    <span>e mail</span>
+    <i></i>
+</div>
+<div class="inputbox">
+    <input value={teammatenum} name='teammatephone' required="required" type="number"
+      onChange={(e)=>setTeammatenum(e.target.value)}
+    />
+    <span>Ph number</span>
+    <i></i>
+</div>
+</div>
+      </div> 
+      <div>
+        
+      </div>
+     {count<3 ? (<div className='fade-up' style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
+      <button className='save' type='submit' >
   <div class="svg-wrapper-1">
     <div class="svg-wrapper">
       <svg class="icon" height="30" width="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z">
@@ -45,89 +124,7 @@ export default function DashInd()
   </div>
   <span>next</span>
 </button>
-
-      </div>
-      <p style={{ color:'white' }}>this team already exists!!</p>
-    </form>
-    </>
-    ) 
-    }
-    {
-        mate&&(
-            <form >
-            <h3>Enter team details</h3>
-            <div className='row' style={{gap:'2rem' }}>
-<div className='team-mate col fade-up'>
-    <h5>Team mate 1</h5>
-    <div class="inputbox">
-    <input  name='teammate1Name' required="required" type="text"/>
-    <span> name</span>
-    <i></i>
-</div>
- <div class="inputbox">
-    <input name='teammate1Email' required="required" type="text"/>
-    <span>e mail</span>
-    <i></i>
-</div>
-</div>
-
-<div className='team-mate  col fade-up'>
-    <h5>Team mate 2</h5>
-    <div class="inputbox">
-    <input name='teammate2Name' required="required" type="text"/>
-    <span> name</span>
-    <i></i>
-</div>
- <div class="inputbox">
-    <input name='teammate2Email' required="required" type="text"/>
-    <span>e mail</span>
-    <i></i>
-</div>
-</div>
-
-<div className='team-mate  col fade-up'>
-    <h5>Team mate 3</h5>
-    <div class="inputbox">
-    <input name='teammate3Name' required="required" type="text"/>
-    <span> name</span>
-    <i></i>
-</div>
- <div class="inputbox">
-    <input name='teammate3Email' required="required" type="text"/>
-    <span>e mail</span>
-    <i></i>
-</div>
-</div>
-
-<div className='team-mate  col fade-up'>
-    <h5>Team mate 4</h5>
-    <div class="inputbox">
-    <input name='teammate4Name' required="required" type="text"/>
-    <span> name</span>
-    <i></i>
-</div>
- <div class="inputbox">
-    <input name='teammate4Email' required="required" type="text"/>
-    <span>e mail</span>
-    <i></i>
-</div>
-</div>
-      </div> 
-      <div>
-        
-      </div>
-      <div className='fade-up' style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
-      <button className='save' type='submit'>
-  <div class="svg-wrapper-1">
-    <div class="svg-wrapper">
-      <svg class="icon" height="30" width="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z">
-        </path>
-        </svg>
-    </div>
-  </div>
-  <span>Save</span>
-</button>
-      </div>
+      </div>):<div>team is full</div>}
     </form>
     
         )
