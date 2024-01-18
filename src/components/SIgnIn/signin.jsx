@@ -1,7 +1,11 @@
+import axios from "axios";
 import "./signin.css";
 import { useState } from "react";
 
 export default function Signin() {
+  const API = import.meta.env.VITE_API;
+  // console.log({process.env.API})
+  console.log(API)
   const [state, setState] = useState(true);
 
   // login variables
@@ -22,13 +26,21 @@ export default function Signin() {
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
 
-  const registerEvent = (e) => {
+  const registerEvent = async(e) => {
     e.preventDefault();
-    console.log(name);
-    console.log(email);
-    console.log(phone);
-    console.log(password1);
-    console.log(password2);
+    const data ={
+      name:name,
+      email:email,
+      phone:phone,
+      password:password1,
+    }
+    console.log(data);
+    if (password1 !== password2){
+      alert("Password does not match");
+      return;
+    }
+    const res =  await axios.post(`${API}/user/register`,data,{withCredentials:true})
+    console.log(res);
   };
 
   const login = (

@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/navbar";
 import { useEffect } from "react";
 import ScrollReveal from "scrollreveal";
 import Dash from "./components/dash/dash";
-import Signin from "./components/signin/signin";
+import Signin from "./components/SIgnIn/signin";
 import IdeaSubmission from "./components/IdeaSubmission/IdeaSubmission";
 import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import landing from "./components/landing";
