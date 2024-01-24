@@ -1,6 +1,10 @@
 import axios from "axios";
 import "./signin.css";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loggedIn } from "../../redux/action";
+import { redirect } from "react-router-dom";
+import DashInd from "../dash/dashInd";
 
 export default function Signin() {
   const API = import.meta.env.VITE_API;
@@ -8,14 +12,26 @@ export default function Signin() {
   console.log(API)
   const [state, setState] = useState(true);
 
+  const dispatch=useDispatch()
+  const loginSuccess=useSelector((state)=>state.logIn)
+
   // login variables
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
-  const loginEvent = (e) => {
+  const loginEvent = async(e) => {
     e.preventDefault();
-    console.log(user);
-    console.log(password);
+   const data={
+    email:user,
+    password:password
+   }
+   const res = await axios.post(`${API}/auth/login`,data,{withCredentials:true})
+   console.log(res)
+   if(res.status===201)
+    dispatch(loggedIn())
+    console.log(loginSuccess.isLoggedIn)
+    if(loginSuccess.isLoggedIn)
+      return <redirect to='/dash'/>
   };
 
   //signup variables
@@ -34,13 +50,16 @@ export default function Signin() {
       phone:phone,
       password:password1,
     }
-    console.log(data);
     if (password1 !== password2){
       alert("Password does not match");
       return;
     }
     const res =  await axios.post(`${API}/user/register`,data,{withCredentials:true})
     console.log(res);
+    if(res.status==230)
+        dispatch(loggedIn())
+    if(loginSuccess.isLoggedIn)
+        return <redirect to='/dash'/>
   };
 
   const login = (
@@ -241,5 +260,5 @@ export default function Signin() {
       </div>
     </div>
   );
-  return state ? login : register;
+  return state ? (loginSuccess.isLoggedIn?<DashInd/> :login) : (loginSuccess.isLoggedIn?<DashInd/> :register);
 }

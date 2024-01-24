@@ -76,7 +76,7 @@ export default function Navbar() {
              FAQ
             </li></a>
             <li className="lin">
-              <a href="">Sponsors</a>
+              <a href="#HERO">Sponsors</a>
             </li>
             <a href="#CONTACT"> <li
               className={`lin ${
@@ -89,6 +89,7 @@ export default function Navbar() {
                 document.getElementById('hero-nav').style.display='block'
                 document.getElementById('hero-nav').classList.remove('link-active')
                 document.getElementById('hero-a').style.display='none'
+          
                 console.log("Jithin")
               } }> <li className="register">
               Register
@@ -126,12 +127,12 @@ export default function Navbar() {
             </a>
           </li>
           <li className="lin">
-            <a href="" onClick={setNavigation}>
+            <a href="#FAQ" onClick={setNavigation}>
               FAQ
             </a>
           </li>
           <li className="lin">
-            <a href="" onClick={setNavigation}>
+            <a href="#HERO" onClick={setNavigation}>
               Sponsors
             </a>
           </li>

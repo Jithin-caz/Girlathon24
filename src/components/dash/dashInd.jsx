@@ -7,6 +7,8 @@ import axios from 'axios';
 
 export default function DashInd()
 {
+  const API = import.meta.env.VITE_API;
+
   const [count,setCount]=useState(0)
     const [team,setTeam]=useState(true)
     const [mate,setMate]=useState(false)
@@ -24,17 +26,23 @@ export default function DashInd()
       console.log(teammatenum)
     }
 
-    function checkTeamName(event)
+    async function checkTeamName(event)
     {
       event.preventDefault();
-      if(teamname==="ddd")
+      const data={
+        team:teamname
+      }
+      const res = await axios.post(`${API}/team/team-assign`,data,{withCredentials:true})
+      console.log(res)
+      if(res.status==200)
       {
-        document.getElementById('team-exist').style.display='block'
+        setTeam(false)
+         setMate(true)
       }
       else{
-        setTeam(false)
-        setMate(true)
+        document.getElementById('team-exist').style.display='block'
       }
+   
     }
     return(<section style={{ paddingTop:'1rem' }}>
     <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'#45f3ff' }} className='fade-up dash-heading'>Dash Board</h1>

@@ -16,6 +16,6 @@ export default function landing()
       <FAQPage/>
       <Contact />
       <Footer />
-      <DashInd/>
+     
     </>);
 }
