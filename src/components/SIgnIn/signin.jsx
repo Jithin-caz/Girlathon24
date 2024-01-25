@@ -1,6 +1,11 @@
 import axios from "axios";
 import "./signin.css";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loggedIn, teamRegistered } from "../../redux/action";
+import { redirect, useNavigate } from "react-router-dom";
+import DashInd from "../dash/dashInd";
+import { Alert } from "react-bootstrap";
 
 export default function Signin() {
   const API = import.meta.env.VITE_API;
@@ -8,14 +13,35 @@ export default function Signin() {
   console.log(API)
   const [state, setState] = useState(true);
 
+  const navigate=useNavigate()
+
+  const dispatch=useDispatch()
+  const loginSuccess=useSelector((state)=>state.logIn)
+  const isTeamRegistered=useSelector((state)=>state.teamRegistered)
   // login variables
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
-  const loginEvent = (e) => {
+  const loginEvent = async(e) => {
     e.preventDefault();
-    console.log(user);
-    console.log(password);
+   const data={
+    email:user,
+    password:password
+   }
+   const res = await axios.post(`${API}/auth/login`,data,{withCredentials:true})
+   console.log(res.data.user)
+   if(res.status===201)
+    dispatch(loggedIn())
+   
+  if(res.data.user.team!=null)
+  {
+    dispatch(teamRegistered(res.data.user.team))
+    console.log(isTeamRegistered)
+  }
+  
+  
+  if(loginSuccess.isLoggedIn)
+    navigate('/dash')
   };
 
   //signup variables
@@ -34,13 +60,22 @@ export default function Signin() {
       phone:phone,
       password:password1,
     }
-    console.log(data);
     if (password1 !== password2){
       alert("Password does not match");
       return;
     }
     const res =  await axios.post(`${API}/user/register`,data,{withCredentials:true})
     console.log(res);
+    if(res.status==230)
+    {
+      alert('This email already exists');
+      setState(true);
+    }
+    
+   else if(res.status==200)
+        dispatch(loggedIn())
+    if(loginSuccess.isLoggedIn)
+        navigate('/dash')
   };
 
   const login = (
@@ -56,6 +91,7 @@ export default function Signin() {
               id="email"
               placeholder=""
               value={user}
+              required="required"
               onChange={(e) => setUser(e.target.value)}
             />
           </div>
@@ -63,6 +99,7 @@ export default function Signin() {
             <label htmlFor="password">Password</label>
             <input
               type="password"
+              required="required"
               name="password"
               id="password"
               placeholder=""
@@ -140,6 +177,7 @@ export default function Signin() {
               type="text"
               name="name"
               id="name"
+              required="required"
               placeholder=""
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -151,6 +189,7 @@ export default function Signin() {
               type="tel"
               name="phone"
               id="phone"
+              required="required"
               placeholder=""
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
@@ -162,6 +201,7 @@ export default function Signin() {
               type="text"
               name="email"
               id="email"
+              required="required"
               placeholder=""
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -172,6 +212,7 @@ export default function Signin() {
             <input
               type="password"
               name="password"
+              required="required"
               id="password"
               placeholder=""
               value={password1}
@@ -184,6 +225,7 @@ export default function Signin() {
               type="password"
               name="confirmpassword"
               id="confirmpassword"
+              required="required"
               placeholder=""
               value={password2}
               onChange={(e) => setPassword2(e.target.value)}

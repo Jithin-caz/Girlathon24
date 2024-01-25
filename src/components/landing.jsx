@@ -18,7 +18,6 @@ export default function landing() {
       <Contact />
       <Footer />
       <DashInd />
-      <IdeaSubmission />
     </>
   );
 }

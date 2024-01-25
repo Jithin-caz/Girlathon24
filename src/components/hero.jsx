@@ -57,13 +57,10 @@ function Hero() {
 
   return (
     <section className="hero-bg fade-up" id="HERO">
-      <img
-        className="hero-image"
-        src="images/backgroundAbstarct.png"
-      />
+      <img className="hero-image" src="images/backgroundAbstarct.png" />
       <div className="hex-grid" id="hexGrid"></div>
 
-      <div className="hero row fade-up" >
+      <div className="hero row fade-up">
         <div className="left col-lg-6"></div>
         <div className="right col-lg-6">
           <div className="timer">
@@ -95,14 +92,14 @@ function Hero() {
           //<iframe title='J' src='https://my.spline.design/readyplayermelookingaround-0c0f2a2232256d31c16ec20f9e01ab2c/' frameborder='0' width='100%' height='100%'></iframe>
         }
       </div>
-      <div className="reg-btn-cont row">
+      {/* <div className="reg-btn-cont row">
         <div className="col-6 oth"></div>
         <div className="col-6 reg">
           <Link to="/Signin" className="reg-btn" >
             Register &#x2197;
           </Link>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

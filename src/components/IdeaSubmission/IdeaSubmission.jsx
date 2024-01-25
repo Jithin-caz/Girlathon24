@@ -1,29 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./IdeaSubmission.css";
 
 export default function IdeaSubmission() {
-  // variables
-  const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("");
-  const [description, setDescription] = useState("");
-  const [abstract, setAbstract] = useState("");
-  // const [otherdoc, setOtherdoc] = useState("");
-
-  const IdeaSubmission = (e) => {
-    e.preventDefault();
-    console.log(title);
-    console.log(category);
-    console.log(description);
-    console.log(abstract);
-    // console.log(category);
-
-    // Clear the input values
-    setTitle("");
-    setCategory("");
-    setDescription("");
-    setAbstract("");
-  };
-
   return (
     <section className="IdeaSubmission" style={{ paddingTop: "6rem" }}>
       <h2>Idea Submission</h2>
@@ -133,6 +113,11 @@ export default function IdeaSubmission() {
               Submit
             </button>
           </form>
+          <div style={{ paddingTop: "1rem" }}>
+            <NavLink to="/resetPassword">
+              <u style={{ color: "yellow" }}> reset password</u>
+            </NavLink>
+          </div>
         </div>
       </div>
     </section>
