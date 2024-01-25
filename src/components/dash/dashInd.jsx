@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './dash.css'
 import { Card } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 
@@ -19,7 +19,12 @@ export default function DashInd()
     const [teammatenum,setTeammatenum]=useState('')
    
     const isTeamRegistered=useSelector((state)=>state.teamRegistered)
+    const loginSuccess=useSelector((state)=>state.logIn)
+
+    const navigate=useNavigate()
     useEffect(()=>{
+      if(!loginSuccess.isLoggedIn)
+        navigate('/Signin')
       if(isTeamRegistered.registeredTeamName!=null)
       {
         setTeam(false)
@@ -30,7 +35,6 @@ export default function DashInd()
     const setTeammate=async(event)=>
     {
       event.preventDefault();
-      
       const data={
         name:teammatename,
         email:teammateemail,
@@ -68,7 +72,7 @@ export default function DashInd()
     }
     return(<section style={{ paddingTop:'1rem' }}>
     <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'#45f3ff' }} className='fade-up dash-heading'>Dash Board</h1>
-    <div className='dashContainer'>
+    <div className='dashContainer' >
     <div className='dash-left' >
     {team &&(
         <>
@@ -86,7 +90,7 @@ export default function DashInd()
         <form onSubmit={checkTeamName}>
     <div style={{ maxWidth:'18rem',minWidth:'13rem' }}>
     <div class="input-container fade-up">
-  <input value={teamname} name='teamname' placeholder="Team name" class="input-field" type="text"
+  <input value={teamname} name='teamname' placeholder="Team name" class="input-field" type="text"  required="required"
     onChange={(e)=>setTeamname(e.target.value)}
   />
   <label for="input-field" class="input-label">Give a cool name for your team</label>
@@ -162,6 +166,7 @@ export default function DashInd()
     }
     </div>
     <div className='dash-right fade-up'>
+    <div>
     <div class="card">
   <div class="card-inner">
     <div class="card-front">
@@ -183,6 +188,7 @@ export default function DashInd()
     </div>
   </div>
 </div>
+</div>
     </div>
    {mate&&(<div className='idea-submission fade-up'>
     <NavLink to='/ideaSumbit' >
@@ -202,7 +208,11 @@ export default function DashInd()
 </button>
     
 </NavLink>
+<div style={{ paddingTop:'1rem' }}>
+<NavLink to='/resetPassword'><u style={{ color:'yellow' }}> reset password</u></NavLink>
+</div>
 </div>)} 
+
     </div>
     
     </section>);

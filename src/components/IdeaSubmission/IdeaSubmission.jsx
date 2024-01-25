@@ -1,7 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import {NavLink, useNavigate} from 'react-router-dom'
 import "./IdeaSubmission.css";
 
+
 export default function IdeaSubmission() {
+  const loginSuccess=useSelector((state)=>state.logIn)
+  const navigate=useNavigate()
+  useEffect(()=>
+  {
+    if(!loginSuccess.isLoggedIn)
+    navigate('/Signin')
+  }
+  ,[])
   return (
     <section className="IdeaSubmission" style={{ paddingTop:'6rem' }}>
       <h2>Idea Submission</h2>
@@ -50,6 +61,9 @@ export default function IdeaSubmission() {
               <input type="file" className="input" required />
             </div>
           </form>
+          <div style={{ paddingTop:'1rem' }}>
+<NavLink to='/resetPassword'><u style={{ color:'yellow' }}> reset password</u></NavLink>
+</div>
         </div>
       </div>
     </section>
