@@ -1,20 +1,39 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import {NavLink, useNavigate} from 'react-router-dom'
+import { NavLink, useNavigate } from "react-router-dom";
 import "./IdeaSubmission.css";
 
-
 export default function IdeaSubmission() {
-  const loginSuccess=useSelector((state)=>state.logIn)
-  const navigate=useNavigate()
-  useEffect(()=>
-  {
-    if(!loginSuccess.isLoggedIn)
-    navigate('/Signin')
-  }
-  ,[])
+  const loginSuccess = useSelector((state) => state.logIn);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!loginSuccess.isLoggedIn) navigate("/Signin");
+  }, []);
+
+  // variables
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [abstract, setAbstract] = useState("");
+  // const [otherdoc, setOtherdoc] = useState("");
+
+  const IdeaSubmission = (e) => {
+    e.preventDefault();
+    console.log(title);
+    console.log(category);
+    console.log(description);
+    console.log(abstract);
+    // console.log(category);
+
+    // Clear the input values
+    setTitle("");
+    setCategory("");
+    setDescription("");
+    setAbstract("");
+  };
+
   return (
-    <section className="IdeaSubmission" style={{ paddingTop:'6rem' }}>
+    <section className="IdeaSubmission" style={{ paddingTop: "6rem" }}>
       <h2>Idea Submission</h2>
       <div className="SubmissionContent">
         <div className="IdeaTeamDetails">
@@ -35,35 +54,98 @@ export default function IdeaSubmission() {
           </div>
         </div>
         <div className="SubmissionDiv">
-          <form action="" className="IdeaSubmissionForm">
+          <form
+            action=""
+            className="IdeaSubmissionForm"
+            onSubmit={IdeaSubmission}
+          >
             <input
               placeholder="Idea Title"
               type="text"
               className="input"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
               required
             />
+            {/* <label className="inputlabel">Select Category</label> */}
+            <select
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="input"
+              style={{ width: "100%" }}
+              required
+            >
+              <option className="dropdown-option" value="">
+                -- Select Category --
+              </option>
+              <option className="dropdown-option" value="Health Care">
+                Health Care
+              </option>
+              <option className="dropdown-option" value="Transportation">
+                Transportation
+              </option>
+              <option className="dropdown-option" value="Social Stigma">
+                Social Stigma
+              </option>
+              <option className="dropdown-option" value="Waste Management">
+                Waste Management
+              </option>
+              <option className="dropdown-option" value="Blockchain">
+                Blockchain
+              </option>
+              <option className="dropdown-option" value="Communication">
+                Communication
+              </option>
+              <option
+                className="dropdown-option"
+                value="Environment & Agriculture"
+              >
+                Environment & Agriculture
+              </option>
+              <option className="dropdown-option" value="Security">
+                Security
+              </option>
+              <option className="dropdown-option" value="Renewable Energy">
+                Renewable Energy
+              </option>
+              <option className="dropdown-option" value="Disaster Management">
+                Disaster Management
+              </option>
+              <option className="dropdown-option" value="Open Innovation">
+                Open Innovation
+              </option>
+            </select>
             <textarea
               placeholder="Idea Description"
               type="text"
               className="input textarea"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
               required
             />
-            <div>
-              <label className="inputlabel">
-                Abstract <span>(should be below 100MB)</span>
-              </label>
-              <input type="file" className="input" required />
-            </div>
-            <div>
+            <textarea
+              placeholder="Abstract (should be below 100MB)"
+              type="text"
+              className="input textarea"
+              value={abstract}
+              onChange={(e) => setAbstract(e.target.value)}
+              required
+            />
+            {/* <div>
               <label className="inputlabel">
                 Other Documents <span>(should be below 50MB)</span>
               </label>
               <input type="file" className="input" required />
-            </div>
+            </div> */}
+            <button type="submit" className="submit">
+              Submit
+            </button>
           </form>
-          <div style={{ paddingTop:'1rem' }}>
-<NavLink to='/resetPassword'><u style={{ color:'yellow' }}> reset password</u></NavLink>
-</div>
+          <div style={{ paddingTop: "1rem" }}>
+            <NavLink to="/resetPassword">
+              <u style={{ color: "yellow" }}> reset password</u>
+            </NavLink>
+          </div>
         </div>
       </div>
     </section>
