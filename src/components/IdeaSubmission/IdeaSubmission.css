@@ -89,6 +89,7 @@
     width: 80%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     /* padding: 10%; */
 }
 
@@ -109,7 +110,7 @@
 }
 
 .textarea{
-    height: 30dvh;
+    height: 25dvh;
 }
 
 .input:focus,
@@ -129,7 +130,15 @@
     transition: opacity .3s;
 }
 
+.dropdown-option{
+    background-color: #303030;
+    font-size: 1rem;
+}
 
+.submit{
+    width: 50%;
+    background: linear-gradient(45deg, #3eff2d, #ff2bbf);
+}
 
 
 @media screen and (max-width: 768px){
