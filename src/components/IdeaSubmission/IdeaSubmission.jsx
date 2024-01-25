@@ -4,6 +4,34 @@ import { NavLink, useNavigate } from "react-router-dom";
 import "./IdeaSubmission.css";
 
 export default function IdeaSubmission() {
+  const loginSuccess = useSelector((state) => state.logIn);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!loginSuccess.isLoggedIn) navigate("/Signin");
+  }, []);
+
+  // variables
+  const [title, setTitle] = useState("");
+  const [category, setCategory] = useState("");
+  const [description, setDescription] = useState("");
+  const [abstract, setAbstract] = useState("");
+  // const [otherdoc, setOtherdoc] = useState("");
+
+  const IdeaSubmission = (e) => {
+    e.preventDefault();
+    console.log(title);
+    console.log(category);
+    console.log(description);
+    console.log(abstract);
+    // console.log(category);
+
+    // Clear the input values
+    setTitle("");
+    setCategory("");
+    setDescription("");
+    setAbstract("");
+  };
+
   return (
     <section className="IdeaSubmission" style={{ paddingTop: "6rem" }}>
       <h2>Idea Submission</h2>
