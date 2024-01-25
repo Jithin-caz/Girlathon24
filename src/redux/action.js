@@ -9,3 +9,10 @@ export const loggedOut=()=>{
         type:'LOGGED_OUT',
     }
 }
+
+export const teamRegistered=(teamName)=>{
+    return {
+        type:'TEAM_REGISTERED',
+        payload:teamName,
+    }
+}

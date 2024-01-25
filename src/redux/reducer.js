@@ -17,3 +17,19 @@ export const loggedinReducer=(state=Initialtoken,action)=>
         default: return state
     }
 }
+
+const initialTeamStatus={
+    registeredTeamName:null,
+}
+
+export const TeamRegisteredReducer=(state=initialTeamStatus,action)=>
+{
+    switch(action.type)
+    {
+        case 'TEAM_REGISTERED':return {
+            ...state,
+            registeredTeamName:action.payload
+        }
+        default: return state
+    }
+}

@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './dash.css'
 import { Card } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 
 export default function DashInd()
@@ -12,18 +13,39 @@ export default function DashInd()
   const [count,setCount]=useState(0)
     const [team,setTeam]=useState(true)
     const [mate,setMate]=useState(false)
-    const [teamname,setTeamname]=useState('')
+    const [teamname,setTeamname]=useState('TBD')
     const [teammatename,setTeammatename]=useState('')
     const [teammateemail,setTeammateemail]=useState('')
     const [teammatenum,setTeammatenum]=useState('')
    
-    const setTeammate=(event)=>
+    const isTeamRegistered=useSelector((state)=>state.teamRegistered)
+    useEffect(()=>{
+      if(isTeamRegistered.registeredTeamName!=null)
+      {
+        setTeam(false)
+        setMate(true)
+        setTeamname(isTeamRegistered.registeredTeamName)
+      }
+    },[])
+    const setTeammate=async(event)=>
     {
       event.preventDefault();
-      setCount(count+1)
-      console.log(teammatename)
-      console.log(teammateemail)
-      console.log(teammatenum)
+      
+      const data={
+        name:teammatename,
+        email:teammateemail,
+        phone:teammatenum,
+        team:teamname
+      }
+      const res = await axios.post(`${API}/team/member-register`,data,{withCredentials:true})
+      console.log(res)
+      if(res.status==230)
+        document.getElementById('email-exist').style.display='block'
+      
+      else if(res.status==250)
+        setCount(5)
+      else
+        alert("team mate registered")
     }
 
     async function checkTeamName(event)
@@ -94,7 +116,7 @@ export default function DashInd()
             <h3>Enter team details</h3>
             <div className='row' style={{gap:'2rem' }}>
 <div className='team-mate col fade-up'>
-    <h5>Team mate {count} </h5>
+    <h5>Team mate details </h5>
     <div class="inputbox">
     <input value={teammatename} name='teammateName' required="required" type="text"
       onChange={(e)=>setTeammatename(e.target.value)}
@@ -110,7 +132,7 @@ export default function DashInd()
     <i></i>
 </div>
 <div class="inputbox">
-    <input value={teammatenum} name='teammatephone' required="required" type="number"
+    <input value={teammatenum} name='teammatephone' required="required" type="text"
       onChange={(e)=>setTeammatenum(e.target.value)}
     />
     <span>Ph number</span>
@@ -132,7 +154,8 @@ export default function DashInd()
   </div>
   <span>next</span>
 </button>
-      </div>):<div>team is full</div>}
+      </div>):<div style={{ paddingTop:'1rem' }}>team is full</div>}
+      <p id='email-exist' style={{ color:'yellow',display:'none' }}>this email already exists!!</p>
     </form>
     
         )
@@ -146,7 +169,7 @@ export default function DashInd()
     </div>
     <div class="card-back">
     <Card style={{ minWidth:'18.5rem',background:'#2b2b2b',color:'white' }}>
-            <Card.Header>Team Name</Card.Header>
+            <Card.Header>{teamname}</Card.Header>
             <Card.Body>
                 <div style={{ color:'white' }}><h6>team members</h6>
                 <ul style={{ color:'white' }}>
