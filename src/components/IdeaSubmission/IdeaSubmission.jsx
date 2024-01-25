@@ -138,7 +138,12 @@ export default function IdeaSubmission() {
               <input type="file" className="input" required />
             </div> */}
             <button type="submit" className="submit">
-              Submit
+              <span class="circle1"></span>
+              <span class="circle2"></span>
+              <span class="circle3"></span>
+              <span class="circle4"></span>
+              <span class="circle5"></span>
+              <span class="text">Send</span>
             </button>
           </form>
           <div style={{ paddingTop: "1rem" }}>
