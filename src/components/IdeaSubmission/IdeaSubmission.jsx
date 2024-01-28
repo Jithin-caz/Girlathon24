@@ -1,38 +1,66 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "./IdeaSubmission.css";
+import { loggedOut } from "../../redux/action";
+import Loader from "../loader/loader";
 
 export default function IdeaSubmission() {
+  const API = import.meta.env.VITE_API;
   const loginSuccess = useSelector((state) => state.logIn);
   const navigate = useNavigate();
+  const dispatch=useDispatch()
+
+  const [teammates,setteammates]=useState([])
+  const [lead,setLead]=useState('')
+  const [teamname,setTeamname]=useState('')
+
+  const [datafetched,setDataFetched]=useState(false)
+
+  const getter=async()=>{
+    const res=await axios.get(`${API}/auth/profile`,{withCredentials:true})
+     
+    if(res!=null)
+      setDataFetched(true)
+    setLead(res.data.lead.name)
+    setteammates(res.data.members)
+    setTeamname(res.data.lead.team)
+    setVis(!res.data.lead.idea)
+   
+  }
   useEffect(() => {
-    if (!loginSuccess.isLoggedIn) navigate("/Signin");
-  }, []);
+    getter();
+    if (!loginSuccess.isLoggedIn) 
+    navigate("/Signin");
+  });
 
   // variables
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
   const [abstract, setAbstract] = useState("");
+  const [vis,setVis]=useState(true)
   // const [otherdoc, setOtherdoc] = useState("");
 
-  const IdeaSubmission = (e) => {
+  const IdeaSubmission = async(e) => {
+   
     e.preventDefault();
-    console.log(title);
-    console.log(category);
-    console.log(description);
-    console.log(abstract);
-    // console.log(category);
+    const data={
+      title:title,
+      category:category,
+      description:abstract,
+      team:teamname
+    }
+    const res=await axios.post(`${API}/idea/submit`,data,{withCredentials:true})
 
-    // Clear the input values
     setTitle("");
     setCategory("");
     setDescription("");
     setAbstract("");
   };
 
-  return (
+  return (datafetched?
     <section className="IdeaSubmission" style={{ paddingTop: "6rem" }}>
       <h2>Idea Submission</h2>
       <div className="SubmissionContent">
@@ -41,20 +69,18 @@ export default function IdeaSubmission() {
             <div class="idea-card">
               <div class="first-content">
                 <h5>Team Name</h5>
-                <p>**Team Name**</p>
+                <p>{teamname}</p>
               </div>
               <div class="second-content">
                 <h5>Team Members</h5>
-                <p>**Member 1**</p>
-                <p>**Member 2**</p>
-                <p>**Member 3**</p>
-                <p>**Member 4**</p>
+                <p style={{ textAlign:'center',paddingBottom:'1rem' }}>{lead} (lead)</p>
+                {teammates.map((mate,index)=><p key={index}>{mate.name}</p>)}
               </div>
             </div>
           </div>
         </div>
         <div className="SubmissionDiv">
-          <form
+        {vis?( <form
             action=""
             className="IdeaSubmissionForm"
             onSubmit={IdeaSubmission}
@@ -124,7 +150,7 @@ export default function IdeaSubmission() {
               required
             />
             <textarea
-              placeholder="Abstract (should be below 100MB)"
+              placeholder="Abstract"
               type="text"
               className="input textarea"
               value={abstract}
@@ -145,14 +171,19 @@ export default function IdeaSubmission() {
               <span class="circle5"></span>
               <span class="text">Send</span>
             </button>
-          </form>
+          </form>) :(<h1>Idea submitted</h1>)}
+         
           <div style={{ paddingTop: "1rem" }}>
             <NavLink to="/resetPassword">
               <u style={{ color: "yellow" }}> reset password</u>
-            </NavLink>
+            </NavLink><br>
+            </br>
+            <button style={{ background:'none',border:'none' }} onClick={()=>{
+   dispatch(loggedOut())
+}}>logout</button>
           </div>
         </div>
       </div>
-    </section>
+    </section> :<Loader/>
   );
 }

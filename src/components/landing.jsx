@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Hero from "./hero";
 import About from "./about";
 import Previous from "./previous/previous_year";
@@ -8,7 +8,9 @@ import Footer from "./Footer/Footer";
 import Dash from "./dash/dash";
 import DashInd from "./dash/dashInd";
 import IdeaSubmission from "./IdeaSubmission/IdeaSubmission";
+import { useSelector } from "react-redux";
 export default function landing() {
+
   return (
     <>
       <Hero />
@@ -17,7 +19,6 @@ export default function landing() {
       <FAQPage />
       <Contact />
       <Footer />
-     
     </>
   );
 }

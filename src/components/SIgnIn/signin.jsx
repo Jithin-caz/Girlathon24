@@ -1,11 +1,12 @@
 import axios from "axios";
 import "./signin.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loggedIn, teamRegistered } from "../../redux/action";
 import { redirect, useNavigate } from "react-router-dom";
 import DashInd from "../dash/dashInd";
 import { Alert } from "react-bootstrap";
+import Loader from "../loader/loader";
 
 export default function Signin() {
   const API = import.meta.env.VITE_API;
@@ -22,26 +23,35 @@ export default function Signin() {
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
+  const [datafetched,setDataFetched]=useState(true)
+useEffect(()=>{
+  if(loginSuccess.isLoggedIn)
+  navigate('/dash')
+})
   const loginEvent = async(e) => {
     e.preventDefault();
+    setDataFetched(false)
    const data={
     email:user,
     password:password
    }
-   const res = await axios.post(`${API}/auth/login`,data,{withCredentials:true})
-   console.log(res.data.user)
+   const res = await axios.post(`${API}/auth/login`,data,{withCredentials:true}).catch((e)=>alert("wrong email or password"))
+   if(res!=null)
+    setDataFetched(true)
+   console.log(res)
+   
    if(res.status===201)
+   {
     dispatch(loggedIn())
+    navigate('/dash')
+   }
+  
    
   if(res.data.user.team!=null)
   {
     dispatch(teamRegistered(res.data.user.team))
     console.log(isTeamRegistered)
   }
-  
-  
-  if(loginSuccess.isLoggedIn)
-    navigate('/dash')
   };
 
   //signup variables
@@ -54,6 +64,7 @@ export default function Signin() {
 
   const registerEvent = async(e) => {
     e.preventDefault();
+    setDataFetched(false)
     const data ={
       name:name,
       email:email,
@@ -65,6 +76,8 @@ export default function Signin() {
       return;
     }
     const res =  await axios.post(`${API}/user/register`,data,{withCredentials:true})
+    if(res!=null)
+    setDataFetched(true)
     console.log(res);
     if(res.status==230)
     {
@@ -73,10 +86,13 @@ export default function Signin() {
     }
     
    else if(res.status==200)
-        dispatch(loggedIn())
-    if(loginSuccess.isLoggedIn)
+   {
+    dispatch(loggedIn())
         navigate('/dash')
+   }
   };
+
+  
 
   const login = (
     <div className="section login">
@@ -283,5 +299,5 @@ export default function Signin() {
       </div>
     </div>
   );
-  return state ? login : register;
+  return state ? (datafetched? login:<Loader/>) :(datafetched? register:<Loader/>);
 }

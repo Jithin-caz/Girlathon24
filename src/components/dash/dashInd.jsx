@@ -3,12 +3,17 @@ import './dash.css'
 import { Card } from 'react-bootstrap';
 import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { loggedOut } from '../../redux/action';
+import Loader from '../loader/loader';
 
 
 export default function DashInd()
 {
   const API = import.meta.env.VITE_API;
+
+  const [teammates,setteammates]=useState([])
+  const [lead,setLead]=useState('')
 
   const [count,setCount]=useState(0)
     const [team,setTeam]=useState(true)
@@ -17,23 +22,46 @@ export default function DashInd()
     const [teammatename,setTeammatename]=useState('')
     const [teammateemail,setTeammateemail]=useState('')
     const [teammatenum,setTeammatenum]=useState('')
+
+    const [datafetched,setDataFetched]=useState(false)
    
     const isTeamRegistered=useSelector((state)=>state.teamRegistered)
     const loginSuccess=useSelector((state)=>state.logIn)
-
+    const dispatch=useDispatch()
     const navigate=useNavigate()
+  
+    const getter=async()=>
+    {
+   const res=await axios.get(`${API}/auth/profile`,{withCredentials:true})
+   if(res!=null)
+      setDataFetched(true)
+    setLead(res.data.lead.name)
+    setteammates(res.data.members)
+    if(res.data.lead.idea)
+    {
+     const idea=document.getElementById('idea-status')
+     idea.innerHTML="idea submission complete"
+     idea.style.color='white'
+    }
+    }
     useEffect(()=>{
+      getter()
       if(!loginSuccess.isLoggedIn)
         navigate('/Signin')
+     if(teammates.length==3)
+        setCount(5)
+
+      
       if(isTeamRegistered.registeredTeamName!=null)
       {
         setTeam(false)
         setMate(true)
         setTeamname(isTeamRegistered.registeredTeamName)
       }
-    },[])
+    })
     const setTeammate=async(event)=>
     {
+      document.getElementById('email-exist').style.display='none'
       event.preventDefault();
       const data={
         name:teammatename,
@@ -43,11 +71,12 @@ export default function DashInd()
       }
       const res = await axios.post(`${API}/team/member-register`,data,{withCredentials:true})
       console.log(res)
-      if(res.status==230)
-        document.getElementById('email-exist').style.display='block'
-      
-      else if(res.status==250)
+   
+     if(teammates.length==3)
         setCount(5)
+
+        else if(res.status==230)
+        document.getElementById('email-exist').style.display='block'
       else
         alert("team mate registered")
     }
@@ -70,8 +99,9 @@ export default function DashInd()
       }
    
     }
-    return(<section style={{ paddingTop:'1rem' }}>
-    <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'#45f3ff' }} className='fade-up dash-heading'>Dash Board</h1>
+    return(datafetched? <section style={{ paddingTop:'1rem' }}>
+    <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'#45f3ff' }} className='fade-up dash-heading'>Welcome {lead}</h1>
+    <p id='idea-status' style={{ paddingTop:'.5rem',paddingLeft:'3rem',color:'orange' }}>idea not sumbitted</p>
     <div className='dashContainer' >
     <div className='dash-left' >
     {team &&(
@@ -170,7 +200,8 @@ export default function DashInd()
     <div class="card">
   <div class="card-inner">
     <div class="card-front">
-      <h3 style={{ color:'#23242a',fontSize:'2rem' }}> Team details</h3>
+     <div> <h3 ><b style={{ color:'#23242a',fontSize:'2rem' }}>Team details</b></h3>
+     </div>
     </div>
     <div class="card-back">
     <Card style={{ minWidth:'18.5rem',background:'#2b2b2b',color:'white' }}>
@@ -178,10 +209,8 @@ export default function DashInd()
             <Card.Body>
                 <div style={{ color:'white' }}><h6>team members</h6>
                 <ul style={{ color:'white' }}>
-              <li style={{ color:'white' }}>guy 1 <span style={{ color:'white',fontSize:'.8rem' }}>(lead)</span></li>
-              <li style={{ color:'white' }}>guy 2</li>
-              <li style={{ color:'white' }}>guy 3</li>
-              <li style={{ color:'white' }}>guy 4</li>
+              <li style={{ color:'white' }}>{lead} <span style={{ color:'white',fontSize:'.8rem' }}>(lead)</span></li>
+              {teammates.map((member,index)=> <li key={index} style={{ color:'white' }}>{member.name}</li>)}
                 </ul></div>
             </Card.Body>
         </Card>
@@ -210,10 +239,14 @@ export default function DashInd()
 </NavLink>
 <div style={{ paddingTop:'1rem' }}>
 <NavLink to='/resetPassword'><u style={{ color:'yellow' }}> reset password</u></NavLink>
+<br></br>
+<button style={{ background:'none',border:'none' }} onClick={()=>{
+   dispatch(loggedOut())
+}}>logout</button>
 </div>
 </div>)} 
 
     </div>
     
-    </section>);
+    </section> :<Loader/>);
 }
