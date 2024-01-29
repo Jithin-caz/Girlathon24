@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { loggedOut } from '../../redux/action';
-import Signin from './signin';
 import "./signin.css";
+import axios from 'axios';
 
 export default function ResetPass(){
+
+  const API = import.meta.env.VITE_API;
+  
     const dispatch= useDispatch();
     const [oldPass,setOldPass]=useState('');
     const [newPass,setNewPass]=useState('');
@@ -13,14 +16,20 @@ export default function ResetPass(){
 
     const navigate=useNavigate()
 
-    const changePass=(e)=>{
+    const changePass=async(e)=>{
         e.preventDefault()
-       
+      
         if(newPass!=confPass)
         {
             alert("password does not match")
             return
         }
+        const data={
+          prevpassword:oldPass,
+          password:newPass
+        }
+       
+        console.log(res)
        dispatch(loggedOut())
       navigate('/Signin')
     }

@@ -5,12 +5,7 @@ import Previous from "./previous/previous_year";
 import FAQPage from "./FAQ/FAQ";
 import Contact from "./contact/contact";
 import Footer from "./Footer/Footer";
-import Dash from "./dash/dash";
-import DashInd from "./dash/dashInd";
-import IdeaSubmission from "./IdeaSubmission/IdeaSubmission";
-import { useSelector } from "react-redux";
 export default function landing() {
-
   return (
     <>
       <Hero />

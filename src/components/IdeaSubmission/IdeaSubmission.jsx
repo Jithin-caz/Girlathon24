@@ -53,7 +53,7 @@ export default function IdeaSubmission() {
       team:teamname
     }
     const res=await axios.post(`${API}/idea/submit`,data,{withCredentials:true})
-
+console.log(res)
     setTitle("");
     setCategory("");
     setDescription("");

@@ -35,7 +35,9 @@ useEffect(()=>{
     email:user,
     password:password
    }
-   const res = await axios.post(`${API}/auth/login`,data,{withCredentials:true}).catch((e)=>alert("wrong email or password"))
+   const res = await axios.post(`${API}/auth/login`,data,{withCredentials:true}).catch((e)=>{alert("wrong email or password")
+   setDataFetched(true)
+  })
    if(res!=null)
     setDataFetched(true)
    console.log(res)

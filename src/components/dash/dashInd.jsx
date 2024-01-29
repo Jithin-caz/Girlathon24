@@ -37,6 +37,7 @@ export default function DashInd()
       setDataFetched(true)
     setLead(res.data.lead.name)
     setteammates(res.data.members)
+    console.log(res)
     if(res.data.lead.idea)
     {
      const idea=document.getElementById('idea-status')
@@ -100,10 +101,12 @@ export default function DashInd()
    
     }
     return(datafetched? <section style={{ paddingTop:'1rem' }}>
-    <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'#45f3ff' }} className='fade-up dash-heading'>Welcome {lead}</h1>
+    <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:' rgb(103, 151, 255)' }} className='fade-up dash-heading'>Welcome {lead}</h1>
+    <h3 style={{paddingLeft:'3rem',color:' rgb(103, 151, 255)' }} className='fade-up dash-heading'>{teamname}</h3>
     <p id='idea-status' style={{ paddingTop:'.5rem',paddingLeft:'3rem',color:'orange' }}>idea not sumbitted</p>
     <div className='dashContainer' >
-    <div className='dash-left' >
+    {teammates.length<3 &&(
+      <div className='dash-left' >
     {team &&(
         <>
         <h3>Guidelines</h3>
@@ -146,7 +149,7 @@ export default function DashInd()
     }
     {
         mate&&(
-            <form onSubmit={setTeammate}>
+            <form onSubmit={setTeammate} style={{ width:'45dvw',minwidth:'20rem' }}>
             <h3>Enter team details</h3>
             <div className='row' style={{gap:'2rem' }}>
 <div className='team-mate col fade-up'>
@@ -177,7 +180,7 @@ export default function DashInd()
       <div>
         
       </div>
-     {count<3 ? (<div className='fade-up' style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
+     <div className='fade-up' style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
       <button className='save' type='submit' >
   <div class="svg-wrapper-1">
     <div class="svg-wrapper">
@@ -188,23 +191,27 @@ export default function DashInd()
   </div>
   <span>next</span>
 </button>
-      </div>):<div style={{ paddingTop:'1rem' }}>team is full</div>}
+      </div>
       <p id='email-exist' style={{ color:'yellow',display:'none' }}>this email already exists!!</p>
     </form>
     
         )
     }
     </div>
+    )}
+    
     <div className='dash-right fade-up'>
-    <div>
-    <div class="card">
+    <div >
+    <div className='row' style={{ rowGap:'2rem',display:'flex',justifyContent:'center',alignItems:'center',width:'100%' }}>
+    {teammates.length<3 ?(
+      <div class="card">
   <div class="card-inner">
     <div class="card-front">
      <div> <h3 ><b style={{ color:'#23242a',fontSize:'2rem' }}>Team details</b></h3>
      </div>
     </div>
     <div class="card-back">
-    <Card style={{ minWidth:'18.5rem',background:'#2b2b2b',color:'white' }}>
+    <Card style={{ minWidth:'20.3rem',background:'#2b2b2b',color:'white' }}>
             <Card.Header>{teamname}</Card.Header>
             <Card.Body>
                 <div style={{ color:'white' }}><h6>team members</h6>
@@ -217,7 +224,32 @@ export default function DashInd()
     </div>
   </div>
 </div>
+    ):(
+      
+      teammates.map((member,index)=>  <div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+     <div> <h3 ><b style={{ color:'#23242a',fontSize:'2rem' }}>{member.name}</b></h3>
+     </div>
+    </div>
+    <div class="card-back">
+    <Card style={{ minWidth:'18.7rem',background:'#2b2b2b',color:'white' }}>
+            <Card.Header>{member.name}</Card.Header>
+            <Card.Body>
+                <ul style={{ color:'white' }}>
+              <li style={{ color:'white',paddingTop:'1rem' }}>email: {member.email}</li>
+              <li style={{ color:'white',paddingTop:'1rem' }}>phone: {member.phone}</li>
+                </ul>
+            </Card.Body>
+        </Card>
+    </div>
+  </div>
+</div>)
+      )}
+   
 </div>
+    </div>
+   
     </div>
    {mate&&(<div className='idea-submission fade-up'>
     <NavLink to='/ideaSumbit' >

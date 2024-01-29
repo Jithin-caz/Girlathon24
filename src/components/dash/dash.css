@@ -11,7 +11,7 @@
   .dash-left
   {
     grid-area: left; 
-    box-shadow: 1px 3px 3px 0px #45f3ffae;
+    box-shadow: 1px 3px 3px 0px rgb(103, 151, 255);
     padding:2rem;
   }
   .dash-right
@@ -27,7 +27,7 @@
     margin-top: 4rem;
     border: solid .1rem whitesmoke;
     border-radius: 1rem;
-    max-width: 17rem;
+    max-width: 60rem;
     min-height: 14rem;
   }
 
@@ -36,8 +36,8 @@
 
   .inputbox {
     position: relative;
-    width: 196px;
-    padding-top: 1rem;
+    width: 100%;
+    padding-top: 2.3rem;
   }
   
   .inputbox input {
@@ -68,7 +68,7 @@
   
   .inputbox input:valid ~span,
   .inputbox input:focus ~span {
-    color: #45f3ff;
+    color: rgb(103, 151, 255);
     transform: translateX(-10px) translateY(-34px);
     font-size: 0,75em;
   }
@@ -79,7 +79,7 @@
     bottom: 0;
     width: 100%;
     height: 2px;
-    background: #45f3ff;
+    background: rgb(103, 151, 255);
     border-radius: 4px;
     transition: 0.5s;
     pointer-events: none;
@@ -131,7 +131,7 @@
     left: 0;
     height: 4px;
     width: 0;
-    background-color:#45f3ff;
+    background-color:rgb(103, 151, 255);
     transition: all 0.3s ease;
   }
   
@@ -139,7 +139,7 @@
   .input-field:focus + .input-label {
     top: -20px;
     font-size: 12px;
-    color: #45f3ff;
+    color: rgb(103, 151, 255);
   }
   
   .input-field:focus + .input-label + .input-highlight {
@@ -203,7 +203,7 @@
   
   
   .card {
-    width: 300px;
+    width: 330px;
     height: 260px;
     perspective: 1000px;
     background-color: #23242a00;
@@ -231,11 +231,11 @@
   }
   
   .card-front {
-    background: linear-gradient(132deg, #45F3FF 6.23%, #8fe5eb 73.69%);
+    background: linear-gradient(132deg, rgb(103, 151, 255) 6.23%, rgb(135, 165, 228) 73.69%);
     color: #23242a;
     display: flex;
     align-items: center;
-    border: 5px solid  linear-gradient(132deg, #45F3FF 6.23%, #75DDE5 73.69%);
+    border: 5px solid  linear-gradient(132deg, rgb(103, 151, 255) 6.23%,  rgb(135, 165, 228) 73.69%);
     border-radius: 10px;
     justify-content: center;
     font-size: 24px;
@@ -243,11 +243,11 @@
   }
   
   .card-back {
-    background-color: #45f3ff;
+    background-color:  rgb(103, 151, 255);
     color: #fff;
     display: flex;
     align-items: center;
-    border: 10px solid #45f3ff;
+    border: 10px solid  rgb(103, 151, 255);
     border-radius: 10px;
     justify-content: center;
     font-size: 24px;
@@ -461,7 +461,7 @@
 
 
   
-  @media(max-width:600px){
+  @media(max-width:745px){
     .dashContainer
   {
       grid-template-areas: "right"
