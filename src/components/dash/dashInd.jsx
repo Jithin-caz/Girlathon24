@@ -22,13 +22,18 @@ export default function DashInd()
     const [teammatename,setTeammatename]=useState('')
     const [teammateemail,setTeammateemail]=useState('')
     const [teammatenum,setTeammatenum]=useState('')
+    const [dashDone,setDashDone]=useState(false)
 
     const [datafetched,setDataFetched]=useState(false)
    
-    const isTeamRegistered=useSelector((state)=>state.teamRegistered)
+    
     const loginSuccess=useSelector((state)=>state.logIn)
     const dispatch=useDispatch()
     const navigate=useNavigate()
+
+    const logOut=async()=>{
+      const res=await axios.get(`${API}/auth/logout`,{withCredentials:true})
+    }
   
     const getter=async()=>
     {
@@ -44,6 +49,14 @@ export default function DashInd()
      idea.innerHTML="idea submission complete"
      idea.style.color='white'
     }
+    if(res.data.lead.team!=null)
+      {
+        setTeam(false)
+        setMate(true)
+        setTeamname(res.data.lead.team)
+        if(teammates.length==3)
+          setDashDone(true)
+      }
     }
     useEffect(()=>{
       getter()
@@ -51,14 +64,7 @@ export default function DashInd()
         navigate('/Signin')
      if(teammates.length==3)
         setCount(5)
-
-      
-      if(isTeamRegistered.registeredTeamName!=null)
-      {
-        setTeam(false)
-        setMate(true)
-        setTeamname(isTeamRegistered.registeredTeamName)
-      }
+     
     })
     const setTeammate=async(event)=>
     {
@@ -101,10 +107,13 @@ export default function DashInd()
    
     }
     return(datafetched? <section style={{ paddingTop:'1rem' }}>
-    <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'#45f3ff' }} className='fade-up dash-heading'>Welcome {lead}</h1>
+    <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:' rgb(103, 151, 255)' }} className='fade-up dash-heading'>Welcome {lead}</h1>
+    <h3 style={{paddingLeft:'3rem',color:' rgb(103, 151, 255)' }} className='fade-up dash-heading'>{teamname}</h3>
+    {dashDone&&<p  style={{paddingLeft:'3rem',color:'white' }}>team full</p>}
     <p id='idea-status' style={{ paddingTop:'.5rem',paddingLeft:'3rem',color:'orange' }}>idea not sumbitted</p>
     <div className='dashContainer' >
-    <div className='dash-left' >
+    {!dashDone &&(
+      <div className='dash-left' >
     {team &&(
         <>
         <h3>Guidelines</h3>
@@ -147,7 +156,7 @@ export default function DashInd()
     }
     {
         mate&&(
-            <form onSubmit={setTeammate}>
+            <form onSubmit={setTeammate} style={{ width:'45dvw',minwidth:'20rem' }}>
             <h3>Enter team details</h3>
             <div className='row' style={{gap:'2rem' }}>
 <div className='team-mate col fade-up'>
@@ -178,7 +187,7 @@ export default function DashInd()
       <div>
         
       </div>
-     {count<3 ? (<div className='fade-up' style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
+     <div className='fade-up' style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
       <button className='save' type='submit' >
   <div class="svg-wrapper-1">
     <div class="svg-wrapper">
@@ -189,23 +198,27 @@ export default function DashInd()
   </div>
   <span>next</span>
 </button>
-      </div>):<div style={{ paddingTop:'1rem' }}>team is full</div>}
+      </div>
       <p id='email-exist' style={{ color:'yellow',display:'none' }}>this email already exists!!</p>
     </form>
     
         )
     }
     </div>
-    <div className='dash-right fade-up'>
-    <div>
-    <div class="card">
+    )}
+    
+   {mate&&<div className='dash-right fade-up'>
+    <div >
+    <div className='row' style={{ rowGap:'2rem',display:'flex',justifyContent:'center',alignItems:'center',width:'100%' }}>
+    {teammates.length<3 ?(
+      <div class="card">
   <div class="card-inner">
     <div class="card-front">
      <div> <h3 ><b style={{ color:'#23242a',fontSize:'2rem' }}>Team details</b></h3>
      </div>
     </div>
     <div class="card-back">
-    <Card style={{ minWidth:'18.5rem',background:'#2b2b2b',color:'white' }}>
+    <Card style={{ minWidth:'19.1rem',background:'#2b2b2b',color:'white' }}>
             <Card.Header>{teamname}</Card.Header>
             <Card.Body>
                 <div style={{ color:'white' }}><h6>team members</h6>
@@ -218,8 +231,33 @@ export default function DashInd()
     </div>
   </div>
 </div>
+    ):<>
+      
+     {teammates.map((member,index)=>  <div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+     <div> <h3 ><b style={{ color:'#23242a',fontSize:'2rem' }}>{member.name}</b></h3>
+     </div>
+    </div>
+    <div class="card-back">
+    <Card style={{ minWidth:'20.5rem',background:'#2b2b2b',color:'white' }}>
+            <Card.Header>{member.name}</Card.Header>
+            <Card.Body>
+                <ul style={{ color:'white' }}>
+              <li style={{ color:'white',paddingTop:'.9rem' }}><b>email:</b> {member.email}</li>
+              <li style={{ color:'white',paddingTop:'.9rem' }}><b>phone:</b> {member.phone}</li>
+                </ul>
+            </Card.Body>
+        </Card>
+    </div>
+  </div>
+</div>)} 
+    </>  }
+   
 </div>
     </div>
+   
+    </div>}
    {mate&&(<div className='idea-submission fade-up'>
     <NavLink to='/ideaSumbit' >
     <button class="continue-application">
@@ -242,6 +280,7 @@ export default function DashInd()
 <NavLink to='/resetPassword'><u style={{ color:'yellow' }}> reset password</u></NavLink>
 <br></br>
 <button style={{ background:'none',border:'none' }} onClick={()=>{
+  logOut();
    dispatch(loggedOut())
 }}>logout</button>
 </div>

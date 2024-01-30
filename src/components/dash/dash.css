@@ -203,7 +203,7 @@
   
   
   .card {
-    width: 330px;
+    width: 360px;
     height: 260px;
     perspective: 1000px;
     background-color: #23242a00;
@@ -461,7 +461,7 @@
 
 
   
-  @media(max-width:745px){
+  @media(max-width:792px){
     .dashContainer
   {
       grid-template-areas: "right"

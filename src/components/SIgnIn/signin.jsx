@@ -44,8 +44,8 @@ useEffect(()=>{
    
    if(res.status===201)
    {
-    dispatch(loggedIn())
-    navigate('/dash')
+     dispatch(loggedIn())
+     navigate('/dash')
    }
   
    
@@ -75,23 +75,30 @@ useEffect(()=>{
     }
     if (password1 !== password2){
       alert("Password does not match");
+      setDataFetched(true)
       return;
     }
-    const res =  await axios.post(`${API}/user/register`,data,{withCredentials:true})
-    if(res!=null)
-    setDataFetched(true)
-    console.log(res);
-    if(res.status==230)
-    {
-      alert('This email already exists');
-      setState(true);
-    }
+    const response =  await axios.post(`${API}/user/register`,data,{withCredentials:true})
     
-   else if(res.status==200)
-   {
-    dispatch(loggedIn())
-        navigate('/dash')
-   }
+      if(response!=null)
+        setDataFetched(true)
+      console.log(response)
+      if(response.status==230)
+      {
+        alert('This email already exists');
+        setState(true);
+      }
+      
+      else if(response.status==200)
+      {
+        dispatch(loggedIn())
+      //       navigate('/dash')
+           console.log("hello")
+      }
+    
+    console.log(response)
+   
+   
   };
 
   
