@@ -245,7 +245,7 @@ export default function DashInd()
             <Card.Body>
                 <ul style={{ color:'white' }}>
               <li style={{ color:'white',paddingTop:'.9rem' }}><b>email:</b> {member.email}</li>
-              <li style={{ color:'white',paddingTop:'.9rem' }}><b>phone:</b> {member.phone}</li>
+              <li style={{ color:'white',paddingTop:'.9rem' }}><b>phone:<br></br></b> {member.phone}</li>
                 </ul>
             </Card.Body>
         </Card>
