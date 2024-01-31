@@ -18,7 +18,7 @@ export default function DashInd()
   const [count,setCount]=useState(0)
     const [team,setTeam]=useState(true)
     const [mate,setMate]=useState(false)
-    const [teamname,setTeamname]=useState('TBD')
+    const [teamname,setTeamname]=useState('team name not set!')
     const [teammatename,setTeammatename]=useState('')
     const [teammateemail,setTeammateemail]=useState('')
     const [teammatenum,setTeammatenum]=useState('')
@@ -40,7 +40,7 @@ export default function DashInd()
    const res=await axios.get(`${API}/auth/profile`,{withCredentials:true})
    if(res!=null)
       setDataFetched(true)
-    setLead(res.data.lead.name)
+    setLead(res.data.lead)
     setteammates(res.data.members)
     console.log(res)
     if(res.data.lead.idea)
@@ -107,9 +107,9 @@ export default function DashInd()
    
     }
     return(datafetched? <section style={{ paddingTop:'1rem' }}>
-    <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:' rgb(103, 151, 255)' }} className='fade-up dash-heading'>Welcome {lead}</h1>
-    <h3 style={{paddingLeft:'3rem',color:' rgb(103, 151, 255)' }} className='fade-up dash-heading'>{teamname}</h3>
-    {dashDone&&<p  style={{paddingLeft:'3rem',color:'white' }}>team full</p>}
+    <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'rgb(103, 225, 255)' }} className='fade-up dash-heading'>Welcome {lead.name}</h1>
+    <h3 style={{paddingLeft:'3rem',color:' rgb(103, 225, 255)' }} className='fade-up dash-heading'>{teamname}</h3>
+    {dashDone&&<p  style={{paddingLeft:'3rem',color:'rgb(103, 225, 255)' }}>team full</p>}
     <p id='idea-status' style={{ paddingTop:'.5rem',paddingLeft:'3rem',color:'orange' }}>idea not sumbitted</p>
     <div className='dashContainer' >
     {!dashDone &&(
@@ -159,7 +159,7 @@ export default function DashInd()
             <form onSubmit={setTeammate} style={{ width:'45dvw',minwidth:'20rem' }}>
             <h3>Enter team details</h3>
             <div className='row' style={{gap:'2rem' }}>
-<div className='team-mate col fade-up'>
+<div className='team-mate col fade-up' >
     <h5>Team mate details </h5>
     <div class="inputbox">
     <input value={teammatename} name='teammateName' required="required" type="text"
@@ -223,7 +223,7 @@ export default function DashInd()
             <Card.Body>
                 <div style={{ color:'white' }}><h6>team members</h6>
                 <ul style={{ color:'white' }}>
-              <li style={{ color:'white' }}>{lead} <span style={{ color:'white',fontSize:'.8rem' }}>(lead)</span></li>
+              <li style={{ color:'white' }}>{lead.name} <span style={{ color:'white',fontSize:'.8rem' }}>(lead)</span></li>
               {teammates.map((member,index)=> <li key={index} style={{ color:'white' }}>{member.name}</li>)}
                 </ul></div>
             </Card.Body>
@@ -232,7 +232,7 @@ export default function DashInd()
   </div>
 </div>
     ):<>
-      
+    
      {teammates.map((member,index)=>  <div class="card">
   <div class="card-inner">
     <div class="card-front">
@@ -252,6 +252,25 @@ export default function DashInd()
     </div>
   </div>
 </div>)} 
+ <div class="card">
+  <div class="card-inner">
+    <div class="card-front">
+     <div> <h3 style={{ color:'#23242a' }}><b style={{ color:'#23242a',fontSize:'2rem' }}>{lead.name}</b>(lead)</h3>
+     </div>
+    </div>
+    <div class="card-back">
+    <Card style={{ minWidth:'20.5rem',background:'#2b2b2b',color:'white' }}>
+            <Card.Header>{lead.name}</Card.Header>
+            <Card.Body>
+                <ul style={{ color:'white' }}>
+              <li style={{ color:'white',paddingTop:'.9rem' }}><b>email:</b>{lead.email} </li>
+              <li style={{ color:'white',paddingTop:'.9rem' }}><b>phone:</b>{lead.phone} </li>
+                </ul>
+            </Card.Body>
+        </Card>
+    </div>
+  </div>
+</div>
     </>  }
    
 </div>
@@ -277,7 +296,7 @@ export default function DashInd()
     
 </NavLink>
 <div style={{ paddingTop:'1rem' }}>
-<NavLink to='/resetPassword'><u style={{ color:'yellow' }}> reset password</u></NavLink>
+<NavLink to='/resetPassword'><u style={{ color:'orange' }}> reset password</u></NavLink>
 <br></br>
 <button style={{ background:'none',border:'none' }} onClick={()=>{
   logOut();
