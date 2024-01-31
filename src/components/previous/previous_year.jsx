@@ -36,26 +36,40 @@ const Previous = () => {
   };
 
   return (
-    <section className="previous_section" >
-    <img style={{ position:'absolute',height:'100%',opacity:'.6',width:'100%' }} 
-       src="images/backgroundAbstarct.png"
-    />
-      <Container style={{ height: "fit-content",padding:'3rem' }}>
+    <section className="previous_section">
+      <img
+        style={{
+          position: "absolute",
+          height: "100%",
+          opacity: ".6",
+          width: "100%",
+        }}
+        src="images/backgroundAbstarct.png"
+      />
+      <Container style={{ height: "fit-content", padding: "3rem" }}>
         <Row style={{ rowGap: "8rem" }}>
           <Col
             md={6}
             style={{ textAlign: "center", gap: "2rem", color: "white" }}
           >
-            <h2 className="fade-up" style={{ fontSize: "4rem" }}>Girlathon @2022</h2>
-            <p className="fade-up" style={{ color: "white",textAlign:'left' }}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
-              minus amet officia consequatur deserunt suscipit nesciunt, nostrum
-              voluptatibus optio laudantium saepe, placeat tempora velit
-              assumenda id tenetur sequi ad alias. Reprehenderit repellat sit
-              ipsa corporis tempora. Delectus vero labore alias quis voluptatum
-              exercitationem debitis nam totam placeat quo nulla corporis
-              veritatis incidunt a hic, fugiat nobis quaerat quidem! Voluptatum
-              libero eligendi aut, tempora dolorum quae optio nostrum maxime
+            <h2 className="fade-up" style={{ fontSize: "4rem" }}>
+              Girlathon @2023
+            </h2>
+            <p
+              className="fade-up"
+              style={{ color: "white", textAlign: "left" }}
+            >
+              Explore the empowering world of Girlathon '23, the prior edition
+              of our annual GDSC hackathon at Mar Athanasius College. This
+              unique event celebrated women in technology, providing a dedicated
+              space for participants to showcase coding prowess, creativity, and
+              innovative solutions. Girlathon '23 featured inspiring speakers,
+              mentor-guided challenges, and a collaborative atmosphere promoting
+              skill development and networking. The holistic approach included
+              wellness sessions for balance. Reflect on the impact of Girlathon
+              '23, shaping a more inclusive tech industry. Join us in
+              celebrating the successes and achievements, as we continue
+              empowering women in technology at Mar Athanasius College.
             </p>
             <div
               style={{
@@ -130,7 +144,8 @@ const Previous = () => {
                         ).style.opacity = 1;
                       }}
                     >
-                      <span className="square-letters"
+                      <span
+                        className="square-letters"
                         style={{
                           color: "white",
                           fontWeight: "bold",
@@ -149,12 +164,19 @@ const Previous = () => {
             className="image-right fade-up"
             style={{ marginTop: "2rem", overflow: "hidden" }}
           >
-            <Carousel interval={hoveredIndex!=null?10000:1000}>
+            <Carousel interval={hoveredIndex != null ? 10000 : 1000}>
               {repeatedImages.map((imageName, index) => (
-                <Carousel.Item key={index} style={{ height: "100%",width:'100%' }}>
+                <Carousel.Item
+                  key={index}
+                  style={{ height: "100%", width: "100%" }}
+                >
                   <img
                     className="d-block w-100 h-100"
-                    src={hoveredIndex==null? `images/${imageName}`:`images/${repeatedImages[currentImageIndex]}`}
+                    src={
+                      hoveredIndex == null
+                        ? `images/${imageName}`
+                        : `images/${repeatedImages[currentImageIndex]}`
+                    }
                     alt={`Slide ${index + 1}`}
                     style={{ height: "100%" }}
                   />
