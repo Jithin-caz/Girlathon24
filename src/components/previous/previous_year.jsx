@@ -164,7 +164,7 @@ const Previous = () => {
             className="image-right fade-up"
             style={{ marginTop: "2rem", overflow: "hidden" }}
           >
-            <Carousel interval={hoveredIndex != null ? 10000 : 1000}>
+            <Carousel interval={hoveredIndex != null ? 10000 : 1000} controls={false} indicators={false}>
               {repeatedImages.map((imageName, index) => (
                 <Carousel.Item
                   key={index}

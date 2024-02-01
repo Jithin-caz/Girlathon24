@@ -41,11 +41,7 @@ export default function About() {
                 <b>About GDSC MACE</b>
                 <br></br>
               </span>
-              <br></br>GDSC MACE, is the college chapter of the Google Developer
-              Student Club of Mar Athanasius College of Engineering. Formed in
-              the year 2020, it has since become an active medium to put forward
-              creative initiatives to enhance the potential abilities in
-              students.
+              <br></br>Welcome to GDSC MACE, the dynamic Google Developer Student Club chapter at Mar Athanasius College of Engineering. Established in 2020, we've rapidly evolved into a vibrant platform for student innovation. Our mission is to enhance potential abilities through hands-on workshops, coding competitions, and engaging tech talks. GDSC MACE is more than a club; it's a gateway to the latest in technology, fostering a mindset of continuous learning. Join us as we shape the tech leaders of tomorrow, making an impact at Mar Athanasius College of Engineering. Innovation meets opportunity here!
             </p>
           </Col>{" "}
           <Col lg={6}>

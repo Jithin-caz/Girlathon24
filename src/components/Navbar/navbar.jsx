@@ -43,17 +43,12 @@ export default function Navbar() {
       <section className="navigation row">
 
         <NavLink to='/' className="logo col" style={{height:'2rem',display:'flex',alignItems:'center' }}><img src="/images/GDSC.png" style={{ height:'190%' }} alt=""  /></NavLink >
-        <div
-          className="logo col"
-          style={{ height: "2rem", display: "flex", alignItems: "center" }}
-        >
-          <img src="/images/GDSC.png" style={{ height: "190%" }} alt="" />
-        </div>
+       
 
         <div className="navigation-links col">
           <ul>
             <li
-              id="hero-a"
+              id="hero-a" 
               className={`lin ${
                 activeSection === "HERO" ? "link-active" : "link-passive"
               }`}
@@ -144,13 +139,27 @@ export default function Navbar() {
         }`}
       >
         <ul>
-          <li className="lin">
-            <NavLink to="/">
-              <a href="#HERO" onClick={setNavigation}>
+        <li
+              id="hero-a" 
+              className={`lin`}
+            >
+              <a href="#HERO">Home</a>
+            </li>
+            <li
+              id="hero-nav"
+              style={{ display: "none" }}
+              className={`lin`}
+            >
+              <NavLink
+                to="/"
+                onClick={() => {
+                  document.getElementById("hero-nav").style.display = "none";
+                  document.getElementById("hero-a").style.display = "block";
+                }}
+              >
                 Home
-              </a>
-            </NavLink>
-          </li>
+              </NavLink>
+            </li>
           <li className="lin">
             <a href="#ABOUT" onClick={setNavigation}>
               About
@@ -171,11 +180,11 @@ export default function Navbar() {
               Contact
             </a>
           </li>
-          <li className="register">
+          {/* <li className="register">
             <Link to="/Signin" onClick={setNavigation}>
               Register
             </Link>
-          </li>
+          </li> */}
         </ul>
       </section>
     </div>
