@@ -46,30 +46,24 @@ const Previous = () => {
         }}
         src="images/backgroundAbstarct.png"
       />
-      <Container style={{ height: "fit-content", padding: "3rem" }}>
+      <Container style={{ height: "fit-content", padding: "2rem",paddingTop:'3rem' }}>
         <Row style={{ rowGap: "8rem" }}>
           <Col
-            md={6}
+            lg={6}
             style={{ textAlign: "center", gap: "2rem", color: "white" }}
           >
-            <h2 className="fade-up" style={{ fontSize: "4rem" }}>
+            <h2 id="heading-prev" className="fade-up" style={{ fontSize: "4rem" }}>
               Girlathon @2023
             </h2>
+           
             <p
               className="fade-up"
               style={{ color: "white", textAlign: "left" }}
             >
-              Explore the empowering world of Girlathon '23, the prior edition
-              of our annual GDSC hackathon at Mar Athanasius College. This
-              unique event celebrated women in technology, providing a dedicated
-              space for participants to showcase coding prowess, creativity, and
-              innovative solutions. Girlathon '23 featured inspiring speakers,
-              mentor-guided challenges, and a collaborative atmosphere promoting
-              skill development and networking. The holistic approach included
-              wellness sessions for balance. Reflect on the impact of Girlathon
-              '23, shaping a more inclusive tech industry. Join us in
-              celebrating the successes and achievements, as we continue
-              empowering women in technology at Mar Athanasius College.
+             Explore Girlathon '23, our annual GDSC hackathon at Mar Athanasius College. This empowering event celebrated women in technology, providing a space for coding prowess, creativity, and innovative solutions. 
+             With inspiring speakers, mentor-guided challenges, and a collaborative atmosphere, Girlathon '23 promoted skill development and networking.
+              The holistic approach included wellness sessions for balance. Reflect on the impact of this edition, shaping a more inclusive tech industry.
+               Join us in celebrating successes and achievements as we continue empowering women in technology at Mar Athanasius College.
             </p>
             <div
               style={{
@@ -115,7 +109,9 @@ const Previous = () => {
                           objectFit: "cover",
                         }}
                         onClick={() => rightImage(index)}
-                        onMouseEnter={() => setHoveredIndex(index)}
+                        onMouseEnter={() => {setHoveredIndex(index)
+                       
+                        }}
                         onMouseLeave={() => setHoveredIndex(null)}
                         alt={`Image ${index + 1}`}
                       />
@@ -136,7 +132,8 @@ const Previous = () => {
                         borderRadius: "8px",
                         opacity: hoveredIndex === index ? 0 : 1,
                       }}
-                      onMouseEnter={() => rightImage(index)}
+                      onMouseEnter={() => {rightImage(index)
+                     }}
                       onMouseLeave={() => {
                         setHoveredIndex(null);
                         document.getElementById(
@@ -160,9 +157,9 @@ const Previous = () => {
             </div>
           </Col>
           <Col
-            md={6}
+            lg={6} 
             className="image-right fade-up"
-            style={{ marginTop: "2rem", overflow: "hidden" }}
+            style={{ marginTop: "0rem", overflow: "hidden" }}
           >
             <Carousel interval={hoveredIndex != null ? 10000 : 1000} controls={false} indicators={false}>
               {repeatedImages.map((imageName, index) => (

@@ -8,6 +8,6 @@
 }
 .square-letters
 {
-    font-size: clamp(1.5rem,10dvw,8rem);
+    font-size: clamp(4rem,10dvw,8rem);
    
 }
