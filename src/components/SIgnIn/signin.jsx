@@ -11,49 +11,47 @@ import Loader from "../loader/loader";
 export default function Signin() {
   const API = import.meta.env.VITE_API;
   // console.log({process.env.API})
-  console.log(API)
+  console.log(API);
   const [state, setState] = useState(true);
 
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
-  const dispatch=useDispatch()
-  const loginSuccess=useSelector((state)=>state.logIn)
-  const isTeamRegistered=useSelector((state)=>state.teamRegistered)
+  const dispatch = useDispatch();
+  const loginSuccess = useSelector((state) => state.logIn);
+  const isTeamRegistered = useSelector((state) => state.teamRegistered);
   // login variables
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
 
-  const [datafetched,setDataFetched]=useState(true)
-useEffect(()=>{
-  if(loginSuccess.isLoggedIn)
-  navigate('/dash')
-})
-  const loginEvent = async(e) => {
+  const [datafetched, setDataFetched] = useState(true);
+  useEffect(() => {
+    if (loginSuccess.isLoggedIn) navigate("/dash");
+  });
+  const loginEvent = async (e) => {
     e.preventDefault();
-    setDataFetched(false)
-   const data={
-    email:user,
-    password:password
-   }
-   const res = await axios.post(`${API}/auth/login`,data,{withCredentials:true}).catch((e)=>{alert("wrong email or password")
-   setDataFetched(true)
-  })
-   if(res!=null)
-    setDataFetched(true)
-   console.log(res)
-   
-   if(res.status===201)
-   {
-     dispatch(loggedIn())
-     navigate('/dash')
-   }
-  
-   
-  if(res.data.user.team!=null)
-  {
-    dispatch(teamRegistered(res.data.user.team))
-    console.log(isTeamRegistered)
-  }
+    setDataFetched(false);
+    const data = {
+      email: user,
+      password: password,
+    };
+    const res = await axios
+      .post(`${API}/auth/login`, data, { withCredentials: true })
+      .catch((e) => {
+        alert("wrong email or password");
+        setDataFetched(true);
+      });
+    if (res != null) setDataFetched(true);
+    console.log(res);
+
+    if (res.status === 201) {
+      dispatch(loggedIn());
+      navigate("/dash");
+    }
+
+    if (res.data.user.team != null) {
+      dispatch(teamRegistered(res.data.user.team));
+      console.log(isTeamRegistered);
+    }
   };
 
   //signup variables
@@ -64,49 +62,47 @@ useEffect(()=>{
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
 
-  const registerEvent = async(e) => {
+  const registerEvent = async (e) => {
     e.preventDefault();
-    setDataFetched(false)
-    const data ={
-      name:name,
-      email:email,
-      phone:phone,
-      password:password1,
-    }
-    if (password1 !== password2){
+    setDataFetched(false);
+    const data = {
+      name: name,
+      email: email,
+      phone: phone,
+      password: password1,
+    };
+    if (password1 !== password2) {
       alert("Password does not match");
-      setDataFetched(true)
+      setDataFetched(true);
       return;
     }
-    const response =  await axios.post(`${API}/user/register`,data,{withCredentials:true})
-    
-      if(response!=null)
-        setDataFetched(true)
-      console.log(response)
-      if(response.status==230)
-      {
-        alert('This email already exists');
-        setState(true);
-      }
-      
-      else if(response.status==200)
-      {
-        dispatch(loggedIn())
-         const data2={
-    email:email,
-    password:password1
-   }
-         const res = await axios.post(`${API}/auth/login`,data2,{withCredentials:true})
-             navigate('/dash')
-           console.log("hello")
-      }
-    
-    console.log(response)
-   
-   
-  };
+    const response = await axios
+      .post(`${API}/user/register`, data, { withCredentials: true })
+      .catch((e) => {
+        alert("Network error");
+        setDataFetched(true);
+      });
 
-  
+    if (response != null) setDataFetched(true);
+    console.log(response);
+    if (response.status == 230) {
+      alert("This email already exists");
+      setState(true);
+    } else if (response.status == 200) {
+      dispatch(loggedIn());
+      const data2 = {
+        email: email,
+        password: password1,
+      };
+      const res = await axios.post(`${API}/auth/login`, data2, {
+        withCredentials: true,
+      });
+      navigate("/dash");
+      console.log("hello");
+    }
+
+    console.log(response);
+  };
 
   const login = (
     <div className="section login">
@@ -313,5 +309,15 @@ useEffect(()=>{
       </div>
     </div>
   );
-  return state ? (datafetched? login:<Loader/>) :(datafetched? register:<Loader/>);
+  return state ? (
+    datafetched ? (
+      login
+    ) : (
+      <Loader />
+    )
+  ) : datafetched ? (
+    register
+  ) : (
+    <Loader />
+  );
 }

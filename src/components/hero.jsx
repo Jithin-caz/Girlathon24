@@ -25,7 +25,7 @@ function Hero() {
   //timer code
 
   const calculateTimeLeft = () => {
-    const difference = +new Date("2069-06-9") - +new Date();
+    const difference = +new Date("2024-06-9") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {

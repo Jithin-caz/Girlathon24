@@ -41,51 +41,76 @@ export default function Navbar() {
   return (
     <div>
       <section className="navigation row">
+
         <NavLink to='/' className="logo col" style={{height:'2rem',display:'flex',alignItems:'center' }}><img src="/images/GDSC.png" style={{ height:'190%' }} alt=""  /></NavLink >
+        <div
+          className="logo col"
+          style={{ height: "2rem", display: "flex", alignItems: "center" }}
+        >
+          <img src="/images/GDSC.png" style={{ height: "190%" }} alt="" />
+        </div>
+
         <div className="navigation-links col">
           <ul>
-          <li id="hero-a"
+            <li
+              id="hero-a"
               className={`lin ${
                 activeSection === "HERO" ? "link-active" : "link-passive"
               }`}
             >
               <a href="#HERO">Home</a>
             </li>
-            <li id="hero-nav" style={{ display:'none' }}
+            <li
+              id="hero-nav"
+              style={{ display: "none" }}
               className={`lin ${
                 activeSection === "HERO" ? "link-active" : "link-passive"
               }`}
             >
-              <NavLink to="/"  onClick={()=>{
-                document.getElementById('hero-nav').style.display='none'
-                document.getElementById('hero-a').style.display='block'
-              } }>Home</NavLink>
+              <NavLink
+                to="/"
+                onClick={() => {
+                  document.getElementById("hero-nav").style.display = "none";
+                  document.getElementById("hero-a").style.display = "block";
+                }}
+              >
+                Home
+              </NavLink>
             </li>
-            <a href="#ABOUT"> <li
-              className={`lin ${
-                activeSection === "ABOUT" ? "link-active" : "link-passive"
-              }`}
-            >
-             About
-            </li></a>
-            <a href="#FAQ"> <li
-              className={`lin ${
-                activeSection === "FAQ" ? "link-active" : "link-passive"
-              }`}
-            >
-             FAQ
-            </li></a>
+            <a href="#ABOUT">
+              {" "}
+              <li
+                className={`lin ${
+                  activeSection === "ABOUT" ? "link-active" : "link-passive"
+                }`}
+              >
+                About
+              </li>
+            </a>
+            <a href="#FAQ">
+              {" "}
+              <li
+                className={`lin ${
+                  activeSection === "FAQ" ? "link-active" : "link-passive"
+                }`}
+              >
+                FAQ
+              </li>
+            </a>
             <li className="lin">
               <a href="#HERO">Sponsors</a>
             </li>
-            <a href="#CONTACT"> <li
-              className={`lin ${
-                activeSection === "CONTACT" ? "link-active" : "link-passive"
-              }`}
-            >
-              Contact
-            </li></a>
-            <Link to="/Signin" onClick={()=>{
+            <a href="#CONTACT">
+              {" "}
+              <li
+                className={`lin ${
+                  activeSection === "CONTACT" ? "link-active" : "link-passive"
+                }`}
+              >
+                Contact
+              </li>
+            </a>
+            {/* <Link to="/Signin" onClick={()=>{
                 document.getElementById('hero-nav').style.display='block'
                 document.getElementById('hero-nav').classList.remove('link-active')
                 document.getElementById('hero-a').style.display='none'
@@ -93,12 +118,17 @@ export default function Navbar() {
                 console.log("Jithin")
               } }> <li className="register">
               Register
-            </li></Link>
+            </li></Link> */}
           </ul>
         </div>
       </section>
       <div className="navigation-mobile-menu">
-      <div className="logo col" style={{height:'2rem',display:'flex',alignItems:'center' }}><img src="/images/GDSC.png" style={{ height:'190%' }} alt=""  /></div>
+        <div
+          className="logo col"
+          style={{ height: "2rem", display: "flex", alignItems: "center" }}
+        >
+          <img src="/images/GDSC.png" style={{ height: "190%" }} alt="" />
+        </div>
         <i
           className={`bi bi-list list${Nav ? "nav-active" : ""}`}
           onClick={setNavigation}
