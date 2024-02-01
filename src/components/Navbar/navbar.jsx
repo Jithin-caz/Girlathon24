@@ -41,7 +41,7 @@ export default function Navbar() {
   return (
     <div>
       <section className="navigation row">
-        <div className="logo col" style={{height:'2rem',display:'flex',alignItems:'center' }}><img src="/images/GDSC.png" style={{ height:'190%' }} alt=""  /></div>
+        <NavLink to='/' className="logo col" style={{height:'2rem',display:'flex',alignItems:'center' }}><img src="/images/GDSC.png" style={{ height:'190%' }} alt=""  /></NavLink >
         <div className="navigation-links col">
           <ul>
           <li id="hero-a"

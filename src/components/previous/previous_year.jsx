@@ -46,7 +46,7 @@ const Previous = () => {
             md={6}
             style={{ textAlign: "center", gap: "2rem", color: "white" }}
           >
-            <h2 className="fade-up" style={{ fontSize: "4rem" }}>Girlathon @2022</h2>
+            <h2 className="fade-up" style={{ fontSize: "4rem" }}>Girlathon @2023</h2>
             <p className="fade-up" style={{ color: "white",textAlign:'left' }}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit,
               minus amet officia consequatur deserunt suscipit nesciunt, nostrum

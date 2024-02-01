@@ -57,7 +57,7 @@ export default function About() {
           style={{ paddingTop: "10dvw", rowGap: "3rem" }}
         >
           <Col lg={6} style={{ display: "flex", justifyContent: "center" }}>
-            <img src="images/girl.jpg" style={{ width: "70%" }} />
+            <img src="images/girlathonComSonn.jpeg" style={{ width: "70%" }} />
           </Col>{" "}
           <Col lg={6}>
             <p>

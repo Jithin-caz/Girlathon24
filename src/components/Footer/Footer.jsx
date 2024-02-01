@@ -12,13 +12,13 @@ export default function Footer() {
         </a>
         <p>Connect with Us</p>
         <div className="social">
-          <a href="">
+          <a href="https://x.com/gdsc_mace?s=20">
             <i class="bi bi-twitter"></i>
           </a>
-          <a href="">
+          <a href="https://www.instagram.com/gdsc_mace?igsh=MTIwaTdwY3IwaWJnZw==">
             <i class="bi bi-instagram"></i>
           </a>
-          <a href="">
+          <a href="https://www.linkedin.com/company/gdsc-mace/">
             <i class="bi bi-linkedin"></i>
           </a>
         </div>
