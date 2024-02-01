@@ -63,7 +63,7 @@ function Hero() {
       <div className="hero row fade-up">
         <div className="left col-lg-6"></div>
         <div className="right col-lg-6">
-          <div className="timer">
+          {/* <div className="timer">
             <h4 className="fade-up">Time Left</h4>
             <h6 className="clock fade-up">
               <span className="digit">{formatTime(timeLeft.days)}</span>
@@ -75,7 +75,7 @@ function Hero() {
               <span className="digit">{formatTime(timeLeft.seconds)}</span>
               {"    "}secs
             </h6>
-          </div>
+          </div> */}
           <div className="title fade-up">
             <h1>GIRLATHON</h1>
             <h2>2023</h2>

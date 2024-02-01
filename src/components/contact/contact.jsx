@@ -61,7 +61,57 @@ export default function Contact() {
                 <img src="/images/icons8-call-64.png" />
               </i>
               <br></br>
-              <p> GDSC MACE: gdscmace@gmail.com</p>
+              Annmary Vinod : 9656638238 <br></br>
+              Sivanie Nejukumar: 8590282979
+            </div>
+            <div
+              className="con-box "
+              style={{
+                textAlign: "center",
+                marginTop: "3rem",
+                paddingTop: "1.5rem",
+                paddingBottom: "1.5rem",
+                paddingInline: "1rem",
+                minHeight: "7rem",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                zIndex: "5",
+              }}
+            >
+              <div>
+                <i>
+                  <img src="/images/icons8-email-50.png" />
+                </i>
+                <br></br>
+                <p> GDSC MACE: dscmace@gmail.com</p>
+              </div>
+            </div>
+            <div
+              className="con-box "
+              style={{
+                textAlign: "center",
+                marginTop: "3rem",
+                paddingTop: "1.5rem",
+                paddingBottom: "1.5rem",
+                paddingInline: "1rem",
+                minHeight: "7rem",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                zIndex: "5",
+              }}
+            >
+              <div style={{ zIndex: "5" }}>
+                <i>
+                  <img src="/images/lc.png" />
+                </i>
+                <br></br>
+                <p>
+                  {" "}
+                  3J39+JM3, College Junction Road, Kothamangalam, Kerala 686666
+                </p>
+              </div>
             </div>
           </div>
           <form
