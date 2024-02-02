@@ -78,7 +78,7 @@ function Hero() {
           </div> */}
           <div className="title fade-up">
             <h1>GIRLATHON</h1>
-            <h2>2023</h2>
+            <h2>2024</h2>
           </div>
           <div className="desc">
             <h6 className="typing-animation">

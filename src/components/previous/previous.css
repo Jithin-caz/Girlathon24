@@ -11,3 +11,37 @@
     font-size: clamp(4rem,10dvw,8rem);
    
 }
+
+
+
+.swiper {
+    width: 100%;
+  
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+   max-width: 20rem;
+  
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+   
+  }
+  .mob_car
+  {
+    display: none;
+  }
+  @media(max-width: 991px) {
+    .mob_car
+    {
+        display:flex;
+    }
+    .tiles
+    {
+        display: none;
+    }
+  }

@@ -2,13 +2,22 @@ import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Col, Row, Carousel } from "react-bootstrap";
 import "./previous.css";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
-const images = ["girl.jpg", "mace.png", "hero.png"];
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+
+
+// import required modules
+import { Autoplay,EffectCoverflow, Pagination,Navigation } from 'swiper/modules';
+
 
 const Previous = () => {
-  const chars = ["G", "I", "R", "L", "A", "T", "H", "O", "N"];
+  const chars = ["G", "I", "R", "L", "A", "T", "H", "O", "N",'@','2','3'];
   var x = -1;
-  const repeatedImages = Array.from({ length: 3 }, (_, index) => images).flat();
+  const repeatedImages =[1,2,3,4,5,6,7,8,9,10,11,12];
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -46,13 +55,13 @@ const Previous = () => {
         }}
         src="images/backgroundAbstarct.png"
       />
-      <Container style={{ height: "fit-content", padding: "2rem",paddingTop:'3rem' }}>
-        <Row style={{ rowGap: "8rem" }}>
+      <Container style={{ height: "fit-content",paddingTop:'3rem',paddingBottom:'3rem' }}>
+        <Row style={{ rowGap: "8rem",paddingBottom:'2rem' }}>
           <Col
-            lg={6}
+            lg={12}
             style={{ textAlign: "center", gap: "2rem", color: "white" }}
           >
-            <h2 id="heading-prev" className="fade-up" style={{ fontSize: "4rem" }}>
+            <h2 id="heading-prev" className="fade-up" style={{ fontSize: "4rem",textAlign:'left' }}>
               Girlathon @2023
             </h2>
            
@@ -60,11 +69,19 @@ const Previous = () => {
               className="fade-up"
               style={{ color: "white", textAlign: "left" }}
             >
-             Explore Girlathon '23, our annual GDSC hackathon at Mar Athanasius College. This empowering event celebrated women in technology, providing a space for coding prowess, creativity, and innovative solutions. 
-             With inspiring speakers, mentor-guided challenges, and a collaborative atmosphere, Girlathon '23 promoted skill development and networking.
-              The holistic approach included wellness sessions for balance. Reflect on the impact of this edition, shaping a more inclusive tech industry.
-               Join us in celebrating successes and achievements as we continue empowering women in technology at Mar Athanasius College.
+            Dive into the transformative world of Girlathon '23, the celebrated annual GDSC hackathon at Mar Athanasius College.
+             This empowering event serves as a dedicated platform, spotlighting and honoring the accomplishments of women in technology.
+              Beyond merely showcasing coding proficiency, Girlathon '23 is a canvas for boundless creativity and the birthplace of innovative
+               solutions. Attendees immersed themselves in an environment enriched with inspiring speakers, mentor-guided challenges, and 
+               a collaborative spirit, fostering not just technical acumen but also critical networking opportunities. The holistic approach
+                taken extends beyond coding, incorporating wellness sessions that emphasize the importance of balance in the fast-paced tech
+                 landscape. Reflecting on the profound impact of this edition, it is evident that Girlathon '23 has played a pivotal role in
+                  shaping a more inclusive tech industry. As we celebrate the numerous successes and achievements of this empowering initiative,
+                   we look forward to a continued commitment to the advancement and empowerment of women in technology at Mar Athanasius College.
             </p>
+            </Col></Row>
+            <Row className="tiles" style={{ rowGap: "3rem",paddingBottom:'2rem' }}>
+            <Col >
             <div
               style={{
                 display: "flex",
@@ -98,7 +115,7 @@ const Previous = () => {
                       }}
                     >
                       <img
-                        src={`images/${imageName}`}
+                        src={`images/prev/p${imageName}.jpg`}
                         className="images"
                         style={{
                           position: "absolute",
@@ -161,7 +178,7 @@ const Previous = () => {
             className="image-right fade-up"
             style={{ marginTop: "0rem", overflow: "hidden" }}
           >
-            <Carousel interval={hoveredIndex != null ? 10000 : 1000} controls={false} indicators={false}>
+            <Carousel interval={hoveredIndex != null ? 100000 : 1500} controls={false} indicators={false}>
               {repeatedImages.map((imageName, index) => (
                 <Carousel.Item
                   key={index}
@@ -171,8 +188,8 @@ const Previous = () => {
                     className="d-block w-100 h-100"
                     src={
                       hoveredIndex == null
-                        ? `images/${imageName}`
-                        : `images/${repeatedImages[currentImageIndex]}`
+                        ? `images/prev/p${imageName}.jpg`
+                        : `images/prev/p${currentImageIndex+1}.jpg`
                     }
                     alt={`Slide ${index + 1}`}
                     style={{ height: "100%" }}
@@ -181,6 +198,42 @@ const Previous = () => {
               ))}
             </Carousel>
           </Col>
+        </Row>
+        <Row className="mob_car" >
+        
+        <Col >
+      <Swiper
+       
+        effect={'coverflow'}
+        loop={true}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+        }}
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 2,
+          slideShadows:true,
+          shadowOffset: 20,
+    shadowScale: 50,
+        }}
+        pagination={true}
+        navigation={true}
+        modules={[Autoplay,EffectCoverflow, Pagination,Navigation]}
+        className="mySwiper"
+      >
+      {repeatedImages.map((imgInd)=> <SwiperSlide key={imgInd}>
+          <img  src={`images/prev/p${imgInd}.jpg`} style={{ borderRadius:'.7rem' }}/>
+        </SwiperSlide>)}
+        
+      </Swiper>
+      </Col>
+      
         </Row>
       </Container>
     </section>

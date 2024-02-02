@@ -61,8 +61,8 @@ export default function Contact() {
                 <img src="/images/icons8-call-64.png" />
               </i>
               <br></br>
-              Annmary Vinod : 9656638238 <br></br>
-              Sivanie Nejukumar: 8590282979
+              Mathew Vinu Benny: 9188051711 <br></br>
+              Anamika KP: 7736610701
             </div>
             <div
               className="con-box "
@@ -84,7 +84,7 @@ export default function Contact() {
                   <img src="/images/icons8-email-50.png" />
                 </i>
                 <br></br>
-                <p> GDSC MACE: dscmace@gmail.com</p>
+                <p> GDSC MACE: gdscmace@gmail.com</p>
               </div>
             </div>
             <div
