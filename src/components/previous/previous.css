@@ -22,7 +22,7 @@
   .swiper-slide {
     background-position: center;
     background-size: cover;
-   max-width: 20rem;
+   max-width: 18rem;
   
   }
   
@@ -35,6 +35,14 @@
   {
     display: none;
   }
+ #big_txt
+ {
+  display:block;
+ }
+ #mob_txt
+ {
+  display: none;
+ }
   @media(max-width: 991px) {
     .mob_car
     {
@@ -44,4 +52,12 @@
     {
         display: none;
     }
+    #big_txt
+ {
+  display:none;
+ }
+ #mob_txt
+ {
+  display:block;
+ }
   }

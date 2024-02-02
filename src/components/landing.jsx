@@ -5,7 +5,6 @@ import Previous from "./previous/previous_year";
 import FAQPage from "./FAQ/FAQ";
 import Contact from "./contact/contact";
 import Footer from "./Footer/Footer";
-import Whypart from "./whypart";
 
 export default function landing() {
   return (
@@ -14,7 +13,6 @@ export default function landing() {
       <About />
       <Previous />
       <FAQPage />
-      <Whypart/>
       <Contact />
       <Footer />
     </>

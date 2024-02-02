@@ -53,7 +53,7 @@ const Previous = () => {
           opacity: ".6",
           width: "100%",
         }}
-        src="images/backgroundAbstarct.png"
+        src="images/prevBack.png"
       />
       <Container style={{ height: "fit-content",paddingTop:'3rem',paddingBottom:'3rem' }}>
         <Row style={{ rowGap: "8rem",paddingBottom:'2rem' }}>
@@ -66,7 +66,7 @@ const Previous = () => {
             </h2>
            
             <p
-              className="fade-up"
+              className="fade-up" id="big_txt"
               style={{ color: "white", textAlign: "left" }}
             >
             Dive into the transformative world of Girlathon '23, the celebrated annual GDSC hackathon at Mar Athanasius College.
@@ -79,6 +79,11 @@ const Previous = () => {
                   shaping a more inclusive tech industry. As we celebrate the numerous successes and achievements of this empowering initiative,
                    we look forward to a continued commitment to the advancement and empowerment of women in technology at Mar Athanasius College.
             </p>
+            <p  className="fade-up" id="mob_txt"
+             style={{ color: "white", textAlign: "left" }}>Discover Girlathon '23, the annual GDSC hackathon at Mar Athanasius College—an empowering platform spotlighting women in technology.
+              This transformative event fosters creativity, innovation, and technical prowess through inspiring speakers, mentor-guided challenges, and a collaborative atmosphere. Beyond coding,
+               holistic elements, including wellness sessions, prioritize balance in the tech landscape. Girlathon '23 significantly contributes to shaping inclusivity in the industry, celebrating
+                successes, and committing to advancing women in technology at Mar Athanasius College.</p>
             </Col></Row>
             <Row className="tiles" style={{ rowGap: "3rem",paddingBottom:'2rem' }}>
             <Col >
@@ -185,7 +190,7 @@ const Previous = () => {
                   style={{ height: "100%", width: "100%" }}
                 >
                   <img
-                    className="d-block w-100 h-100"
+                    className="d-block w-100 h-100" 
                     src={
                       hoveredIndex == null
                         ? `images/prev/p${imageName}.jpg`

@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <div className="Footer row" style={{ margin: "0px" }}>
+    <div className="Footer row" style={{ margin: "0px"}}>
       <div className="Footer-Top">
         <a href="#">
           <img src="/images/GDSC.png" alt="" />
@@ -13,13 +13,13 @@ export default function Footer() {
         <p>Connect with Us</p>
         <div className="social">
           <a href="https://x.com/gdsc_mace?s=20"  target="_blank">
-            <i class="bi bi-twitter"></i>
+            <i className="bi bi-twitter"></i>
           </a>
           <a href="https://www.instagram.com/gdsc_mace?igsh=MTIwaTdwY3IwaWJnZw=="  target="_blank">
-            <i class="bi bi-instagram"></i>
+            <i className="bi bi-instagram"></i>
           </a>
           <a href="https://www.linkedin.com/company/gdsc-mace/"  target="_blank">
-            <i class="bi bi-linkedin"></i>
+            <i className="bi bi-linkedin"></i>
           </a>
         </div>
       </div>
