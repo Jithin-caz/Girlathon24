@@ -56,17 +56,18 @@ const Previous = () => {
         src="images/prevBack.png"
       />
       <Container style={{ height: "fit-content",paddingTop:'3rem',paddingBottom:'3rem' }}>
-        <Row style={{ rowGap: "8rem",paddingBottom:'2rem' }}>
+        <Row style={{ rowGap: "8rem",paddingBottom:'2rem',position:'relative' }}>
           <Col
             lg={12}
             style={{ textAlign: "center", gap: "2rem", color: "white" }}
           >
-            <h2 id="heading-prev" className="fade-up" style={{ fontSize: "4rem",textAlign:'left' }}>
+            <h2 id="heading-prev" className="fade-up" style={{ fontSize: "4rem",textAlign:'left' }}
+            data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
               Girlathon @2023
             </h2>
            
             <p
-              className="fade-up" id="big_txt"
+              className="fade-up" id="big_txt" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
               style={{ color: "white", textAlign: "left" }}
             >
             Dive into the transformative world of Girlathon '23, the celebrated annual GDSC hackathon at Mar Athanasius College.
@@ -79,7 +80,7 @@ const Previous = () => {
                   shaping a more inclusive tech industry. As we celebrate the numerous successes and achievements of this empowering initiative,
                    we look forward to a continued commitment to the advancement and empowerment of women in technology at Mar Athanasius College.
             </p>
-            <p  className="fade-up" id="mob_txt"
+            <p  className="fade-up" id="mob_txt" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
              style={{ color: "white", textAlign: "left" }}>Discover Girlathon '23, the annual GDSC hackathon at Mar Athanasius College—an empowering platform spotlighting women in technology.
               This transformative event fosters creativity, innovation, and technical prowess through inspiring speakers, mentor-guided challenges, and a collaborative atmosphere. Beyond coding,
                holistic elements, including wellness sessions, prioritize balance in the tech landscape. Girlathon '23 significantly contributes to shaping inclusivity in the industry, celebrating
@@ -95,7 +96,7 @@ const Previous = () => {
               }}
             >
               <div
-                className="row fade-up"
+                className="row fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
                 style={{
                   display: "flex",
                   flexWrap: "wrap",
@@ -180,7 +181,7 @@ const Previous = () => {
           </Col>
           <Col
             lg={6} 
-            className="image-right fade-up"
+            className="image-right fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
             style={{ marginTop: "0rem", overflow: "hidden" }}
           >
             <Carousel interval={hoveredIndex != null ? 100000 : 1500} controls={false} indicators={false}>

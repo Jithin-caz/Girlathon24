@@ -29,12 +29,12 @@ export default function About() {
           color: "white",
         }}
       >
-        <h1 className="about-bg-text">about</h1>{" "}
+        <h1  className="about-bg-text" >about</h1>{" "}
       </div>
       <Container
         style={{ color: "white", paddingTop: "5rem", paddingBottom: "5rem" }}
       >
-        <Row className="fade-up">
+        <Row className="fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true" >
           <Col lg={6}>
             <p>
               <span style={{ fontSize: "2rem" }}>
@@ -50,7 +50,7 @@ export default function About() {
           </Col>
         </Row>
         <Row
-          className="fade-up"
+          className="fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
           style={{ paddingTop: "10dvw", rowGap: "3rem" }}
         >
           <Col lg={6} style={{ display: "flex", justifyContent: "center" }}>

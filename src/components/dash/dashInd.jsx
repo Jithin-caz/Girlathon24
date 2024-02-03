@@ -107,8 +107,10 @@ export default function DashInd()
    
     }
     return(datafetched? <section style={{ paddingTop:'1rem' }}>
-    <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'rgb(103, 225, 255)' }} className='fade-up dash-heading'>Welcome {lead.name}</h1>
-    <h3 style={{paddingLeft:'3rem',color:' rgb(103, 225, 255)' }} className='fade-up dash-heading'>{teamname}</h3>
+    <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'rgb(103, 225, 255)' }} className='fade-up dash-heading'
+    data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">Welcome {lead.name}</h1>
+    <h3 style={{paddingLeft:'3rem',color:' rgb(103, 225, 255)' }} className='fade-up dash-heading'
+    data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">{teamname}</h3>
     {dashDone&&<p  style={{paddingLeft:'3rem',color:'rgb(103, 225, 255)' }}>team full</p>}
     <p id='idea-status' style={{ paddingTop:'.5rem',paddingLeft:'3rem',color:'orange' }}>idea not sumbitted</p>
     <div className='dashContainer' >
@@ -136,7 +138,8 @@ export default function DashInd()
   <label for="input-field" class="input-label">Give a cool name for your team</label>
   <span class="input-highlight"></span>
 </div> </div>
-  <div className='fade-up' style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
+  <div className='fade-up' 
+  data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true" style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
       <button className='save' type='submit'>
   <div class="svg-wrapper-1">
     <div class="svg-wrapper">
@@ -159,7 +162,8 @@ export default function DashInd()
             <form onSubmit={setTeammate} style={{ width:'45dvw',minwidth:'20rem' }}>
             <h3>Enter team details</h3>
             <div className='row' style={{gap:'2rem' }}>
-<div className='team-mate col fade-up' >
+<div className='team-mate col fade-up' 
+data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
     <h5>Team mate details </h5>
     <div class="inputbox">
     <input value={teammatename} name='teammateName' required="required" type="text"
@@ -187,7 +191,9 @@ export default function DashInd()
       <div>
         
       </div>
-     <div className='fade-up' style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
+     <div className='fade-up'
+     data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
+      style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
       <button className='save' type='submit' >
   <div class="svg-wrapper-1">
     <div class="svg-wrapper">
@@ -207,7 +213,8 @@ export default function DashInd()
     </div>
     )}
     
-   {mate&&<div className='dash-right fade-up'>
+   {mate&&<div className='dash-right fade-up'
+   data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
     <div >
     <div className='row' style={{ rowGap:'2rem',display:'flex',justifyContent:'center',alignItems:'center',width:'100%' }}>
     {teammates.length<3 ?(
@@ -277,7 +284,8 @@ export default function DashInd()
     </div>
    
     </div>}
-   {mate&&(<div className='idea-submission fade-up'>
+   {mate&&(<div className='idea-submission fade-up'
+   data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
     <NavLink to='/ideaSumbit' >
     <button class="continue-application">
     <div>

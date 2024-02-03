@@ -11,19 +11,15 @@ import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import landing from "./components/landing";
 import DashInd from "./components/dash/dashInd";
 import ResetPass from "./components/SIgnIn/resetpass";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
  
   useEffect(() => {
-    ScrollReveal().reveal(".fade-up", {
-      delay: 300,
-      distance: "60px",
-      origin: "bottom",
-      opacity: 0,
-      duration: 800,
-      easing: "cubic-bezier(0.5, 0, 0, 1)",
-    }
-    );
+    AOS.init({
+      // Global settings and options go here
+    });
   }, []);
   return (
     <>

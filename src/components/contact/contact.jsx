@@ -41,9 +41,9 @@ export default function Contact() {
           marginTop: "2rem",
         }}
       >
-        <div className="fade-up form-container row" style={{ zIndex: "5" }}>
+        <div className="fade-up form-container row" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true" style={{ zIndex: "5" }}>
           <div
-            className="fade-up scale-up col-md-6 p-4"
+            className="fade-up scale-up col-md-6 p-4" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
             style={{ zIndex: "5" }}
           >
             <div
@@ -128,7 +128,7 @@ export default function Contact() {
                 placeholder="Name"
                 required
               />
-              <label for="name" className="form__label">
+              <label  htmlFor="name" className="form__label">
                 Name
               </label>
             </div>
@@ -140,7 +140,7 @@ export default function Contact() {
                 required
                 name="email"
               />
-              <label for="email" className="form__label">
+              <label  htmlFor="email" className="form__label">
                 Email
               </label>
             </div>
@@ -153,7 +153,7 @@ export default function Contact() {
                 required
                 style={{ maxWidth: "25rem" }}
               />
-              <label for="subject" className="form__label">
+              <label  htmlFor="subject" className="form__label">
                 Subject
               </label>
             </div>
@@ -169,7 +169,7 @@ export default function Contact() {
                 id="textarea"
                 name="content"
               ></textarea>
-              <label for="textarea" className="form__label">
+              <label  htmlFor="textarea" className="form__label">
                 Content
               </label>
             </div>

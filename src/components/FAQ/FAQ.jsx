@@ -63,7 +63,8 @@ const FAQPage = () => {
           zIndex: "2",
         }}
       >
-        <h1 className="FAQ-bg-text">FAQ</h1>
+        <h1 className="FAQ-bg-text" 
+        >FAQ</h1>
       </div>
       <img
         style={{
@@ -75,10 +76,11 @@ const FAQPage = () => {
         }}
         src="images/backgroundAbstarct.png"
       />
-      <div className="faq-container" style={{ marginTop: "3rem" }}>
+      <div className="faq-container" style={{ marginTop: "3rem" }} >
         <h1 style={{ padding: "2rem", display: "none" }}>FAQs</h1>
-        <div className="row" style={{ rowGap: "2rem", padding: "3rem" }}>
-        <div className="col-lg-6 fade-up">
+        <div className="row"
+         style={{ rowGap: "2rem", padding: "3rem" }}>
+        <div className="col-lg-6 fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
         <img
         style={{
          
@@ -87,9 +89,10 @@ const FAQPage = () => {
         src="images/faq2.png"
       />
         </div>
-        <div className="col-lg-6 fade-up" style={{ zIndex: "5" }}>
+        <div className="col-lg-6 fade-up" style={{ zIndex: "5" }} data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
         {faqData.map((item, index) => (
-            <div key={index} className="col-lg-12 fade-up" style={{ paddingBottom:'1.5rem' }}>
+            <div key={index} className="col-lg-12 fade-up" style={{ paddingBottom:'1.5rem' }}
+            data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
               <Button
                 className="drop-down-button"
                 onClick={() => handleToggle(index)}

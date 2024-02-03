@@ -56,11 +56,11 @@ function Hero() {
   };
 
   return (
-    <section className="hero-bg fade-up" id="HERO">
+    <section className="hero-bg fade-up" id="HERO" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
       <img className="hero-image" src="images/backgroundAbstarct.png" />
       <div className="hex-grid" id="hexGrid"></div>
 
-      <div className="hero row fade-up">
+      <div className="hero row fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
         <div className="left col-lg-6"></div>
         <div className="right col-lg-6">
           {/* <div className="timer">
@@ -76,7 +76,7 @@ function Hero() {
               {"    "}secs
             </h6>
           </div> */}
-          <div className="title fade-up">
+          <div className="title fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
             <h1>GIRLATHON</h1>
             <h2>2024</h2>
           </div>
