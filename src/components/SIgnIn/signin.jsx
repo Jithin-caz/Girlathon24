@@ -91,6 +91,7 @@ useEffect(()=>{
       
       else if(response.status==200)
       {
+        const res_=await axios.post(`${API}/auth/login`,{email:email,password:password1},{withCredentials:true});
         dispatch(loggedIn())
       //       navigate('/dash')
            console.log("hello")
