@@ -4,12 +4,12 @@ export default function Loader()
 {
     return(
         <section className='loading-section' >
-		<div class="spinner">
-  <div class="outer">
-    <div class="inner tl"></div>
-    <div class="inner tr"></div>
-    <div class="inner br"></div>
-    <div class="inner bl"></div>
+		<div className="spinner">
+  <div className="outer">
+    <div className="inner tl"></div>
+    <div className="inner tr"></div>
+    <div className="inner br"></div>
+    <div className="inner bl"></div>
   </div>
 </div>
 	</section>

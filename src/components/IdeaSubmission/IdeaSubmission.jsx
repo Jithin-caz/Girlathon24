@@ -175,7 +175,7 @@ console.log(res)
          
           <div style={{ paddingTop: "1rem" }}>
             <NavLink to="/resetPassword">
-              <u style={{ color: "yellow" }}> reset password</u>
+              <u style={{ color: "orange" }}> reset password</u>
             </NavLink><br>
             </br>
             <button style={{ background:'none',border:'none' }} onClick={()=>{

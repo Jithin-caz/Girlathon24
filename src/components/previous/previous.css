@@ -8,6 +8,56 @@
 }
 .square-letters
 {
-    font-size: clamp(1.5rem,10dvw,8rem);
+    font-size: clamp(4rem,10dvw,8rem);
    
 }
+
+
+
+.swiper {
+    width: 100%;
+  
+  }
+  
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+   max-width: 18rem;
+  
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+   
+  }
+  .mob_car
+  {
+    display: none;
+  }
+ #big_txt
+ {
+  display:block;
+ }
+ #mob_txt
+ {
+  display: none;
+ }
+  @media(max-width: 991px) {
+    .mob_car
+    {
+        display:flex;
+    }
+    .tiles
+    {
+        display: none;
+    }
+    #big_txt
+ {
+  display:none;
+ }
+ #mob_txt
+ {
+  display:block;
+ }
+  }

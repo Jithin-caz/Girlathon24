@@ -25,7 +25,7 @@ function Hero() {
   //timer code
 
   const calculateTimeLeft = () => {
-    const difference = +new Date("2069-06-9") - +new Date();
+    const difference = +new Date("2024-06-9") - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -56,14 +56,14 @@ function Hero() {
   };
 
   return (
-    <section className="hero-bg fade-up" id="HERO">
+    <section className="hero-bg fade-up" id="HERO" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
       <img className="hero-image" src="images/backgroundAbstarct.png" />
       <div className="hex-grid" id="hexGrid"></div>
 
-      <div className="hero row fade-up">
+      <div className="hero row fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
         <div className="left col-lg-6"></div>
         <div className="right col-lg-6">
-          <div className="timer">
+          {/* <div className="timer">
             <h4 className="fade-up">Time Left</h4>
             <h6 className="clock fade-up">
               <span className="digit">{formatTime(timeLeft.days)}</span>
@@ -75,10 +75,10 @@ function Hero() {
               <span className="digit">{formatTime(timeLeft.seconds)}</span>
               {"    "}secs
             </h6>
-          </div>
-          <div className="title fade-up">
+          </div> */}
+          <div className="title fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
             <h1>GIRLATHON</h1>
-            <h2>2023</h2>
+            <h2>2024</h2>
           </div>
           <div className="desc">
             <h6 className="typing-animation">

@@ -17,41 +17,30 @@ const FAQPage = () => {
   // FAQ data - replace with your actual data
   const faqData = [
     {
-      question: "What is React?",
-      answer: "React is a JavaScript library for building user interfaces.",
+      question: "Registration cost?",
+      answer: "You can register for free.",
     },
     {
-      question: "How do I install React?",
-      answer: "You can install React using npm by running: npm install react",
+      question: "what is the criteria of participation?",
+      answer: " You should identify as a woman.",
     },
     {
-      question: "What is JSX?",
-      answer: "JSX is a syntax extension for JavaScript recommended by React.",
+      question: "Can we register as a team?",
+      answer: " You can register as a team of four members maximum.",
     },
     {
-      question: "How do React components communicate?",
-      answer: "React components can communicate by passing props between them.",
+      question: "What is mode of hackathon?",
+      answer: " Hybrid.The registration, abstract submission and project development will be held   online. The final presentation will take place offline.",
     },
     {
-      question: "What is the virtual DOM?",
-      answer:
-        "The virtual DOM is a lightweight copy of the real DOM for better performance.",
+      question: "What is the time period of project development phase?",
+      answer: "3 weeks.",
     },
     {
-      question: "What is the virtual DOM?",
-      answer:
-        "The virtual DOM is a lightweight copy of the real DOM for better performance.",
+      question: "Is there any kind of support provided for project development?",
+      answer:"Yes, mentors are allocated for each team  to provide guidance and support throughout the project development process.",
     },
-    {
-      question: "What is the virtual DOM?",
-      answer:
-        "The virtual DOM is a lightweight copy of the real DOM for better performance.",
-    },
-    {
-      question: "What is the virtual DOM?",
-      answer:
-        "The virtual DOM is a lightweight copy of the real DOM for better performance.",
-    },
+   
   ];
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -74,23 +63,36 @@ const FAQPage = () => {
           zIndex: "2",
         }}
       >
-        <h1 className="FAQ-bg-text">FAQ</h1>
+        <h1 className="FAQ-bg-text" 
+        >FAQ</h1>
       </div>
       <img
         style={{
           position: "absolute",
           height: "100%",
-          opacity: ".5",
+          opacity: ".6",
           width: "100%",
           zIndex: "2",
         }}
         src="images/backgroundAbstarct.png"
       />
-      <div className="faq-container" style={{ marginTop: "3rem" }}>
+      <div className="faq-container" style={{ marginTop: "3rem" }} >
         <h1 style={{ padding: "2rem", display: "none" }}>FAQs</h1>
-        <div className="row" style={{ rowGap: "2rem", padding: "3rem" }}>
-          {faqData.map((item, index) => (
-            <div key={index} className="col-lg-6 fade-up" style={{ zIndex: "5" }}>
+        <div className="row"
+         style={{ rowGap: "2rem", padding: "3rem" }}>
+        <div className="col-lg-6 fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
+        <img
+        style={{
+         
+          width: "100%",maxWidth:'35rem'
+        }}
+        src="images/faq2.png"
+      />
+        </div>
+        <div className="col-lg-6 fade-up" style={{ zIndex: "5" }} data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
+        {faqData.map((item, index) => (
+            <div key={index} className="col-lg-12 fade-up" style={{ paddingBottom:'1.5rem' }}
+            data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
               <Button
                 className="drop-down-button"
                 onClick={() => handleToggle(index)}
@@ -111,6 +113,7 @@ const FAQPage = () => {
               </Collapse>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </section>

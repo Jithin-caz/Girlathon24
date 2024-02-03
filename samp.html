@@ -1,74 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body style="background: rgb(36, 36, 36);">
-    <div class="hero">
-<img src="Screenshot_2023-12-15_173111-transformed__1_-removebg.png" alt=""> <div>
-</div>
-    </div>
-    <div class="second-section">
-        <h1>heading</h1>
-        <p style="font-size: 2rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati explicabo consequatur 
-            error perspiciatis modi? Exercitationem sapiente dolores cum voluptatum, libero temporibus
-             distinctio assumenda, a voluptates, dolor recusandae incidunt corrupti deleniti!</p>
-          
-             <p style="font-size: 2rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati explicabo consequatur 
-                error perspiciatis modi? Exercitationem sapiente dolores cum voluptatum, libero temporibus
-                 distinctio assumenda, a voluptates, dolor recusandae incidunt corrupti deleniti!</p>
-                 <p style="font-size: 2rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati explicabo consequatur 
-                    error perspiciatis modi? Exercitationem sapiente dolores cum voluptatum, libero temporibus
-                     distinctio assumenda, a voluptates, dolor recusandae incidunt corrupti deleniti!</p>
-                  
-                     <p style="font-size: 2rem;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati explicabo consequatur 
-                        error perspiciatis modi? Exercitationem sapiente dolores cum voluptatum, libero temporibus
-                         distinctio assumenda, a voluptates, dolor recusandae incidunt corrupti deleniti!</p>
-    </div>
-</body>
 <style>
-    
-    .hero
-    {
-        min-height: 75dvh;
-        animation: parallax linear;
-        --screen-val:1;
-        animation-timeline: scroll();
-        position: relative;
-        z-index: 1;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .hero img{
-       max-width: 100%;
-       min-height: 100%;
-    }
-    @keyframes parallax
-    {
-        to{
-            transform: translateY(calc(var(--screen-val)*7rem));
-        }
-    }
-    .second-section
-    {
-        position: relative;
-        z-index: 2;
-       padding: 3rem;
-       color: whitesmoke; 
-       background: rgb(95, 94, 94) ;
-    }
-    ::-webkit-scrollbar
-    {
-        display: none;
-    }
-    @media(max-width:600px) {
-        .hero{
-            --screen-val:7;
-        }
-    }
+
+.values .box {
+  padding: 30px;
+  box-shadow: 0px 0 5px rgba(1, 41, 112, 0.08);
+  text-align: center;
+  transition: 0.3s;
+  height: 100%;
+}
+
+.values .box img {
+  padding: 30px 50px;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+.values .box h3 {
+  font-size: 24px;
+  color: #012970;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.values .box:hover {
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+}
+
+.values .box:hover img {
+  transform: scale(1);
+}
+
+
+
+
+
+
+
+
+
+
 </style>
-</html>
+
+
+<section id="values" class="values">
+  <div class="container" data-aos="fade-up">
+    <div class="row">
+      <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="box">
+          <img src="assets/img/values-1.png" class="img-fluid" alt="">
+          <h3>Proper Mentorship and Support </h3>
+          <p>Get access to a completely aided development platform with the help of experienced mentors , when it
+            comes to knowing about new technologies stacks and other developments in the world today.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+        <div class="box">
+          <img src="assets/img/values-2.png" class="img-fluid" alt="">
+          <h3>Peer to Peer Learning </h3>
+          <p>Develop your existing level of knowledge to much higher levels through peer to peer learning and
+            exploring as a team whilst you create game-changing innovations as a budding developer.</p>
+        </div>
+      </div>
+
+      <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+        <div class="box">
+          <img src="assets/img/values-3.png" class="img-fluid" alt="">
+          <h3>Internship Opportunities </h3>
+          <p>As you reach the completion of a project, get a chance to get internships and establish professional
+            connections with industry experts , which could eventually aid in developing your dream career.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
 import Navbar from "./components/Navbar/navbar";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ScrollReveal from "scrollreveal";
 
 import Signin from "./components/SIgnIn/signin";
@@ -11,21 +11,23 @@ import {BrowserRouter,Route,Routes} from 'react-router-dom'
 import landing from "./components/landing";
 import DashInd from "./components/dash/dashInd";
 import ResetPass from "./components/SIgnIn/resetpass";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Loader from "./components/loader/loader";
 
 function App() {
- 
+ const [loading,setLoading]=useState(false)
   useEffect(() => {
-    ScrollReveal().reveal(".fade-up", {
-      delay: 300,
-      distance: "60px",
-      origin: "bottom",
-      opacity: 0,
-      duration: 800,
-      easing: "cubic-bezier(0.5, 0, 0, 1)",
-    }
-    );
+    AOS.init({
+      // Global settings and options go here
+    });
+    const timer = setTimeout(() => {
+      setLoading(true); // Set loading to false after a certain time or when your data has loaded
+    }, 1000);
+    return () => clearTimeout(timer); 
   }, []);
   return (
+    loading?
     <>
     <BrowserRouter>
     <Navbar />
@@ -38,6 +40,7 @@ function App() {
       </Routes>
     </BrowserRouter>
     </>
+    :<Loader/>
   );
 }
 
