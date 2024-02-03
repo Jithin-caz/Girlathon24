@@ -84,7 +84,7 @@ export default function Contact() {
                   <img src="/images/icons8-email-50.png" />
                 </i>
                 <br></br>
-                <p> GDSC MACE: gdscmace@gmail.com</p>
+                <p> GDSC MACE: dscmace@gmail.com</p>
               </div>
             </div>
             <div
