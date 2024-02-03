@@ -29,7 +29,7 @@ export default function CommPart(){
           </Col>
           <Col  lg={6}  style={{ display:'flex',justifyContent:'center',alignItems:'center' }} data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
           <div class="card">
-          <img src='/images/GDG Cochin-Centre.png' style={{ width:'100%' }}/>
+          <img src='/images/wtm.png' style={{ width:'150%' }}/>
   <div class="card__content">
  
   </div>
