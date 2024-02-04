@@ -50,7 +50,7 @@ const Previous = () => {
         style={{
           position: "absolute",
           height: "100%",
-          opacity: ".6",
+          opacity: "1",
           width: "100%",
         }}
         src="images/prevBack.png"
