@@ -285,7 +285,7 @@ data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
     </div>
    
     </div>}
-   <div className='idea-submission fade-up'
+   {mate&&(<div className='idea-submission fade-up'
    >
     <NavLink to='/ideaSumbit' >
     <button class="continue-application">
@@ -312,7 +312,7 @@ data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
    dispatch(loggedOut())
 }}>logout</button>
 </div>
-</div>
+</div>)} 
 
     </div>
     
