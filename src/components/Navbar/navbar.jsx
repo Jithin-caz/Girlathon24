@@ -105,15 +105,15 @@ export default function Navbar() {
                 Contact
               </li>
             </a>
-            {/* <Link to="/Signin" onClick={()=>{
+            <Link to="/Signin" onClick={()=>{
                 document.getElementById('hero-nav').style.display='block'
                 document.getElementById('hero-nav').classList.remove('link-active')
                 document.getElementById('hero-a').style.display='none'
           
-                console.log("Jithin")
+                // console.log("Jithin")
               } }> <li className="register">
               Register
-            </li></Link> */}
+            </li></Link>
           </ul>
         </div>
       </section>
