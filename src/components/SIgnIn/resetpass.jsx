@@ -29,7 +29,7 @@ export default function ResetPass(){
           password:newPass
         }
        
-        console.log(res)
+        
        dispatch(loggedOut())
       navigate('/Signin')
     }
