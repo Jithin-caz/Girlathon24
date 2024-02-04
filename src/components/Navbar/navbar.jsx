@@ -42,7 +42,7 @@ export default function Navbar() {
     <div>
       <section className="navigation row">
 
-        <NavLink to='/' className="logo col" style={{height:'2rem',display:'flex',alignItems:'center' }}><img src="/images/GDSC.png" style={{ height:'190%' }} alt=""  /></NavLink >
+        <NavLink to='/' className="logo col" style={{height:'2rem',display:'flex',alignItems:'center' }}><img src="/images/GDSC.png" style={{ height:'190%' }} alt=""  /></NavLink>
        
 
         <div className="navigation-links col">
@@ -105,7 +105,7 @@ export default function Navbar() {
                 Contact
               </li>
             </a>
-            <Link to="/Signin" onClick={()=>{
+             <NavLink to="/Signin" onClick={()=>{
                 document.getElementById('hero-nav').style.display='block'
                 document.getElementById('hero-nav').classList.remove('link-active')
                 document.getElementById('hero-a').style.display='none'
@@ -113,17 +113,17 @@ export default function Navbar() {
                 // console.log("Jithin")
               } }> <li className="register">
               Register
-            </li></Link>
+            </li></NavLink> 
           </ul>
         </div>
       </section>
       <div className="navigation-mobile-menu">
-        <div
+        <NavLink to='/'
           className="logo col"
           style={{ height: "2rem", display: "flex", alignItems: "center" }}
         >
           <img src="/images/GDSC.png" style={{ height: "190%" }} alt="" />
-        </div>
+        </NavLink>
         <i
           className={`bi bi-list list${Nav ? "nav-active" : ""}`}
           onClick={setNavigation}
@@ -140,21 +140,21 @@ export default function Navbar() {
       >
         <ul>
         <li
-              id="hero-a" 
+              id="hero-amob" 
               className={`lin`}
             >
               <a href="#HERO">Home</a>
             </li>
             <li
-              id="hero-nav"
+              id="hero-navmob"
               style={{ display: "none" }}
               className={`lin`}
             >
               <NavLink
                 to="/"
                 onClick={() => {
-                  document.getElementById("hero-nav").style.display = "none";
-                  document.getElementById("hero-a").style.display = "block";
+                  document.getElementById("hero-navmob").style.display = "none";
+                  document.getElementById("hero-amob").style.display = "block";
                 }}
               >
                 Home
@@ -180,11 +180,14 @@ export default function Navbar() {
               Contact
             </a>
           </li>
-          {/* <li className="register">
+           <li className="register" onClick={()=>{
+             document.getElementById("hero-navmob").style.display = "block";
+                  document.getElementById("hero-amob").style.display = "none";
+           }}>
             <Link to="/Signin" onClick={setNavigation}>
               Register
             </Link>
-          </li> */}
+          </li> 
         </ul>
       </section>
     </div>

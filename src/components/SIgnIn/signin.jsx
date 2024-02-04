@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loggedIn, teamRegistered } from "../../redux/action";
 import { redirect, useNavigate } from "react-router-dom";
-import DashInd from "../dash/dashInd";
-import { Alert } from "react-bootstrap";
+
+
 import Loader from "../loader/loader";
 
 export default function Signin() {
@@ -41,7 +41,7 @@ export default function Signin() {
         setDataFetched(true);
       });
     if (res != null) setDataFetched(true);
-    console.log(res);
+   
 
     if (res.status === 201) {
       dispatch(loggedIn());
@@ -50,7 +50,7 @@ export default function Signin() {
 
     if (res.data.user.team != null) {
       dispatch(teamRegistered(res.data.user.team));
-      console.log(isTeamRegistered);
+     
     }
   };
 
@@ -84,7 +84,7 @@ export default function Signin() {
       });
 
     if (response != null) setDataFetched(true);
-    console.log(response);
+    
     if (response.status == 230) {
       alert("This email already exists");
       setState(true);
@@ -98,15 +98,15 @@ export default function Signin() {
         withCredentials: true,
       });
       navigate("/dash");
-      console.log("hello");
+      
     }
 
-    console.log(response);
+   
   };
 
   const login = (
     <div className="section login">
-      <div className="form-container">
+      <div className="form-container" style={{ maxWidth:'50rem' }}>
         <p className="title">Login</p>
         <form className="form" onSubmit={loginEvent}>
           <div className="input-group">
@@ -194,7 +194,7 @@ export default function Signin() {
   );
   const register = (
     <div className="section login">
-      <div className="form-container">
+      <div className="form-container" style={{ maxWidth:'50rem' }}>
         <p className="title">Register</p>
         <form className="form" onSubmit={registerEvent}>
           <div className="input-group">

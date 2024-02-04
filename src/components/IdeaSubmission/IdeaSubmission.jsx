@@ -17,6 +17,9 @@ export default function IdeaSubmission() {
   const [teamname,setTeamname]=useState('')
 
   const [datafetched,setDataFetched]=useState(false)
+  const logOut=async()=>{
+    const res=await axios.get(`${API}/auth/logout`,{withCredentials:true})
+  }
 
   const getter=async()=>{
     const res=await axios.get(`${API}/auth/profile`,{withCredentials:true})
@@ -62,8 +65,8 @@ console.log(res)
 
   return (datafetched?
     <section className="IdeaSubmission" style={{ paddingTop: "6rem" }}>
-      <h2>Idea Submission</h2>
-      <div className="SubmissionContent">
+      <h2  data-aos-duration="1300" data-aos-once="true">Idea Submission</h2>
+      <div className="SubmissionContent"  data-aos-duration="1300" data-aos-once="true">
         <div className="IdeaTeamDetails">
           <div style={{ width: "80%", height: "80%" }}>
             <div class="idea-card">
@@ -142,7 +145,7 @@ console.log(res)
               </option>
             </select>
             <textarea
-              placeholder="Idea Description"
+              placeholder="short idea Description"
               type="text"
               className="input textarea"
               value={description}
@@ -174,12 +177,11 @@ console.log(res)
           </form>) :(<h1>Idea submitted</h1>)}
          
           <div style={{ paddingTop: "1rem" }}>
-            <NavLink to="/resetPassword">
-              <u style={{ color: "orange" }}> reset password</u>
-            </NavLink><br>
+           <br>
             </br>
             <button style={{ background:'none',border:'none' }} onClick={()=>{
    dispatch(loggedOut())
+   logOut()
 }}>logout</button>
           </div>
         </div>

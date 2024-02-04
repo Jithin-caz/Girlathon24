@@ -18,7 +18,7 @@ export default function DashInd()
   const [count,setCount]=useState(0)
     const [team,setTeam]=useState(true)
     const [mate,setMate]=useState(false)
-    const [teamname,setTeamname]=useState('team name not set!')
+    const [teamname,setTeamname]=useState('')
     const [teammatename,setTeammatename]=useState('')
     const [teammateemail,setTeammateemail]=useState('')
     const [teammatenum,setTeammatenum]=useState('')
@@ -42,7 +42,7 @@ export default function DashInd()
       setDataFetched(true)
     setLead(res.data.lead)
     setteammates(res.data.members)
-    console.log(res)
+    
     if(res.data.lead.idea)
     {
      const idea=document.getElementById('idea-status')
@@ -77,7 +77,7 @@ export default function DashInd()
         team:teamname
       }
       const res = await axios.post(`${API}/team/member-register`,data,{withCredentials:true})
-      console.log(res)
+      
    
      if(teammates.length==3)
         setCount(5)
@@ -95,7 +95,7 @@ export default function DashInd()
         team:teamname
       }
       const res = await axios.post(`${API}/team/team-assign`,data,{withCredentials:true})
-      console.log(res)
+      
       if(res.status==200)
       {
         setTeam(false)
@@ -110,22 +110,23 @@ export default function DashInd()
     <h1 style={{ paddingTop:'5rem',paddingLeft:'3rem',color:'rgb(103, 225, 255)' }} className='fade-up dash-heading'
     data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">Welcome {lead.name}</h1>
     <h3 style={{paddingLeft:'3rem',color:' rgb(103, 225, 255)' }} className='fade-up dash-heading'
-    data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">{teamname}</h3>
+    data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">{teamname==''?'team not  registered':teamname}</h3>
     {dashDone&&<p  style={{paddingLeft:'3rem',color:'rgb(103, 225, 255)' }}>team full</p>}
-    <p id='idea-status' style={{ paddingTop:'.5rem',paddingLeft:'3rem',color:'orange' }}>idea not sumbitted</p>
-    <div className='dashContainer' >
+    <p id='idea-status' style={{ paddingTop:'.5rem',paddingLeft:'3rem',color:'orange' }}
+     data-aos-duration="1300" data-aos-once="true">idea not sumbitted</p>
+    <div className='dashContainer'  data-aos-duration="1300" data-aos-once="true">
     {!dashDone &&(
       <div className='dash-left' >
     {team &&(
         <>
         <h3>Guidelines</h3>
         <ol>
-        <li style={{ paddingTop:'.5rem' }}>jvxzss cgvd d sb dns dns dns dn dnbzs nddsn zdsnd dsdasdns ns dnas adn Sndnb d as dasdbas da d ad adsnbd a 
-    fadnfnad fnbad fnb adfnb adnf adnf adsn asnd adnbfd adnbf adbnf adbn fnbad fbnad fbnd fbd fbnda f</li>
-    <li  style={{ paddingTop:'.5rem' }}>jvxzss cgvd d sb dns dns dns dn dnbzs nddsn zdsnd dsdasdns ns dnas adn Sndnb d as dasdbas da d ad adsnbd a 
-    fadnfnad fnbad fnb adfnb adnf adnf adsn asnd adnbfd adnbf adbnf adbn fnbad fbnad fbnd fbd fbnda f</li>
-    <li  style={{ paddingTop:'.5rem' }}>jvxzss cgvd d sb dns dns dns dn dnbzs nddsn zdsnd dsdasdns ns dnas adn Sndnb d as dasdbas da d ad adsnbd a 
-    fadnfnad fnbad fnb adfnb adnf adnf adsn asnd adnbfd adnbf adbnf adbn fnbad fbnad fbnd fbd fbnda f</li>
+        <li style={{ paddingTop:'.5rem' }}>1.You can register as a team of 4 members maximum.</li>
+    <li  style={{ paddingTop:'.5rem' }}>2.Team lead has to register first</li>
+    <li  style={{ paddingTop:'.5rem' }}>3.After registration, team lead can add the members by the option of 'Add Member'.</li>
+    <li  style={{ paddingTop:'.5rem' }}>4.Only team lead can enter the details of team members.</li>
+    <li  style={{ paddingTop:'.5rem' }}>5.Ideas based on various domains of interest can be submitted as Abstract.</li>
+    <li  style={{ paddingTop:'.5rem' }}>6.Once the abstract of your idea is submitted and all team members are added , the registration is complete.</li>
         </ol>
        <hr></hr>
        <br></br>
@@ -160,7 +161,7 @@ export default function DashInd()
     {
         mate&&(
             <form onSubmit={setTeammate} style={{ width:'45dvw',minwidth:'20rem' }}>
-            <h3>Enter team details</h3>
+            <h3>Add member</h3>
             <div className='row' style={{gap:'2rem' }}>
 <div className='team-mate col fade-up' 
 data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
@@ -285,7 +286,7 @@ data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
    
     </div>}
    {mate&&(<div className='idea-submission fade-up'
-   data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
+   >
     <NavLink to='/ideaSumbit' >
     <button class="continue-application">
     <div>
@@ -304,7 +305,7 @@ data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
     
 </NavLink>
 <div style={{ paddingTop:'1rem' }}>
-<NavLink to='/resetPassword'><u style={{ color:'orange' }}> reset password</u></NavLink>
+
 <br></br>
 <button style={{ background:'none',border:'none' }} onClick={()=>{
   logOut();
