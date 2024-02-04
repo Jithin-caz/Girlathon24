@@ -110,7 +110,7 @@ export default function Navbar() {
                 document.getElementById('hero-nav').classList.remove('link-active')
                 document.getElementById('hero-a').style.display='none'
           
-                console.log("Jithin")
+                // console.log("Jithin")
               } }> <li className="register">
               Register
             </li></NavLink> 
