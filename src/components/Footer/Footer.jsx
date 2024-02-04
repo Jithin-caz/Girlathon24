@@ -24,7 +24,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="Footer-Bottom">
-        <p>
+        <p style={{ color:'white' }}>
           &#169;Copyright GDSC MACE. All Rights Reserved. <br />
           Designed by Team Girlathon
         </p>

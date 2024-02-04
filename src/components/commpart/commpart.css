@@ -9,7 +9,7 @@
     min-height: 100dvh;
 }
 }
-.card {
+.card1 {
   position: relative;
   width: 300px;
   height: 200px;
@@ -25,13 +25,13 @@
   min-width: 15rem;
 }
 
-.card svg {
+.card1 svg {
   width: 48px;
   fill: #333;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.card:hover {
+.card1:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 }
@@ -51,7 +51,7 @@
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.card:hover .card__content {
+.card1:hover .card__content {
   transform: rotateX(0deg);
 }
 
@@ -62,7 +62,7 @@
   font-weight: 700;
 }
 
-.card:hover svg {
+.card1:hover svg {
   scale: 0;
 }
 

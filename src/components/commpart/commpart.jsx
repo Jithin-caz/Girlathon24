@@ -19,7 +19,7 @@ export default function CommPart(){
         <Row style={{paddingTop:'2rem',paddingLeft:'2rem',rowGap:'2rem'}}>
         <Col sm={12}><h1 style={{textAlign:'center' }} data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">Community Partners</h1></Col>
           <Col lg={6}  style={{ display:'flex',justifyContent:'center',alignItems:'center' }} data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
-          <div class="card">
+          <div class="card1">
           <img src='/images/GDG Cochin-Centre.png' style={{ width:'100%' }}/>
   <div class="card__content">
  
@@ -28,7 +28,7 @@ export default function CommPart(){
 
           </Col>
           <Col  lg={6}  style={{ display:'flex',justifyContent:'center',alignItems:'center' }} data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
-          <div class="card">
+          <div class="card1">
           <img src='/images/wtm.png' style={{ width:'150%' }}/>
   <div class="card__content">
  
