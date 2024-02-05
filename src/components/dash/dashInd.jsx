@@ -10,6 +10,7 @@ import Loader from '../loader/loader';
 
 export default function DashInd()
 {
+ 
   const API = import.meta.env.VITE_API;
 
   const [teammates,setteammates]=useState([])
@@ -111,9 +112,9 @@ export default function DashInd()
     data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">Welcome {lead.name}</h1>
     <h3 style={{paddingLeft:'3rem',color:' rgb(103, 225, 255)' }} className='fade-up dash-heading'
     data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">{teamname==''?'team not  registered':teamname}</h3>
-    {dashDone&&<p  style={{paddingLeft:'3rem',color:'rgb(103, 225, 255)' }}>team full</p>}
+    {dashDone&&<p  style={{paddingLeft:'3rem',color:'rgb(103, 225, 255)' }}  data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">team full</p>}
     <p id='idea-status' style={{ paddingTop:'.5rem',paddingLeft:'3rem',color:'orange' }}
-     data-aos-duration="1300" data-aos-once="true">idea not sumbitted</p>
+     data-aos-duration="1300" data-aos-once="true" >idea not sumbitted</p>
     <div className='dashContainer'  data-aos-duration="1300" data-aos-once="true">
     {!dashDone &&(
       <div className='dash-left' >
@@ -132,19 +133,19 @@ export default function DashInd()
        <br></br>
         <form onSubmit={checkTeamName}>
     <div style={{ maxWidth:'18rem',minWidth:'13rem' }}>
-    <div class="input-container fade-up">
-  <input value={teamname} name='teamname' placeholder="Team name" class="input-field" type="text"  required="required"
+    <div className="input-container fade-up">
+  <input value={teamname} name='teamname' placeholder="Team name" className="input-field" type="text"  required="required"
     onChange={(e)=>setTeamname(e.target.value)}
   />
-  <label for="input-field" class="input-label">Give a cool name for your team</label>
-  <span class="input-highlight"></span>
+  <label for="input-field" className="input-label">Give a cool name for your team</label>
+  <span className="input-highlight"></span>
 </div> </div>
   <div className='fade-up' 
   data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true" style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
       <button className='save' type='submit'>
-  <div class="svg-wrapper-1">
-    <div class="svg-wrapper">
-      <svg class="icon" height="30" width="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z">
+  <div className="svg-wrapper-1">
+    <div className="svg-wrapper">
+      <svg className="icon" height="30" width="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z">
         </path>
         </svg>
     </div>
@@ -166,21 +167,21 @@ export default function DashInd()
 <div className='team-mate col fade-up' 
 data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
     <h5>Team mate details </h5>
-    <div class="inputbox">
+    <div className="inputbox">
     <input value={teammatename} name='teammateName' required="required" type="text"
       onChange={(e)=>setTeammatename(e.target.value)}
     />
     <span> name</span>
     <i></i>
 </div>
- <div class="inputbox">
+ <div className="inputbox">
     <input value={teammateemail} name='teammateEmail' required="required" type="email"
       onChange={(e)=>setTeammateemail(e.target.value)}
     />
     <span>e mail</span>
     <i></i>
 </div>
-<div class="inputbox">
+<div className="inputbox">
     <input value={teammatenum} name='teammatephone' required="required" type="text"
       onChange={(e)=>setTeammatenum(e.target.value)}
     />
@@ -196,9 +197,9 @@ data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
      data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
       style={{ width:'100%',display:'flex',justifyContent:'right',padding:'3rem' }}>
       <button className='save' type='submit' >
-  <div class="svg-wrapper-1">
-    <div class="svg-wrapper">
-      <svg class="icon" height="30" width="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z">
+  <div className="svg-wrapper-1">
+    <div className="svg-wrapper">
+      <svg className="icon" height="30" width="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22,15.04C22,17.23 20.24,19 18.07,19H5.93C3.76,19 2,17.23 2,15.04C2,13.07 3.43,11.44 5.31,11.14C5.28,11 5.27,10.86 5.27,10.71C5.27,9.33 6.38,8.2 7.76,8.2C8.37,8.2 8.94,8.43 9.37,8.8C10.14,7.05 11.13,5.44 13.91,5.44C17.28,5.44 18.87,8.06 18.87,10.83C18.87,10.94 18.87,11.06 18.86,11.17C20.65,11.54 22,13.13 22,15.04Z">
         </path>
         </svg>
     </div>
@@ -219,13 +220,13 @@ data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
     <div >
     <div className='row' style={{ rowGap:'2rem',display:'flex',justifyContent:'center',alignItems:'center',width:'100%' }}>
     {teammates.length<3 ?(
-      <div class="card">
-  <div class="card-inner">
-    <div class="card-front">
+      <div className="card">
+  <div className="card-inner">
+    <div className="card-front">
      <div> <h3 ><b style={{ color:'#23242a',fontSize:'2rem' }}>Team details</b></h3>
      </div>
     </div>
-    <div class="card-back">
+    <div className="card-back">
     <Card style={{ minWidth:'19.1rem',background:'#2b2b2b',color:'white' }}>
             <Card.Header>{teamname}</Card.Header>
             <Card.Body>
@@ -241,13 +242,13 @@ data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
 </div>
     ):<>
     
-     {teammates.map((member,index)=>  <div class="card">
-  <div class="card-inner">
-    <div class="card-front">
+     {teammates.map((member,index)=>  <div className="card">
+  <div className="card-inner">
+    <div className="card-front">
      <div> <h3 ><b style={{ color:'#23242a',fontSize:'2rem' }}>{member.name}</b></h3>
      </div>
     </div>
-    <div class="card-back">
+    <div className="card-back">
     <Card style={{ minWidth:'20.5rem',background:'#2b2b2b',color:'white' }}>
             <Card.Header>{member.name}</Card.Header>
             <Card.Body>
@@ -260,13 +261,13 @@ data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
     </div>
   </div>
 </div>)} 
- <div class="card">
-  <div class="card-inner">
-    <div class="card-front">
+ <div className="card">
+  <div className="card-inner">
+    <div className="card-front">
      <div> <h3 style={{ color:'#23242a' }}><b style={{ color:'#23242a',fontSize:'2rem' }}>{lead.name}</b>(lead)</h3>
      </div>
     </div>
-    <div class="card-back">
+    <div className="card-back">
     <Card style={{ minWidth:'20.5rem',background:'#2b2b2b',color:'white' }}>
             <Card.Header>{lead.name}</Card.Header>
             <Card.Body>
@@ -288,16 +289,16 @@ data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
    {mate&&(<div className='idea-submission fade-up'
    >
     <NavLink to='/ideaSumbit' >
-    <button class="continue-application">
+    <button className="continue-application">
     <div>
-        <div class="pencil"></div>
-        <div class="folder">
-            <div class="top">
+        <div className="pencil"></div>
+        <div className="folder">
+            <div className="top">
                 <svg viewBox="0 0 24 27">
                     <path d="M1,0 L23,0 C23.5522847,-1.01453063e-16 24,0.44771525 24,1 L24,8.17157288 C24,8.70200585 23.7892863,9.21071368 23.4142136,9.58578644 L20.5857864,12.4142136 C20.2107137,12.7892863 20,13.2979941 20,13.8284271 L20,26 C20,26.5522847 19.5522847,27 19,27 L1,27 C0.44771525,27 6.76353751e-17,26.5522847 0,26 L0,1 C-6.76353751e-17,0.44771525 0.44771525,1.01453063e-16 1,0 Z"></path>
                 </svg>
             </div>
-            <div class="paper"></div>
+            <div className="paper"></div>
         </div>
     </div>
    idea sumbission
