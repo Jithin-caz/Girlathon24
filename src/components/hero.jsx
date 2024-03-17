@@ -127,7 +127,7 @@ function Hero() {
             data-aos-once="true"
             style={{ paddingTop: "1rem" }}
           >
-            <h1>GIRLATHON</h1>
+            <h1 >GIRLATHON</h1>
             <h2>2024</h2>
           </div>
           <div className="desc">
