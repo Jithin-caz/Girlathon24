@@ -85,7 +85,7 @@
 
 .title h1{
     font-family: 'hanson';
-   /*  margin-bottom: 0;
+     margin-bottom: 0;
     padding-bottom: 0;
     color: transparent;
 
@@ -95,8 +95,8 @@
     background-size: contain;
     background-clip: text;
     -webkit-background-clip: text;
-    -moz-background-clip: text; */
-    color: rgba(255, 255, 255, 0.797);
+    -moz-background-clip: text; 
+   
 }
 
 .title h2{
