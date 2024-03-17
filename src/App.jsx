@@ -23,7 +23,7 @@ function App() {
     });
     const timer = setTimeout(() => {
       setLoading(true); // Set loading to false after a certain time or when your data has loaded
-    }, 1000);
+    }, 500);
     return () => clearTimeout(timer); 
   }, []);
   return (
@@ -33,12 +33,13 @@ function App() {
     <Navbar />
       <Routes>
       <Route path="/" exact Component={landing}/>
-        <Route path="/Signin" exact Component={Signin}/>
+        <Route path="/Signin" exact Component={landing}/>
         <Route path="/dash" exact Component={DashInd}/>
         <Route path="/ideaSumbit" exact Component={IdeaSubmission}/>
         <Route path="/resetPassword" exact Component={ResetPass}/>
       </Routes>
     </BrowserRouter>
+    
     </>
     :<Loader/>
   );

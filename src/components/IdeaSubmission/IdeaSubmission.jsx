@@ -35,7 +35,7 @@ export default function IdeaSubmission() {
   useEffect(() => {
     getter();
     if (!loginSuccess.isLoggedIn) 
-    navigate("/Signin");
+    navigate("/");
   });
 
   // variables
@@ -49,14 +49,14 @@ export default function IdeaSubmission() {
   const IdeaSubmission = async(e) => {
    
     e.preventDefault();
-    const data={
+    const data= {
       title:title,
       category:category,
       description:abstract,
       team:teamname
     }
+
     const res=await axios.post(`${API}/idea/submit`,data,{withCredentials:true})
-console.log(res)
     setTitle("");
     setCategory("");
     setDescription("");
@@ -144,14 +144,14 @@ console.log(res)
                 Open Innovation
               </option>
             </select>
-            <textarea
-              placeholder="short idea Description"
-              type="text"
-              className="input textarea"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
-              required
-            />
+            {/*<textarea*/}
+            {/*  placeholder="short idea Description"*/}
+            {/*  type="text"*/}
+            {/*  className="input textarea"*/}
+            {/*  value={description}*/}
+            {/*  onChange={(e) => setDescription(e.target.value)}*/}
+            {/*  required*/}
+            {/*/>*/}
             <textarea
               placeholder="Abstract"
               type="text"
@@ -182,7 +182,7 @@ console.log(res)
             <button style={{ background:'none',border:'none' }} onClick={()=>{
    dispatch(loggedOut())
    logOut()
-}}>logout</button>
+}}><u>logout</u></button>
           </div>
         </div>
       </div>

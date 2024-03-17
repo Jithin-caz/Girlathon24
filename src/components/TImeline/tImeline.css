@@ -1,0 +1,15 @@
+.Timeline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: max-content;
+    width: 100dvw;
+    padding: 20px 10px;
+    background: url("images/backgroundAbstarct.png");
+    background-size: cover;
+}
+.timeline-heading{
+    color: white;
+    font-size: 25px;
+}
