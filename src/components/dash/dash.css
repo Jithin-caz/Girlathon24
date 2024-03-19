@@ -287,6 +287,7 @@
   font-weight: 500;
   line-height: 19px;
   -webkit-appearance: none;
+  appearance: none;
   -webkit-tap-highlight-color: transparent;
   padding: 17px 29px 17px 69px;
   transition: background 0.3s;
@@ -473,9 +474,72 @@
 
 
 
+/* tracks */
+.tracks-card-back{
+  
+  color: #fff;
+  display: flex;
+  align-items: center;
 
-
-
-
-
+  border-radius: 10px;
+  justify-content: center;
+  font-size: 20px;
  
+}
+.track-back
+{
+  backdrop-filter: blur(10px);
+  border: solid .16rem;
+  border-radius: 1rem;
+  background: none;
+  border-image: linear-gradient(45deg, #0057E7, #D62D20, #FFA700, #0057E7, #008744, #D62D20) 1;
+}
+
+.tracks-card{
+  background: rgba(19, 15, 52, 0);
+  min-width: 18rem;
+ 
+}
+
+.track-front1,.track-front3,.track-front5,.track-front7,.track-front9,.track-front11
+{
+  transition-timing-function: ease-in-out;
+  animation: bouncy 7s infinite;
+ 
+}
+.track-front2,.track-front4,.track-front6,.track-front8,.track-front10,.track-front12
+{
+  transition-timing-function: ease-in-out;
+  animation: bouncy2 5s infinite;
+}
+
+@keyframes bouncy{
+  50%{
+    transform:translate(.3rem,.3rem);
+  }
+}
+@keyframes bouncy2{
+  50%{
+    transform:translate(-.3rem,-.3rem);
+  }
+}
+.tracks-small
+{
+  display: none;
+  
+}
+.tracks-big
+{
+  display:flex;
+}
+@media(max-width:768px)
+ {
+  .tracks-small
+  {
+    display:block;
+  }
+  .tracks-big
+  {
+    display:none;
+  }
+ }

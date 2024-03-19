@@ -85,7 +85,7 @@
 
 .title h1{
     font-family: 'hanson';
-    margin-bottom: 0;
+   /*  margin-bottom: 0;
     padding-bottom: 0;
     color: transparent;
 
@@ -95,7 +95,8 @@
     background-size: contain;
     background-clip: text;
     -webkit-background-clip: text;
-    -moz-background-clip: text;
+    -moz-background-clip: text; */
+    color: rgba(255, 255, 255, 0.797);
 }
 
 .title h2{
@@ -180,6 +181,10 @@ letter-spacing: -10px;
     background: #0057E7;
     border-radius: 1vh;
     font-size: clamp(0.75rem,1vw,1rem);
+    position: absolute;
+    bottom: 20%;
+    right: 40%;
+    z-index: 100;
   }
 
   .reg-btn:hover{
@@ -206,18 +211,24 @@ letter-spacing: -10px;
   .typing-animation {
     font-size: clamp(0.6rem,1.2vw,1.2rem);
     overflow: hidden; 
-    border-right: 2px solid; 
     white-space: nowrap; 
-    animation: typing 4s steps(40) infinite;
+    animation: typing 6s steps(50);
   }
 
   @keyframes typing {
     0% {
       width: 0;
+      border-right: 2px solid; 
     }
     90%,100% {
       width: 100%;
+      border-right: 2px solid; 
     }
+  }
+  .tracks-sm{
+    display: none;
+    text-align: center;
+    padding-top: 3rem;
   }
   @media(max-width: 1024px){
 
@@ -253,6 +264,10 @@ letter-spacing: -10px;
     .about-bg-text
     {
         display: none;
+    }
+    .tracks-sm
+    {
+      display: block;
     }
     .hero::before{
         background-position: 50% 100%;
@@ -290,6 +305,10 @@ letter-spacing: -10px;
   transform: scale(1);
 }
 
-
-
+.prize-card{
+  background: #eeeeee03 !important;
+  backdrop-filter: blur(10px);
+  transition: ease-in-out;
+  transition-duration: 500ms;
+}
 

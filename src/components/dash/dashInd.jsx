@@ -10,7 +10,6 @@ import Loader from '../loader/loader';
 
 export default function DashInd()
 {
- 
   const API = import.meta.env.VITE_API;
 
   const [teammates,setteammates]=useState([])
@@ -62,7 +61,7 @@ export default function DashInd()
     useEffect(()=>{
       getter()
       if(!loginSuccess.isLoggedIn)
-        navigate('/Signin')
+        navigate('/')
      if(teammates.length==3)
         setCount(5)
      
@@ -79,6 +78,9 @@ export default function DashInd()
       }
       const res = await axios.post(`${API}/team/member-register`,data,{withCredentials:true})
       
+      setTeammatename("")
+      setTeammateemail("")
+      setTeammatenum("")
    
      if(teammates.length==3)
         setCount(5)
@@ -86,7 +88,13 @@ export default function DashInd()
         else if(res.status==230)
         document.getElementById('email-exist').style.display='block'
       else
+      {
         alert("team mate registered")
+        setTeammatename("")
+        setTeammateemail("")
+        setTeammatenum("")
+      }
+
     }
 
     async function checkTeamName(event)
@@ -112,9 +120,9 @@ export default function DashInd()
     data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">Welcome {lead.name}</h1>
     <h3 style={{paddingLeft:'3rem',color:' rgb(103, 225, 255)' }} className='fade-up dash-heading'
     data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">{teamname==''?'team not  registered':teamname}</h3>
-    {dashDone&&<p  style={{paddingLeft:'3rem',color:'rgb(103, 225, 255)' }}  data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">team full</p>}
+    {dashDone&&<p  style={{paddingLeft:'3rem',color:'rgb(103, 225, 255)' }}>team full</p>}
     <p id='idea-status' style={{ paddingTop:'.5rem',paddingLeft:'3rem',color:'orange' }}
-     data-aos-duration="1300" data-aos-once="true" >idea not sumbitted</p>
+     data-aos-duration="1300" data-aos-once="true">idea not sumbitted</p>
     <div className='dashContainer'  data-aos-duration="1300" data-aos-once="true">
     {!dashDone &&(
       <div className='dash-left' >
@@ -122,12 +130,12 @@ export default function DashInd()
         <>
         <h3>Guidelines</h3>
         <ol>
-        <li style={{ paddingTop:'.5rem' }}>1.You can register as a team of 4 members maximum.</li>
-    <li  style={{ paddingTop:'.5rem' }}>2.Team lead has to register first</li>
-    <li  style={{ paddingTop:'.5rem' }}>3.After registration, team lead can add the members by the option of 'Add Member'.</li>
-    <li  style={{ paddingTop:'.5rem' }}>4.Only team lead can enter the details of team members.</li>
-    <li  style={{ paddingTop:'.5rem' }}>5.Ideas based on various domains of interest can be submitted as Abstract.</li>
-    <li  style={{ paddingTop:'.5rem' }}>6.Once the abstract of your idea is submitted and all team members are added , the registration is complete.</li>
+        <li style={{ paddingTop:'.5rem' }}>You can register as a team of 4 members maximum.</li>
+    <li  style={{ paddingTop:'.5rem' }}>Team lead has to register first</li>
+    <li  style={{ paddingTop:'.5rem' }}>After registration, team lead can add the members by the option of 'Add Member'.</li>
+    <li  style={{ paddingTop:'.5rem' }}>Only team lead can enter the details of team members.</li>
+    <li  style={{ paddingTop:'.5rem' }}>Ideas based on various domains of interest can be submitted as Abstract.</li>
+    <li  style={{ paddingTop:'.5rem' }}>Once the abstract of your idea is submitted and all team members are added , the registration is complete.</li>
         </ol>
        <hr></hr>
        <br></br>
@@ -221,8 +229,8 @@ data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
     <div className='row' style={{ rowGap:'2rem',display:'flex',justifyContent:'center',alignItems:'center',width:'100%' }}>
     {teammates.length<3 ?(
       <div className="card">
-  <div className="card-inner">
-    <div className="card-front">
+  <div className="card-inner" >
+    <div className="card-front" >
      <div> <h3 ><b style={{ color:'#23242a',fontSize:'2rem' }}>Team details</b></h3>
      </div>
     </div>
@@ -308,10 +316,10 @@ data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
 <div style={{ paddingTop:'1rem' }}>
 
 <br></br>
-<button style={{ background:'none',border:'none' }} onClick={()=>{
+<button   style={{ background:'none',border:'none'  }}  onClick={()=>{
   logOut();
    dispatch(loggedOut())
-}}>logout</button>
+}}><u>logout</u></button>
 </div>
 </div>)} 
 

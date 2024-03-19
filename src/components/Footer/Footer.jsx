@@ -26,7 +26,7 @@ export default function Footer() {
       <div className="Footer-Bottom">
         <p style={{ color:'white' }}>
           &#169;Copyright GDSC MACE. All Rights Reserved. <br />
-          Designed by Team Girlathon
+          Designed by <a href="https://github.com/abhinav-18max/girlathon-portal" target="_blank" style={{ cursor:'none' }}>Team Girlathon</a>
         </p>
       </div>
     </div>
