@@ -23,7 +23,9 @@ export default function Media() {
               href="https://www.mediaoneonline.com/"
               target="_blank"
               className="card1"
-            ></a>
+            >
+                <img src='images/media_one.png' style={{ width:'100%' }}/>
+            </a>
           </div>
         </div>
       </div>

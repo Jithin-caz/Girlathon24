@@ -25,19 +25,26 @@ export default function CommPart() {
               href="https://kalkitech.com/"
               target="_blank"
               className="card card1"
-            ></a>
+            >
+               <img src='/images/kalikitech.png' style={{ width:'100%' }}/>
+            </a>
           </div>
         </div>
         <div className="sponser-line">
           <div className="sponser sponser2">
-            <a href="" target="_blank" className="card1"></a>
+            <a href="" target="_blank" className="card1">
+            <img src='/images/MACE_N_America.png' style={{ width:'100%' }}/>
+             
+            </a>
           </div>
           <div className="sponser sponser3">
             <a
               href="http://www.macealumniqatar.org/"
               target="_blank"
               className="card1"
-            ></a>
+            >
+                <img src='/images/MACE_QATAR.png' style={{ width:'100%' }}/>
+            </a>
           </div>
         </div>
       </div>
