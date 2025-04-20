@@ -23,7 +23,10 @@ export default function Certificate() {
               href="https://pindown.app/"
               target="_blank"
               className="card1"
-            ></a>
+            >
+           
+            <img src='images/pindown.png' style={{ width:'100%' }}/>
+            </a>
           </div>
         </div>
       </div>

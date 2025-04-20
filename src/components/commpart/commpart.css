@@ -9,21 +9,7 @@
     background: url("images/backgroundAbstarct.png");
     background-size: cover;
 }
-.sponser1{
-  background: url("images/kalikitech.png");
-}
-.sponser2{
-  background: url("images/MACE_N_America.png");
-}
-.sponser3{
-  background: url("images/MACE_QATAR.png");
-}
-.media-card{
-  background: url("images/media_one.png");
-}
-.certi-card{
-  background: url("images/pindown.png");
-}
+
 .sponser{
   display: flex;
   align-items: center;
