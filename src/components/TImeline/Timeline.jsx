@@ -27,7 +27,7 @@ export default function Timeline() {
               style={{ width: "100%", height: "110%" }}
             />
           }
-          date="11th February 2024"
+          date="20th May 2025"
         >
           <h3 className="timeline-heading">
             Registration and Idea Submission Starts
@@ -49,7 +49,7 @@ export default function Timeline() {
               style={{ width: "80%", height: "80%", paddingLeft: ".3rem" }}
             />
           }
-          date="7th March 2024"
+          date="10th June 2025"
         >
           <h3 className="timeline-heading">Registration closes</h3>
         </VerticalTimelineElement>
@@ -67,10 +67,10 @@ export default function Timeline() {
           icon={
             <img src="/images/anoun.png" alt="Icon" style={{ width: "100%" }} />
           }
-          date="12th March 2024"
+          date="31st May 2025"
         >
           <h3 className="timeline-heading">
-            Announcement of Shortlisted participants
+            Announcement of Shortlisted participants stage 1
           </h3>
         </VerticalTimelineElement>
         <VerticalTimelineElement
@@ -89,9 +89,9 @@ export default function Timeline() {
               style={{ width: "90%", height: "80%" }}
             />
           }
-          date="14th March 2024"
+          date="15th June 2025"
         >
-          <h3 className="timeline-heading">Allocation of mentors</h3>
+          <h3 className="timeline-heading">Announcement of Shortlisted participants stage 2</h3>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--registration"
@@ -105,7 +105,7 @@ export default function Timeline() {
           icon={
             <img src="/images/net.png" alt="Icon" style={{ width: "100%" }} />
           }
-          date="16th March 2024"
+          date="1st June 2025"
         >
           <h3 className="timeline-heading">Online Development Phase Begins</h3>
         </VerticalTimelineElement>
@@ -125,9 +125,9 @@ export default function Timeline() {
               style={{ width: "90%", height: "100%", paddingLeft: ".3rem" }}
             />
           }
-          date="4th April 2024"
+          date="21tst July 2025"
         >
-          <h3 className="timeline-heading">Second round of shortlisting</h3>
+          <h3 className="timeline-heading">Final shortlisting</h3>
         </VerticalTimelineElement>
         <VerticalTimelineElement
           className="vertical-timeline-element--registration"
@@ -141,7 +141,7 @@ export default function Timeline() {
           icon={
             <img src="/images/pres.png" alt="Icon" style={{ width: "100%" }} />
           }
-          date="6th April 2024"
+          date="26th July 2025"
         >
           <h3 className="timeline-heading">
             Final Event Day with project presentation and talk sessions

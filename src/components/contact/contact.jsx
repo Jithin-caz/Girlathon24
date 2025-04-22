@@ -61,8 +61,8 @@ export default function Contact() {
                 <img src="/images/icons8-call-64.png" />
               </i>
               <br></br>
-              Mathew Vinu Benny: 9188051711 <br></br>
-              Anamika KP: 7736610701
+              Robin Joby: 9074316297 <br></br>
+              Joann J Koodathil: 8078531945
             </div>
             <div
               className="con-box "
@@ -84,7 +84,7 @@ export default function Contact() {
                   <img src="/images/icons8-email-50.png" />
                 </i>
                 <br></br>
-                <p> GDSC MACE: dscmace@gmail.com</p>
+                <p> DSC MACE: dscmace@gmail.com</p>
               </div>
             </div>
             <div
@@ -128,7 +128,7 @@ export default function Contact() {
                 placeholder="Name"
                 required
               />
-              <label  htmlFor="name" className="form__label">
+              <label htmlFor="name" className="form__label">
                 Name
               </label>
             </div>
@@ -140,7 +140,7 @@ export default function Contact() {
                 required
                 name="email"
               />
-              <label  htmlFor="email" className="form__label">
+              <label htmlFor="email" className="form__label">
                 Email
               </label>
             </div>
@@ -153,7 +153,7 @@ export default function Contact() {
                 required
                 style={{ maxWidth: "25rem" }}
               />
-              <label  htmlFor="subject" className="form__label">
+              <label htmlFor="subject" className="form__label">
                 Subject
               </label>
             </div>
@@ -169,7 +169,7 @@ export default function Contact() {
                 id="textarea"
                 name="content"
               ></textarea>
-              <label  htmlFor="textarea" className="form__label">
+              <label htmlFor="textarea" className="form__label">
                 Content
               </label>
             </div>

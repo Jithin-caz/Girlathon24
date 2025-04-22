@@ -54,18 +54,16 @@ export default function Navbar() {
           <ul>
             <li
               id="hero-a"
-              className={`lin ${
-                activeSection === "HERO" ? "link-active" : "link-passive"
-              }`}
+              className={`lin ${activeSection === "HERO" ? "link-active" : "link-passive"
+                }`}
             >
               <a href="#HERO">Home</a>
             </li>
             <li
               id="hero-nav"
               style={{ display: "none" }}
-              className={`lin ${
-                activeSection === "HERO" ? "link-active" : "link-passive"
-              }`}
+              className={`lin ${activeSection === "HERO" ? "link-active" : "link-passive"
+                }`}
             >
               <NavLink
                 to="/"
@@ -81,9 +79,8 @@ export default function Navbar() {
             <a href="#ABOUT">
               {" "}
               <li
-                className={`lin ${
-                  activeSection === "ABOUT" ? "link-active" : "link-passive"
-                }`}
+                className={`lin ${activeSection === "ABOUT" ? "link-active" : "link-passive"
+                  }`}
               >
                 About
               </li>
@@ -91,14 +88,13 @@ export default function Navbar() {
             <a href="#SPONSERS">
               {" "}
               <li
-                className={`lin ${
-                  activeSection === "SPONSERS" ? "link-active" : "link-passive"
-                }`}
+                className={`lin ${activeSection === "SPONSERS" ? "link-active" : "link-passive"
+                  }`}
               >
                 Sponsors
               </li>
             </a>
-            <a href="#FAQ">
+            {/* <a href="#FAQ">
               {" "}
               <li
                 className={`lin ${
@@ -107,14 +103,13 @@ export default function Navbar() {
               >
                 FAQ
               </li>
-            </a>
+            </a> */}
 
             <a href="#CONTACT">
               {" "}
               <li
-                className={`lin ${
-                  activeSection === "CONTACT" ? "link-active" : "link-passive"
-                }`}
+                className={`lin ${activeSection === "CONTACT" ? "link-active" : "link-passive"
+                  }`}
               >
                 Contact
               </li>
@@ -155,9 +150,8 @@ export default function Navbar() {
         ></i>
       </div>
       <section
-        className={`${
-          Nav ? "navigation-list-mobile" : "navigation-list-mobile-active"
-        }`}
+        className={`${Nav ? "navigation-list-mobile" : "navigation-list-mobile-active"
+          }`}
       >
         <ul>
           <li className="lin" id="hero-amob">
