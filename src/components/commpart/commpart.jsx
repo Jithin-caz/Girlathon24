@@ -6,7 +6,7 @@ export default function CommPart() {
   return (
     <section id="SPONSERS" className="commSec p-5">
       <div>
-        <h1>Sponsors</h1>
+        <h1>Previous Sponsors</h1>
       </div>
       <div
         style={{
@@ -26,15 +26,15 @@ export default function CommPart() {
               target="_blank"
               className="card card1"
             >
-               <img src='/images/kalikitech.png' style={{ width:'100%' }}/>
+              <img src='/images/kalikitech.png' style={{ width: '100%' }} />
             </a>
           </div>
         </div>
         <div className="sponser-line">
           <div className="sponser sponser2">
             <a href="" target="_blank" className="card1">
-            <img src='/images/MACE_N_America.png' style={{ width:'100%' }}/>
-             
+              <img src='/images/MACE_N_America.png' style={{ width: '100%' }} />
+
             </a>
           </div>
           <div className="sponser sponser3">
@@ -43,7 +43,7 @@ export default function CommPart() {
               target="_blank"
               className="card1"
             >
-                <img src='/images/MACE_QATAR.png' style={{ width:'100%' }}/>
+              <img src='/images/MACE_QATAR.png' style={{ width: '100%' }} />
             </a>
           </div>
         </div>

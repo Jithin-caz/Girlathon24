@@ -20,15 +20,15 @@ export default function landing() {
     <div style={{ overflow: "clip" }}>
       <Hero />
       <About />
-      <Prize />
+      {/* <Prize /> */}
       <Previous />
       <Timeline />
-      <Tracks />
+      {/* <Tracks /> */}
       <CommPart />
       <CommPart2 />
       <Media />
       <Certificate />
-      <FAQPage />
+      {/* <FAQPage /> */}
       <Contact />
       <Footer />
     </div>

@@ -128,19 +128,19 @@ function Hero() {
             style={{ paddingTop: "1rem" }}
           >
             <h1 >GIRLATHON</h1>
-            <h2>2024</h2>
+            <h2>2025</h2>
           </div>
           <div className="desc">
             <h6 className="typing-animation">
               3 week long learning and hackathon organized by{" "}
-              <span className="text-Gdsc">GDSC MACE {"  "}</span>
+              <span className="text-Gdsc">DSC MACE {"  "}</span>
               {"  "}
             </h6>
             <br />
 
             <h3>
               <b>
-                <span className="text-danger"> REGISTRATIONS CLOSED</span>
+                <span className="text-danger"> COMING SOON</span>
               </b>
             </h3>
           </div>

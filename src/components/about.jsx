@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import {ParallaxProvider,Parallax} from 'react-scroll-parallax'
+import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
 export default function About() {
   return (
     <section
@@ -30,7 +30,7 @@ export default function About() {
           color: "white",
         }}
       >
-        <h1  className="about-bg-text" >about</h1>{" "}
+        <h1 className="about-bg-text" >about</h1>{" "}
       </div>
       <Container
         style={{ color: "white", paddingTop: "5rem", paddingBottom: "5rem" }}
@@ -39,11 +39,11 @@ export default function About() {
           <Col lg={6}>
             <p>
               <span style={{ fontSize: "2rem" }}>
-                <b>About GDSC MACE</b>
+                <b>About DSC MACE</b>
                 <br></br>
               </span>
-              <br></br>Welcome to GDSC MACE, the dynamic Google Developer Student Club chapter at Mar Athanasius College of Engineering. Established in 2020, we've rapidly evolved into a vibrant platform for student innovation. Our mission is to enhance potential abilities through hands-on workshops, coding competitions, and engaging tech talks.
-               GDSC MACE is more than a club; it's a gateway to the latest in technology, fostering a mindset of continuous learning. Join us as we shape the tech leaders of tomorrow, making an impact at Mar Athanasius College of Engineering. Innovation meets opportunity here!
+              <br></br>Welcome to DSC MACE, the dynamic Developer Student Club chapter at Mar Athanasius College of Engineering. Established in 2020, we've rapidly evolved into a vibrant platform for student innovation. Our mission is to enhance potential abilities through hands-on workshops, coding competitions, and engaging tech talks.
+              DSC MACE is more than a club; it's a gateway to the latest in technology, fostering a mindset of continuous learning. Join us as we shape the tech leaders of tomorrow, making an impact at Mar Athanasius College of Engineering. Innovation meets opportunity here!
             </p>
           </Col>{" "}
           <Col lg={6}>
@@ -63,12 +63,12 @@ export default function About() {
                 <b>About Girlathon</b>
               </span>
               <br></br>
-              <br></br>Welcome to Girlathon 2024, an inclusive hackathon exclusively designed for those who identify as women. Organized by the Google Developers Student Club (GDSC)
-               at Mar Athanasius College of Engineering (MACE), Girlathon aims to advance and excel women in technology by fostering innovation and problem-solving. Taking place from 
-               March 16 to April 6, 2024, at Kerala Startup Mission, Kalamassery, Kochi, India, this beginner-friendly event provides proficient mentorship, guidance, and support to 
-               encourage and celebrate women's participation in STEM fields. Engage in hands-on projects that encourage innovation, address real-world challenges, and showcase the incredible
-                potential of women in tech. Benefit from experienced mentors who are passionate about supporting and guiding women in their tech journeys. Join us in this empowering experience,
-                 celebrating women's achievements in technology.
+              <br></br>Welcome to Girlathon 2025, an inclusive hackathon exclusively designed for those who identify as women. Organized by the Developers Student Club (DSC)
+              at Mar Athanasius College of Engineering (MACE), Girlathon aims to advance and excel women in technology by fostering innovation and problem-solving. Taking place from
+              June 1st - July 26th, 2025, at Kerala Startup Mission, Kalamassery, Kochi, India, this beginner-friendly event provides proficient mentorship, guidance, and support to
+              encourage and celebrate women's participation in STEM fields. Engage in hands-on projects that encourage innovation, address real-world challenges, and showcase the incredible
+              potential of women in tech. Benefit from experienced mentors who are passionate about supporting and guiding women in their tech journeys. Join us in this empowering experience,
+              celebrating women's achievements in technology.
             </p>
           </Col>
         </Row>

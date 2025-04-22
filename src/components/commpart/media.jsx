@@ -4,7 +4,7 @@ export default function Media() {
   return (
     <section className="media-part p-5" style={{ minHeight: "40dvh" }}>
       <div>
-        <h1>Media Partner</h1>
+        <h1>Previous Media Partner</h1>
       </div>
       <div
         style={{
@@ -24,7 +24,7 @@ export default function Media() {
               target="_blank"
               className="card1"
             >
-                <img src='images/media_one.png' style={{ width:'100%' }}/>
+              <img src='images/media_one.png' style={{ width: '100%' }} />
             </a>
           </div>
         </div>

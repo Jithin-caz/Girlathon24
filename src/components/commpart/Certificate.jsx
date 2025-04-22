@@ -4,7 +4,7 @@ export default function Certificate() {
   return (
     <section className="certi-part p-5" style={{ minHeight: "40dvh" }}>
       <div>
-        <h1>Certificate Partner</h1>
+        <h1>Previous Certificate Partner</h1>
       </div>
       <div
         style={{
@@ -24,8 +24,8 @@ export default function Certificate() {
               target="_blank"
               className="card1"
             >
-           
-            <img src='images/pindown.png' style={{ width:'100%' }}/>
+
+              <img src='images/pindown.png' style={{ width: '100%' }} />
             </a>
           </div>
         </div>
