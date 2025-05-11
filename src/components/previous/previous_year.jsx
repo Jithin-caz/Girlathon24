@@ -121,7 +121,7 @@ const Previous = () => {
                       }}
                     >
                       <img
-                        src={`images/prev/p${imageName}.jpg`}
+                        src={`images/prev/p${imageName}.jpeg`}
                         className="images"
                         style={{
                           position: "absolute",
@@ -196,8 +196,8 @@ const Previous = () => {
                     className="d-block w-100 h-100"
                     src={
                       hoveredIndex == null
-                        ? `images/prev/p${imageName}.jpg`
-                        : `images/prev/p${currentImageIndex + 1}.jpg`
+                        ? `images/prev/p${imageName}.jpeg`
+                        : `images/prev/p${currentImageIndex + 1}.jpeg`
                     }
                     alt={`Slide ${index + 1}`}
                     style={{ height: "100%" }}

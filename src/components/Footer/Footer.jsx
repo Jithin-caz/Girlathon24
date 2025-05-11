@@ -7,7 +7,7 @@ export default function Footer() {
     <div className="Footer row" style={{ margin: "0px" }}>
       <div className="Footer-Top">
         <a href="#">
-          <img src="/images/GDSC.png" alt="" />
+          <img src="/images/GDSCfooter.png" alt="" />
           <span>DSC MACE</span>
         </a>
         <p>Connect with Us</p>
