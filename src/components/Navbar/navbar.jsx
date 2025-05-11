@@ -48,7 +48,7 @@ export default function Navbar() {
           style={{ height: "2rem", 
             display: "flex", alignItems: "center" }}
         >
-          <img src="/images/GDSC.png" style={{ height: "190%" ,padding:"0.6rem", boxShadow:"5px 5px 80px inset rgba(255, 255, 255, 0.4) ",borderRadius:"20%"}} alt="" />
+          <img src="/images/GDSC.png" style={{ height: "190%" ,padding:"0.6rem",borderRadius:"20%"}} alt="" />
         </NavLink>
 
         <div className="navigation-links col">
@@ -137,7 +137,7 @@ export default function Navbar() {
         <NavLink
           to="/"
           className="logo col"
-          style={{ height: "2rem", display: "flex", alignItems: "center" }}
+          style={{ height: "1.2rem", display: "flex", alignItems: "center" }}
         >
           <img src="/images/GDSC.png" style={{ height: "190%" }} alt="" />
         </NavLink>
