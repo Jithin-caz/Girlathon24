@@ -137,7 +137,7 @@ export default function Navbar() {
         <NavLink
           to="/"
           className="logo col"
-          style={{ height: "1.2rem", display: "flex", alignItems: "center" }}
+          style={{ height: "0.8rem", display: "flex", alignItems: "center" }}
         >
           <img src="/images/GDSC.png" style={{ height: "190%" }} alt="" />
         </NavLink>

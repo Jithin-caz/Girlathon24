@@ -236,7 +236,7 @@ const Previous = () => {
               className="mySwiper"
             >
               {repeatedImages.map((imgInd) => <SwiperSlide key={imgInd}>
-                <img src={`images/prev/p${imgInd}.jpg`} style={{ borderRadius: '.7rem' }} />
+                <img src={`images/prev/p${imgInd}.jpeg`} style={{ borderRadius: '.7rem' }} />
               </SwiperSlide>)}
 
             </Swiper>
