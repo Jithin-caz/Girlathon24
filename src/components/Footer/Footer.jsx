@@ -15,7 +15,7 @@ export default function Footer() {
           <a href="https://x.com/gdsc_mace?s=20" target="_blank">
             <i className="bi bi-twitter"></i>
           </a>
-          <a href="https://www.instagram.com/gdsc_mace?igsh=MTIwaTdwY3IwaWJnZw==" target="_blank">
+          <a href="https://www.instagram.com/dsc_mace/" target="_blank">
             <i className="bi bi-instagram"></i>
           </a>
           <a href="https://www.linkedin.com/company/gdsc-mace/" target="_blank">

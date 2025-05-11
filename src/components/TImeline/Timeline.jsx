@@ -27,7 +27,7 @@ export default function Timeline() {
               style={{ width: "100%", height: "110%" }}
             />
           }
-          date="20th May 2025"
+          date="18th May 2025"
         >
           <h3 className="timeline-heading">
             Registration and Idea Submission Starts
@@ -49,7 +49,7 @@ export default function Timeline() {
               style={{ width: "80%", height: "80%", paddingLeft: ".3rem" }}
             />
           }
-          date="10th June 2025"
+          date="31st May 2025"
         >
           <h3 className="timeline-heading">Registration closes</h3>
         </VerticalTimelineElement>
@@ -67,32 +67,13 @@ export default function Timeline() {
           icon={
             <img src="/images/anoun.png" alt="Icon" style={{ width: "100%" }} />
           }
-          date="31st May 2025"
+          date="1st June 2025"
         >
           <h3 className="timeline-heading">
             Announcement of Shortlisted participants stage 1
           </h3>
         </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--registration"
-          contentStyle={{
-            background: "#f2f2f200",
-            border: "2px solid white",
-            borderRadius: "20px",
-          }}
-          contentArrowStyle={{ borderRight: "10px solid white" }}
-          iconStyle={{ background: "#0057E7" }}
-          icon={
-            <img
-              src="/images/mentor.png"
-              alt="Icon"
-              style={{ width: "90%", height: "80%" }}
-            />
-          }
-          date="15th June 2025"
-        >
-          <h3 className="timeline-heading">Announcement of Shortlisted participants stage 2</h3>
-        </VerticalTimelineElement>
+        
         <VerticalTimelineElement
           className="vertical-timeline-element--registration"
           contentStyle={{
