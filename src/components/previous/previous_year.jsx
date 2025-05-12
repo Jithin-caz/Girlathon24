@@ -15,7 +15,7 @@ import { Autoplay, EffectCoverflow, Pagination, Navigation } from 'swiper/module
 
 
 const Previous = () => {
-  const chars = ["G", "I", "R", "L", "A", "T", "H", "O", "N", '@', '2', '4'];
+  const chars = ["G", "I", "R", "L", "A", "T", "H", "O", "N", '@', '2', '5'];
   var x = -1;
   const repeatedImages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -63,27 +63,27 @@ const Previous = () => {
           >
             <h2 id="heading-prev" className="fade-up" style={{ fontSize: "4rem", textAlign: 'left' }}
               data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
-              Girlathon @2024
+              Girlathon @2025
             </h2>
 
             <p
               className="fade-up" id="big_txt" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
               style={{ color: "white", textAlign: "left" }}
             >
-              Dive into the transformative world of Girlathon '24, the celebrated annual GDSC hackathon at Mar Athanasius College.
+              Dive into the transformative world of Girlathon '25, the celebrated annual GDSC hackathon at Mar Athanasius College.
               This empowering event serves as a dedicated platform, spotlighting and honoring the accomplishments of women in technology.
-              Beyond merely showcasing coding proficiency, Girlathon '24 is a canvas for boundless creativity and the birthplace of innovative
+              Beyond merely showcasing coding proficiency, Girlathon '25 is a canvas for boundless creativity and the birthplace of innovative
               solutions. Attendees immersed themselves in an environment enriched with inspiring speakers, mentor-guided challenges, and
               a collaborative spirit, fostering not just technical acumen but also critical networking opportunities. The holistic approach
               taken extends beyond coding, incorporating wellness sessions that emphasize the importance of balance in the fast-paced tech
-              landscape. Reflecting on the profound impact of this edition, it is evident that Girlathon '24 has played a pivotal role in
+              landscape. Reflecting on the profound impact of this edition, it is evident that Girlathon '25 has played a pivotal role in
               shaping a more inclusive tech industry. As we celebrate the numerous successes and achievements of this empowering initiative,
               we look forward to a continued commitment to the advancement and empowerment of women in technology at Mar Athanasius College.
             </p>
             <p className="fade-up" id="mob_txt" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
-              style={{ color: "white", textAlign: "left" }}>Discover Girlathon '24, the annual GDSC hackathon at Mar Athanasius College—an empowering platform spotlighting women in technology.
+              style={{ color: "white", textAlign: "left" }}>Discover Girlathon '25, the annual GDSC hackathon at Mar Athanasius College—an empowering platform spotlighting women in technology.
               This transformative event fosters creativity, innovation, and technical prowess through inspiring speakers, mentor-guided challenges, and a collaborative atmosphere. Beyond coding,
-              holistic elements, including wellness sessions, prioritize balance in the tech landscape. Girlathon '24 significantly contributes to shaping inclusivity in the industry, celebrating
+              holistic elements, including wellness sessions, prioritize balance in the tech landscape. Girlathon '25 significantly contributes to shaping inclusivity in the industry, celebrating
               successes, and committing to advancing women in technology at Mar Athanasius College.</p>
           </Col></Row>
         <Row className="tiles" style={{ rowGap: "3rem", paddingBottom: '2rem' }}>
