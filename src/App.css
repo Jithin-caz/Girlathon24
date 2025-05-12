@@ -1,6 +1,7 @@
 .hero-bg{
     position: relative;
-    background: url('/images/newHero3v2.png');
+    background: radial-gradient(circle at bottom right, black, #d9448c 85%);
+    /* background: url('/images/newHero3v3.png'); */
     background-size: cover;
     height: 100dvh;
     width: 100dvw;
@@ -28,7 +29,8 @@
     content: '';
     width: 100%;
     height: 100%;
-    background: url('/images/newHero.png') no-repeat;
+    background: url('/images/newHerov2.png') no-repeat;
+    background-blend-mode: multiply;
     background-size: clamp(35rem,50%,100rem);
     background-position: -10% 100%;
     opacity: 0.7;
@@ -96,14 +98,16 @@
     background-clip: text;
     -webkit-background-clip: text;
     -moz-background-clip: text; */
-    color: rgba(255, 255, 255, 0.797);
+    /* color: rgba(255, 255, 255, 0.797); */
+    color: #ffffff; /* Changed to white for better visibility */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Added shadow for contrast */
 }
 
 .title h2{
     text-align: right;
     line-height: 0.1;
     font-weight: bold;
-    color:#5B5B5B;
+    color:#988896;
 }
 @keyframes parallax {
     to{
@@ -200,7 +204,8 @@ letter-spacing: -10px;
     font-size: larger;
     font-weight: bold;
     color: transparent;
-    background: url("/images/g.png");
+    /* background: url("/images/g1.png"); */
+    background: #ff5a00;
     background-size: contain;
     background-clip: text;
    
