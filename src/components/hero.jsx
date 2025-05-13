@@ -91,7 +91,7 @@ function Hero() {
       data-aos-duration="1300"
       data-aos-once="true"
     >
-      <img className="hero-image" src="images/backgroundAbstarct.png" />
+      <img className="hero-image" src="images/backgroundAbstarctV1.png" />
       <div className="hex-grid" id="hexGrid">
         {/* <Link to="/Signin" className="reg-btn">
           Regsister Now &#8599;
@@ -132,7 +132,7 @@ function Hero() {
           </div>
           <div className="desc">
             <h6 className="typing-animation">
-              3 week long learning and hackathon organized by{" "}
+              9 week long learning and hackathon organized by{" "}
               <span className="text-Gdsc">DSC MACE {"  "}</span>
               {"  "}
             </h6>
