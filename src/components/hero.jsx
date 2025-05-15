@@ -30,8 +30,17 @@ function Hero() {
     // const timer = setTimeout(() => {
     //   scrollUp()
     // }, 1000);
-
     generateHexGrid();
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    console.log("script devfolio added");
+    
+    return () => {
+        document.body.removeChild(script);
+      }
   }, []);
 
   const generateHexGrid = () => {
@@ -74,14 +83,9 @@ function Hero() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
-    }, 1000);
+    }, 1000);})
+  
 
-    return () => clearTimeout(timer);
-  });
-
-  const formatTime = (value) => {
-    return value < 10 ? `0${value}` : value;
-  };
 
   return (
     <section
@@ -137,14 +141,17 @@ function Hero() {
               {"  "}
             </h6>
             <br />
-
-            <h3>
-              <b>
-                <span className="text-danger"> COMING SOON</span>
-              </b>
-            </h3>
+            
           </div>
+          {/* Devfolio Apply Button */}
+          <div 
+          className="apply-button" 
+          data-hackathon-slug="girlathon" 
+          data-button-theme="light"
+          style={{ height: "44px", width: "312px"}}
+        > </div>
         </div>
+        
         {
           //<iframe title='J' src='https://my.spline.design/readyplayermelookingaround-0c0f2a2232256d31c16ec20f9e01ab2c/' frameborder='0' width='100%' height='100%'></iframe>
         }
@@ -181,7 +188,9 @@ function Hero() {
         >
           Register now &#x2197;
         </Link> */}
+    
       </div>
+      {/* Devfolio Apply Button */}
     </section>
   );
 }
