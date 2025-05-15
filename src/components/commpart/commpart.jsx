@@ -46,6 +46,28 @@ export default function CommPart() {
               <img src='/images/MACE_QATAR.png' style={{ width: '100%' }} />
             </a>
           </div>
+          {/* Sponsor logos */}
+<div 
+classname="sponser sponsers"
+  style={{
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    gap: "2rem",
+    alignItems: "center"
+  }}
+>
+  <img 
+    src="/images/devfolio-logo.png" 
+    alt="DEVFOLIO LOGO" 
+    style={{ height: "40px" }} 
+  />
+  <img 
+    src="/images/ethindia-logo.png" 
+    alt="ETHINDIA LOGO" 
+    style={{ height: "40px" }} 
+  />
+</div>
         </div>
       </div>
     </section>
