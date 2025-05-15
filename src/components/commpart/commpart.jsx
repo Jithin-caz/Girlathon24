@@ -46,7 +46,8 @@ export default function CommPart() {
               <img src='/images/MACE_QATAR.png' style={{ width: '100%' }} />
             </a>
           </div>
-          {/* Sponsor logos */}
+        </div>
+         {/* Sponsor logos */}
 <div 
 classname="sponser sponsers"
   style={{
@@ -68,7 +69,6 @@ classname="sponser sponsers"
     style={{ height: "40px" }} 
   />
 </div>
-        </div>
       </div>
     </section>
     //     <section
