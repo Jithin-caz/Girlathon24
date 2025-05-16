@@ -23,7 +23,7 @@ function App() {
     });
     const timer = setTimeout(() => {
       setLoading(true); // Set loading to false after a certain time or when your data has loaded
-    }, 500);
+    }, 250);
     return () => clearTimeout(timer);
   }, []);
   return (
