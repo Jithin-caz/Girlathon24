@@ -35,32 +35,32 @@
 .tl {
   top: 0;
   left: 0;
-  border-top: 8px solid red;
-  border-left: 10px solid red;
+  border-top: 8px solid #fff;
+  border-left: 10px solid #fff;
   animation: spin 1s ease-in-out infinite;
 }
 
 .tr {
   top: 0;
   right: 0;
-  border-top: 8px solid #0575E6;
-  border-right: 10px solid #0575E6;
+  border-top: 8px solid #ff5a00;
+  border-right: 10px solid #ff5a00;
   animation: spin 1s ease-in-out infinite;
 }
 
 .br {
   bottom: 0;
   right: 0;
-  border-bottom: 8px solid  #00F260;
-  border-right: 10px solid  #00F260;
+  border-bottom: 8px solid  #fff;
+  border-right: 10px solid  #fff;
   animation: spin 1s ease-in-out infinite;
 }
 
 .bl {
   bottom: 0;
   left: 0;
-  border-bottom: 8px solid  #e9e93e;
-  border-left: 10x solid #e9e93e;
+  border-bottom: 8px solid  #ff5a00;
+  border-left: 10x solid #ff5a00;
   animation: spin 1s ease-in-out infinite;
 }
 
