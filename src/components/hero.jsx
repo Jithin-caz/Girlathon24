@@ -30,7 +30,12 @@ function Hero() {
     // const timer = setTimeout(() => {
     //   scrollUp()
     // }, 1000);
+    devScript();
     generateHexGrid();
+    
+  }, []);
+  
+  const devScript=()=>{
     const script = document.createElement('script');
     script.src = 'https://apply.devfolio.co/v2/sdk.js';
     script.async = true;
@@ -41,8 +46,7 @@ function Hero() {
     return () => {
         document.body.removeChild(script);
       }
-  }, []);
-
+  }
   const generateHexGrid = () => {
     const hexGrid = document.getElementById("hexGrid");
     const numColumns = 14;
@@ -85,7 +89,6 @@ function Hero() {
       setTimeLeft(calculateTimeLeft());
     }, 1000);})
   
-
 
   return (
     <section
@@ -131,7 +134,7 @@ function Hero() {
             data-aos-once="true"
             style={{ paddingTop: "1rem" }}
           >
-            <h1 >GIRLATHON</h1>
+            <h1>GIRLATHON</h1>
             <h2>2025</h2>
           </div>
           <div className="desc">
@@ -141,15 +144,15 @@ function Hero() {
               {"  "}
             </h6>
             <br />
-            
           </div>
           {/* Devfolio Apply Button */}
-          <div 
-          className="apply-button" 
-          data-hackathon-slug="girlathon" 
-          data-button-theme="light"
-          style={{ height: "44px", width: "312px"}}
-        > </div>
+
+            <button 
+              className="apply-button" 
+              data-hackathon-slug="girlathon" 
+              data-button-theme="light"
+              style={{ height: "44px", width: "312px" ,zIndex:"100"}}
+            >Apply with devfolio</button>
         </div>
         
         {
@@ -164,6 +167,7 @@ function Hero() {
           </Link>
         </div>
       </div> */}
+
       <div
         style={{
           position: "absolute",
@@ -188,9 +192,7 @@ function Hero() {
         >
           Register now &#x2197;
         </Link> */}
-    
       </div>
-      {/* Devfolio Apply Button */}
     </section>
   );
 }
