@@ -99,11 +99,6 @@ function Hero() {
       data-aos-once="true"
     >
       <img className="hero-image" src="images/backgroundAbstarctV1.png" />
-      <div className="hex-grid" id="hexGrid">
-        {/* <Link to="/Signin" className="reg-btn">
-          Regsister Now &#8599;
-        </Link> */}
-      </div>
 
       <div
         className="hero row fade-up"
@@ -146,8 +141,7 @@ function Hero() {
             <br />
           </div>
           {/* Devfolio Apply Button */}
-
-            <button 
+          <button 
               className="apply-button" 
               data-hackathon-slug="girlathon" 
               data-button-theme="light"
@@ -191,6 +185,11 @@ function Hero() {
           }}
         >
           Register now &#x2197;
+        </Link> */}
+      </div>
+      <div className="hex-grid" id="hexGrid">
+        {/* <Link to="/Signin" className="reg-btn">
+          Regsister Now &#8599;
         </Link> */}
       </div>
     </section>
