@@ -14,6 +14,9 @@ import ResetPass from "./components/SIgnIn/resetpass";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Loader from "./components/loader/loader";
+import Hero from "./components/hero.jsx";
+
+
 
 function App() {
   const [loading, setLoading] = useState(false)
