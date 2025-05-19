@@ -47,6 +47,30 @@ export default function CommPart() {
             </a>
           </div>
         </div>
+         {/* Sponsor logos */}
+        <div 
+        className="sponser sponser4"
+          style={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            gap: "2rem",
+            alignItems: "center"
+          }}
+        >
+          <a href="https://devfolio.co/" className="card1">
+  <img 
+    src="/images/devfolio-logo.png" 
+    alt="DEVFOLIO LOGO" 
+    style={{height:"50%"}} 
+  /></a>
+  <a href="https://ethindia2024.devfolio.co/" className="card1">
+  <img 
+    src="/images/ethindia-logo.png" 
+    alt="ETHINDIA LOGO" 
+    style={{ height:"50%" }} 
+  /></a>
+</div>
       </div>
     </section>
     //     <section

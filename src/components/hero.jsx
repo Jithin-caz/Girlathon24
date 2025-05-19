@@ -30,10 +30,23 @@ function Hero() {
     // const timer = setTimeout(() => {
     //   scrollUp()
     // }, 1000);
-
+    devScript();
     generateHexGrid();
+    
   }, []);
-
+  
+  const devScript=()=>{
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    console.log("script devfolio added");
+    
+    return () => {
+        document.body.removeChild(script);
+      }
+  }
   const generateHexGrid = () => {
     const hexGrid = document.getElementById("hexGrid");
     const numColumns = 14;
@@ -74,14 +87,8 @@ function Hero() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  });
-
-  const formatTime = (value) => {
-    return value < 10 ? `0${value}` : value;
-  };
+    }, 1000);})
+  
 
   return (
     <section
@@ -91,12 +98,7 @@ function Hero() {
       data-aos-duration="1300"
       data-aos-once="true"
     >
-      <img className="hero-image" src="images/backgroundAbstarct.png" />
-      <div className="hex-grid" id="hexGrid">
-        {/* <Link to="/Signin" className="reg-btn">
-          Regsister Now &#8599;
-        </Link> */}
-      </div>
+      <img className="hero-image" src="images/backgroundAbstarctV1.png" />
 
       <div
         className="hero row fade-up"
@@ -127,24 +129,26 @@ function Hero() {
             data-aos-once="true"
             style={{ paddingTop: "1rem" }}
           >
-            <h1 >GIRLATHON</h1>
+            <h1>GIRLATHON</h1>
             <h2>2025</h2>
           </div>
           <div className="desc">
             <h6 className="typing-animation">
-              3 week long learning and hackathon organized by{" "}
+              9 week long learning and hackathon organized by{" "}
               <span className="text-Gdsc">DSC MACE {"  "}</span>
               {"  "}
             </h6>
             <br />
-
-            <h3>
-              <b>
-                <span className="text-danger"> COMING SOON</span>
-              </b>
-            </h3>
           </div>
+          {/* Devfolio Apply Button */}
+          <button 
+              className="apply-button" 
+              data-hackathon-slug="girlathon" 
+              data-button-theme="light"
+              style={{ height: "44px", width: "312px" ,zIndex:"100"}}
+            >Apply with devfolio</button>
         </div>
+        
         {
           //<iframe title='J' src='https://my.spline.design/readyplayermelookingaround-0c0f2a2232256d31c16ec20f9e01ab2c/' frameborder='0' width='100%' height='100%'></iframe>
         }
@@ -157,6 +161,7 @@ function Hero() {
           </Link>
         </div>
       </div> */}
+
       <div
         style={{
           position: "absolute",
@@ -180,6 +185,11 @@ function Hero() {
           }}
         >
           Register now &#x2197;
+        </Link> */}
+      </div>
+      <div className="hex-grid" id="hexGrid">
+        {/* <Link to="/Signin" className="reg-btn">
+          Regsister Now &#8599;
         </Link> */}
       </div>
     </section>
