@@ -26,7 +26,11 @@ const FAQPage = () => {
     },
     {
       question: "Can we register as a team?",
-      answer: " You can register as a team of four members maximum.",
+      answer: " You can register as a team with a minimum of two members and a maximum of four members.",
+    },
+    {
+      question: "How do we choose a problem statement for the hackathon? ",
+      answer: " Participants can choose any one of the three themes: Digital Privacy, Mental Health, or Disaster Management. Under each theme, there are two predefined problem statements. In addition to these, there is also an Open Innovation option under each theme, where participants can come up with their own relevant problem statement and submit an abstract based on it.",
     },
     {
       question: "What is mode of hackathon?",
@@ -34,11 +38,11 @@ const FAQPage = () => {
     },
     {
       question: "What is the time period of project development phase?",
-      answer: "3 weeks.",
+      answer: " 8 weeks.",
     },
     {
       question: "Is there any kind of support provided for project development?",
-      answer:"Yes, mentors are allocated for each team  to provide guidance and support throughout the project development process.",
+      answer:" Yes, mentors are allocated for each team  to provide guidance and support throughout the project development process.",
     },
    
   ];

@@ -65,7 +65,7 @@ export default function About() {
               <br></br>
               <br></br>Welcome to Girlathon 2025, an inclusive hackathon exclusively designed for those who identify as women. Organized by the Developers Student Club (DSC)
               at Mar Athanasius College of Engineering (MACE), Girlathon aims to advance and excel women in technology by fostering innovation and problem-solving. Taking place from
-              June 1st - July 26th, 2025, at Kerala Startup Mission, Kalamassery, Kochi, India, this beginner-friendly event provides proficient mentorship, guidance, and support to
+              June 1st - July 26th, 2025, this beginner-friendly event provides proficient mentorship, guidance, and support to
               encourage and celebrate women's participation in STEM fields. Engage in hands-on projects that encourage innovation, address real-world challenges, and showcase the incredible
               potential of women in tech. Benefit from experienced mentors who are passionate about supporting and guiding women in their tech journeys. Join us in this empowering experience,
               celebrating women's achievements in technology.
