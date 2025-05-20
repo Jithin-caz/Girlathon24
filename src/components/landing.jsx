@@ -23,12 +23,12 @@ export default function landing() {
       {/* <Prize /> */}
       <Previous />
       <Timeline />
-      {/* <Tracks /> */}
+      <Tracks /> 
       <CommPart />
       <CommPart2 />
       <Media />
       <Certificate />
-      {/* <FAQPage /> */}
+      <FAQPage /> 
       <Contact />
       <Footer />
     </div>

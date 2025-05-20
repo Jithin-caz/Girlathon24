@@ -134,7 +134,7 @@ function Hero() {
           </div>
           <div className="desc">
             <h6 className="typing-animation">
-              9 week long learning and hackathon organized by{" "}
+              8 week long learning and hackathon organized by{" "}
               <span className="text-Gdsc">DSC MACE {"  "}</span>
               {"  "}
             </h6>
