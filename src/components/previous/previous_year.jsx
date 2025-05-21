@@ -70,7 +70,7 @@ const Previous = () => {
               className="fade-up" id="big_txt" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
               style={{ color: "white", textAlign: "left" }}
             >
-              Dive into the transformative world of Girlathon '25, the celebrated annual GDSC hackathon at Mar Athanasius College.
+              Dive into the transformative world of Girlathon '25, the celebrated annual DSC hackathon at Mar Athanasius College.
               This empowering event serves as a dedicated platform, spotlighting and honoring the accomplishments of women in technology.
               Beyond merely showcasing coding proficiency, Girlathon '25 is a canvas for boundless creativity and the birthplace of innovative
               solutions. Attendees immersed themselves in an environment enriched with inspiring speakers, mentor-guided challenges, and

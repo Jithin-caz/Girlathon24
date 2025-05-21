@@ -10,7 +10,7 @@ const themes = [
     header: 'Mental Health',
     img: 'health.png',
     problems: [
-      'Unsafe Commutes and Street Harassment: Street harassment and unsafe commutes remain prevalent challenges for women and girls, particularly during nighttime travel or in remote areas. How can we enhance personal safety and provide effective protection in such situations?',
+      'Unsafe Commutes and Street Harassment: Street harassment and unsafe commutes remain prevalent challenges for women and girls, particularly during night-time travel or in remote areas. How can we enhance personal safety and provide effective protection in such situations?',
       'Lack of Safe and Anonymous Reporting Channels: Fear of backlash, stigma, and lack of anonymity deter many students from reporting instances of harassment or abuse, allowing serious issues to go unaddressed. How can we create a safe and effective channel for students to voice their concerns without fear of exposure?',
       'Choose your own problem statement related to this track and propose a solution for it.',
     ],
