@@ -22,7 +22,7 @@ const FAQPage = () => {
     },
     {
       question: "what is the criteria of participation?",
-      answer: " You should identify as a woman.",
+      answer: " You should be a woman.",
     },
     {
       question: "Can we register as a team?",

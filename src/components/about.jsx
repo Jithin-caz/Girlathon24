@@ -63,7 +63,7 @@ export default function About() {
                 <b>About Girlathon</b>
               </span>
               <br></br>
-              <br></br>Welcome to Girlathon 2025, an inclusive hackathon exclusively designed for those who identify as women. Organized by the Developers Student Club (DSC)
+              <br></br>Welcome to Girlathon 2025, an inclusive hackathon exclusively designed for women. Organized by the Developers Student Club (DSC)
               at Mar Athanasius College of Engineering (MACE), Girlathon aims to advance and excel women in technology by fostering innovation and problem-solving. Taking place from
               June 1st - July 26th, 2025, this beginner-friendly event provides proficient mentorship, guidance, and support to
               encourage and celebrate women's participation in STEM fields. Engage in hands-on projects that encourage innovation, address real-world challenges, and showcase the incredible

@@ -109,7 +109,7 @@ export default function Contact() {
                 <br></br>
                 <p>
                   {" "}
-                  3J39+JM3, College Junction Road, Kothamangalam, Kerala 686666
+                  3J39+HP, College Junction Road, Kothamangalam, Kerala 686666
                 </p>
               </div>
             </div>
