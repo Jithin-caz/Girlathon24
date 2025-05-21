@@ -3,50 +3,33 @@ import { Link } from "react-router-dom";
 
 function Hero() {
   const [loading, setLoading] = useState(false);
+
   const scrollDown = () => {
-    // Specify the number of pixels to scroll
-    const pixelsToScroll = 2000;
-
-    // Scroll down by the specified number of pixels
-    window.scrollBy({
-      top: pixelsToScroll,
-      left: 0,
-      behavior: "smooth", // Optional: adds smooth scrolling animation
-    });
+    window.scrollBy({ top: 2000, left: 0, behavior: "smooth" });
   };
+
   const scrollUp = () => {
-    // Specify the number of pixels to scroll
-    const pixelsToScroll = -2000;
-
-    // Scroll down by the specified number of pixels
-    window.scrollBy({
-      top: pixelsToScroll,
-      left: 0,
-      behavior: "smooth", // Optional: adds smooth scrolling animation
-    });
+    window.scrollBy({ top: -2000, left: 0, behavior: "smooth" });
   };
+
   useEffect(() => {
-    // scrollDown()
-    // const timer = setTimeout(() => {
-    //   scrollUp()
-    // }, 1000);
     devScript();
     generateHexGrid();
-    
   }, []);
-  
-  const devScript=()=>{
-    const script = document.createElement('script');
-    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+
+  const devScript = () => {
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
     console.log("script devfolio added");
-    
+
     return () => {
-        document.body.removeChild(script);
-      }
-  }
+      document.body.removeChild(script);
+    };
+  };
+
   const generateHexGrid = () => {
     const hexGrid = document.getElementById("hexGrid");
     const numColumns = 14;
@@ -57,18 +40,14 @@ function Hero() {
         const hexagon = document.createElement("div");
         hexagon.classList.add("hexagon");
         hexagon.style.marginTop = row % 2 === 0 ? "0" : "0vw";
-
         hexGrid.appendChild(hexagon);
       }
     }
   };
 
-  //timer code
-
   const calculateTimeLeft = () => {
     const difference = +new Date("2024-04-06") - +new Date();
     let timeLeft = {};
-
     if (difference > 0) {
       timeLeft = {
         days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -77,18 +56,16 @@ function Hero() {
         seconds: Math.floor((difference / 1000) % 60),
       };
     }
-
     return timeLeft;
   };
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-  let hex = [];
-  for (let i = 0; i < 100; i++) hex.push("");
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setTimeLeft(calculateTimeLeft());
-    }, 1000);})
-  
+    }, 1000);
+  });
 
   return (
     <section
@@ -108,20 +85,8 @@ function Hero() {
       >
         <div className="left col-lg-6"></div>
 
-        <div className="right col-lg-6">
-          {/* <div className="timer">
-            <h4 className="fade-up">Time Left</h4>
-            <h6 className="clock fade-up">
-              <span className="digit">{formatTime(timeLeft.days)}</span>
-              {"    "}days:{" "}
-              <span className="digit">{formatTime(timeLeft.hours)}</span>
-              {"    "}hrs:{" "}
-              <span className="digit">{formatTime(timeLeft.minutes)}</span>
-              {"    "}mins:{" "}
-              <span className="digit">{formatTime(timeLeft.seconds)}</span>
-              {"    "}secs
-            </h6>
-          </div> */}
+        {/* Responsive Right Section */}
+        <div className="right col-lg-6 flex flex-col items-center justify-center text-center px-4 md:items-center md:text-center">
           <div
             className="title fade-up"
             data-aos="zoom-out-up"
@@ -132,35 +97,30 @@ function Hero() {
             <h1>GIRLATHON</h1>
             <h2>2025</h2>
           </div>
+
           <div className="desc">
             <h6 className="typing-animation">
               8 week long learning and hackathon organized by{" "}
-              <span className="text-Gdsc">DSC MACE {"  "}</span>
-              {"  "}
+              <span className="text-Gdsc">DSC MACE</span>
             </h6>
             <br />
           </div>
-          {/* Devfolio Apply Button */}
-          <button 
-              className="apply-button" 
-              data-hackathon-slug="girlathon" 
-              data-button-theme="light"
-              style={{ height: "44px", width: "312px" ,zIndex:"100"}}
-            >Apply with devfolio</button>
+
+          <button
+            className="apply-button"
+            data-hackathon-slug="girlathon"
+            data-button-theme="light"
+            style={{
+              height: "44px",
+              width: "312px",
+              zIndex: "100",
+              marginTop: "1rem",
+            }}
+          >
+            Apply with devfolio
+          </button>
         </div>
-        
-        {
-          //<iframe title='J' src='https://my.spline.design/readyplayermelookingaround-0c0f2a2232256d31c16ec20f9e01ab2c/' frameborder='0' width='100%' height='100%'></iframe>
-        }
       </div>
-      {/* <div className="reg-btn-cont row">
-        <div className="col-6 oth"></div>
-        <div style={{ position:'absolute',zIndex:'90',top:'10rem',right:'50%' }}>
-          <Link to="/Signin" className="reg-btn" >
-            Register &#x2197;
-          </Link>
-        </div>
-      </div> */}
 
       <div
         style={{
@@ -172,26 +132,9 @@ function Hero() {
           justifyContent: "center",
           alignItems: "center",
         }}
-      >
-        {/* <Link
-          to="/Signin"
-          className="reg-btn"
-          onClick={() => {
-            document.getElementById("hero-navmob").style.display = "block";
-            document.getElementById("hero-amob").style.display = "none";
-            document.getElementById("hero-nav").style.display = "block";
-            document.getElementById("hero-nav").classList.remove("link-active");
-            document.getElementById("hero-a").style.display = "none";
-          }}
-        >
-          Register now &#x2197;
-        </Link> */}
-      </div>
-      <div className="hex-grid" id="hexGrid">
-        {/* <Link to="/Signin" className="reg-btn">
-          Regsister Now &#8599;
-        </Link> */}
-      </div>
+      ></div>
+
+      <div className="hex-grid" id="hexGrid"></div>
     </section>
   );
 }

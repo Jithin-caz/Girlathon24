@@ -1,16 +1,38 @@
-.commSec, .media-part, .certi-part
-{
-    min-height: 100dvh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background: url("images/backgroundAbstarct.png");
-    background-size: cover;
+/* Common section styling */
+.commSec,
+.media-part,
+.certi-part {
+  min-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: url("images/backgroundAbstarct.png") no-repeat center;
+  background-size: cover;
+  padding: 2rem;
 }
 
-.sponser{
+.commSec2 {
+  min-height: 70dvh;
+}
+
+/* Responsive height for different viewports */
+@media (max-width: 992px) {
+  .commSec2 {
+    min-height: 150dvh;
+  }
+}
+
+@media (max-width: 768px) {
+  .commSec {
+    min-height: auto;
+    padding: 2rem 1rem;
+  }
+}
+
+/* Sponsor container layout */
+.sponser {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,7 +40,8 @@
   background-repeat: no-repeat;
   background-position: center;
 }
-.sponser-line{
+
+.sponser-line {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -26,37 +49,21 @@
   justify-content: space-evenly;
   gap: 20px;
 }
-.commSec2
-{
-    min-height: 70dvh;
-}
 
-@media(max-width: 992px)
-{
-.commSec2
-{
-    min-height: 150dvh;
-}
-}
-
-@media(max-width: 768px)
-{
-.commSec
-{
-    min-height: 70dvh;
-}
-}
-
-@media screen and (max-width: 800px){
-  .sponser-line{
+/* Stack sponsor items vertically on small screens */
+@media screen and (max-width: 800px) {
+  .sponser-line {
     flex-direction: column;
+    gap: 1.5rem;
   }
 }
 
+/* Card style for sponsor logos */
 .card1 {
-  /* position: relative; */
-  width: 320px;
-  height: 240px;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  aspect-ratio: 4 / 3;
   background-color: #f2f2f200;
   border-radius: 10px;
   display: flex;
@@ -66,12 +73,29 @@
   perspective: 1000px;
   box-shadow: 0 0 0 5px #ffffff80;
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  min-width: 15rem;
+  padding: 1rem;
+  text-align: center;
 }
 
-.card{
-  width: 360px;
-  height: 280px;
+/* Larger card style for specific use */
+.card {
+  width: 100%;
+  max-width: 360px;
+  height: auto;
+}
+
+/* Make images responsive */
+.card1 img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Hover animation */
+.card1:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 }
 
 .card1 svg {
@@ -80,12 +104,11 @@
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.card1:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+.card1:hover svg {
+  scale: 0;
 }
 
-
+/* Card content flip effect (optional) */
 .card__content {
   position: absolute;
   top: 0;
@@ -111,13 +134,79 @@
   font-weight: 700;
 }
 
-.card1:hover svg {
-  scale: 0;
-}
-
 .card__description {
   margin: 10px 0 0;
   font-size: 14px;
   color: #777;
   line-height: 1.4;
+}
+.card1 {
+  width: 320px;
+  height: 240px;
+  background-color: #f2f2f200;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  perspective: 1000px;
+  box-shadow: 0 0 0 5px #ffffff80;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  min-width: 15rem;
+}
+
+.highlighted-sponsor {
+  border: 3px solid #7b2ff7;
+  border-radius: 12px;
+  padding: 10px;
+  background-color: rgba(123, 47, 247, 0.1);
+  box-shadow: 0 0 20px rgba(123, 47, 247, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Responsive size */
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.lighter-sponsor {
+  border: 2px solid #d8b4fe;
+  border-radius: 12px;
+  padding: 8px;
+  background-color: rgba(216, 180, 254, 0.2);
+  box-shadow: 0 0 10px rgba(216, 180, 254, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* Responsive size */
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+
+.highlighted-sponsor:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(123, 47, 247, 0.9);
+}
+
+
+
+.lighter-sponsor:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(216, 180, 254, 0.6);
+}
+@media (max-width: 768px) {
+  .highlighted-sponsor {
+    width: 90vw;
+    height: auto;
+    min-width: unset;
+  }
+}
+
+@media (max-width: 576px) {
+  .lighter-sponsor {
+    width: 80vw;
+    height: auto;
+    min-width: unset;
+  }
 }

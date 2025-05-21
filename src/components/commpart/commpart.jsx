@@ -4,159 +4,66 @@ import "./commpart.css";
 
 export default function CommPart() {
   return (
-    <section id="SPONSERS" className="commSec p-5">
-      <div>
-        <h1>Previous Sponsors</h1>
-      </div>
-      <div
-        style={{
-          width: "100%",
-          height: "80%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "25px",
-        }}
-      >
-        <div>
-          <div className="sponser sponser1">
-            <a
-              href="https://kalkitech.com/"
-              target="_blank"
-              className="card card1"
-            >
-              <img src='/images/kalikitech.png' style={{ width: '100%' }} />
-            </a>
-          </div>
-        </div>
-        <div className="sponser-line">
-          <div className="sponser sponser2">
-            <a href="" target="_blank" className="card1">
-              <img src='/images/MACE_N_America.png' style={{ width: '100%' }} />
+    <section id="SPONSERS" className="commSec py-5">
+      <Container>
+        <Row className="mb-4">
+          <Col xs={12}>
+            <h1 className="text-center">Our Sponsors</h1>
+          </Col>
+        </Row>
 
-            </a>
-          </div>
-          <div className="sponser sponser3">
-            <a
-              href="http://www.macealumniqatar.org/"
-              target="_blank"
-              className="card1"
-            >
-              <img src='/images/MACE_QATAR.png' style={{ width: '100%' }} />
-            </a>
-          </div>
-        </div>
-         {/* Sponsor logos */}
-        <div 
-        className="sponser sponser4"
-          style={{
-            width: "100%",
-            display: "flex",
-            justifyContent: "center",
-            gap: "2rem",
-            alignItems: "center"
-          }}
-        >
-          <a href="https://devfolio.co/" className="card1">
-  <img 
-    src="/images/devfolio-logo.png" 
-    alt="DEVFOLIO LOGO" 
-    style={{height:"50%"}} 
-  /></a>
-  <a href="https://ethindia2024.devfolio.co/" className="card1">
-  <img 
-    src="/images/ethindia-logo.png" 
-    alt="ETHINDIA LOGO" 
-    style={{ height:"50%" }} 
-  /></a>
-</div>
-      </div>
+{/* Sponsor: Kalkitech */}
+{/* Sponsor: Kalkitech */}
+<Row className="justify-content-center text-center mb-4">
+  <Col xs={12} sm={10} md={8} lg={6} xl={5}>
+    <a
+      href="https://kalkitech.com/"
+      target="_blank"
+      className="card1 highlighted-sponsor mx-auto"
+      rel="noreferrer"
+    >
+      <img
+        src="/images/kalikitech.png"
+        alt="Kalkitech Logo"
+        className="sponsor-img"
+      />
+    </a>
+  </Col>
+</Row>
+
+{/* Sponsor Logos: Devfolio and ETHIndia */}
+<Row className="justify-content-center g-4">
+  <Col xs={10} sm={6} md={4} className="text-center">
+    <a
+      href="https://devfolio.co/"
+      className="card1 lighter-sponsor"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <img
+        src="/images/devfolio-logo.png"
+        alt="DEVFOLIO LOGO"
+        className="sponsor-img"
+      />
+    </a>
+  </Col>
+  <Col xs={10} sm={6} md={4} className="text-center">
+    <a
+      href="https://ethindia2024.devfolio.co/"
+      className="card1 lighter-sponsor"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <img
+        src="/images/ethindia-logo.png"
+        alt="ETHINDIA LOGO"
+        className="sponsor-img"
+      />
+    </a>
+  </Col>
+</Row>
+
+      </Container>
     </section>
-    //     <section
-    //       id="SPONSERS"
-    //       className="commSec"
-    //       style={{
-    //         position: "relative",
-    //         overflow: "hidden",
-    //         display: "flex",
-    //         justifyContent: "center",
-    //       }}
-    //     >
-    //       <img
-    //         style={{
-    //           position: "absolute",
-    //           height: "100%",
-    //           opacity: ".6",
-    //           width: "100%",
-    //           zIndex: "2",
-    //         }}
-    //         src="images/backgroundAbstarct.png"
-    //       />
-    //       <div style={{ zIndex: "4", position: "absolute" }}>
-    //         <Container style={{ padding: "1rem" }}>
-    //           <Row
-    //             style={{ paddingTop: "2rem", paddingLeft: "2rem", rowGap: "2rem" }}
-    //           >
-    //             <Col sm={12}>
-    //               <h1
-    //                 style={{ textAlign: "center" }}
-    //                 data-aos="zoom-out-up"
-    //                 data-aos-duration="1300"
-    //                 data-aos-once="true"
-    //               >
-    //                 Sponsers
-    //               </h1>
-    //             </Col>
-    //             {/* <Col lg={6}  md={6}  style={{ display:'flex',justifyContent:'center',alignItems:'center' }} data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
-    //           <a href='https://fossunited.org/' target="_blank" className="card1">
-    //           <img src='/images/fossunited.png' style={{ width:'100%' }}/>
-    //   <div className="card__content">
-
-    //   </div>
-    // </a>
-
-    //           </Col> */}
-    //             {/* <Col  lg={6}  md={6}   style={{ display:'flex',justifyContent:'center',alignItems:'center' }} data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
-    //           <a href='https://techgentsia.com/' target="_blank" className="card1">
-    //           <img src='/images/techgentsia.png' style={{ width:'90%' }}/>
-    //   <div className="card__content">
-
-    //   </div>
-    // </a>
-    //           </Col> */}
-    //             {/* <Col  lg={6}  md={6}  style={{ display:'flex',justifyContent:'center',alignItems:'center' }} data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
-    //           <a href='https://techmaghi.com/' target="_blank" className="card1">
-    //           <img src='/images/techmaghi.png' style={{ width:'100%' }}/>
-    //   <div className="card__content">
-
-    //   </div>
-    // </a>
-    //           </Col> */}
-    //             <Col
-    //               lg={6}
-    //               md={6}
-    //               style={{
-    //                 display: "flex",
-    //                 justifyContent: "center",
-    //                 alignItems: "center",
-    //               }}
-    //               data-aos="zoom-out-up"
-    //               data-aos-duration="1300"
-    //               data-aos-once="true"
-    //             >
-    //               <a
-    //                 href="https://kalkitech.com/"
-    //                 target="_blank"
-    //                 className="card1"
-    //               >
-    //                 <img src="/images/kalikitech.png" style={{ width: "90%" }} />
-    //                 <div className="card__content"></div>
-    //               </a>
-    //             </Col>
-    //           </Row>
-    //         </Container>
-    //       </div>
-    //     </section>
   );
 }

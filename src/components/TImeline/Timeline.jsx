@@ -27,7 +27,7 @@ export default function Timeline() {
               style={{ width: "100%", height: "110%" }}
             />
           }
-          date="18th May 2025"
+          date="21st May 2025"
         >
           <h3 className="timeline-heading">
             Registration and Idea Submission Starts
