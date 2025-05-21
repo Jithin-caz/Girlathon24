@@ -81,7 +81,7 @@ const Previous = () => {
               we look forward to a continued commitment to the advancement and empowerment of women in technology at Mar Athanasius College.
             </p>
             <p className="fade-up" id="mob_txt" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
-              style={{ color: "white", textAlign: "left" }}>Discover Girlathon '25, the annual GDSC hackathon at Mar Athanasius College—an empowering platform spotlighting women in technology.
+              style={{ color: "white", textAlign: "left" }}>Discover Girlathon '25, the annual DSC hackathon at Mar Athanasius College—an empowering platform spotlighting women in technology.
               This transformative event fosters creativity, innovation, and technical prowess through inspiring speakers, mentor-guided challenges, and a collaborative atmosphere. Beyond coding,
               holistic elements, including wellness sessions, prioritize balance in the tech landscape. Girlathon '25 significantly contributes to shaping inclusivity in the industry, celebrating
               successes, and committing to advancing women in technology at Mar Athanasius College.</p>
