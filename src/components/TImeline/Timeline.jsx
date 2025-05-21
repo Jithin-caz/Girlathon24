@@ -106,7 +106,7 @@ export default function Timeline() {
               style={{ width: "90%", height: "100%", paddingLeft: ".3rem" }}
             />
           }
-          date="21tst July 2025"
+          date="21st July 2025"
         >
           <h3 className="timeline-heading">Final shortlisting</h3>
         </VerticalTimelineElement>
