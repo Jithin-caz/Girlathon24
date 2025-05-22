@@ -32,7 +32,7 @@ export default function CommPart() {
 </Row>
 
 {/* Sponsor Logos: Devfolio and ETHIndia */}
-<Row className="justify-content-center g-4">
+<Row className=" justify-content-center">
   <Col xs={10} sm={6} md={4} className="text-center">
     <a
       href="https://devfolio.co/"

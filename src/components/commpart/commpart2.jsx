@@ -17,7 +17,7 @@ export default function CommPart2() {
     <div style={{ zIndex: '4', position: 'absolute', width: '100%' }}>
       <Container style={{ padding: '1rem' }}>
 
-        <Row style={{ paddingTop: '2rem', paddingLeft: '2rem', rowGap: '2rem' }}>
+        <Row style={{ paddingTop: '2rem', rowGap: '2rem' }}>
           <Col sm={12}><h1 style={{ textAlign: 'center' }} data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">Previous Community Partners</h1></Col>
           <Col lg={4} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
             <a href='https://gdg.community.dev/gdg-cochin/' target='_blank' className="card1">
