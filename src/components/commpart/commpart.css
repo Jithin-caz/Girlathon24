@@ -2,15 +2,15 @@
 .commSec,
 .media-part,
 .certi-part {
-  min-height: 100dvh;
+  min-height: auto; /* Changed to auto for flexibility */
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* Changed from space-between */
   background: url("images/backgroundAbstarct.png") no-repeat center;
   background-size: cover;
-  padding: 2rem;
+  padding: 2rem 1rem; /* Padding adjusted for all screens */
 }
 
 .commSec2 {
@@ -18,16 +18,17 @@
 }
 
 /* Responsive height for different viewports */
-@media (max-width: 992px) {
-  .commSec2 {
-    min-height: 150dvh;
+@media (min-width: 768px) {
+  .commSec {
+    min-height: 100vh;
+    justify-content: space-between;
+    padding: 2rem;
   }
 }
 
-@media (max-width: 768px) {
-  .commSec {
-    min-height: auto;
-    padding: 2rem 1rem;
+@media (max-width: 992px) {
+  .commSec2 {
+    min-height: 150dvh;
   }
 }
 
@@ -41,13 +42,14 @@
   background-position: center;
 }
 
+/* Sponsor line with wrapping and gap */
 .sponser-line {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap; /* Allow wrap to avoid overflow */
   align-items: center;
-  justify-content: space-evenly;
-  gap: 20px;
+  justify-content: center; /* Center items */
+  gap: 20px; /* Space between sponsors */
 }
 
 /* Stack sponsor items vertically on small screens */
@@ -62,6 +64,7 @@
 .card1 {
   width: 100%;
   max-width: 320px;
+  min-width: 220px; /* Avoid too narrow cards */
   height: auto;
   aspect-ratio: 4 / 3;
   background-color: #f2f2f200;
@@ -75,6 +78,7 @@
   transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   padding: 1rem;
   text-align: center;
+  margin: 0 auto;
 }
 
 /* Larger card style for specific use */
@@ -84,12 +88,13 @@
   height: auto;
 }
 
-/* Make images responsive */
+/* Make images responsive and centered */
 .card1 img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
 
 /* Hover animation */
@@ -140,21 +145,8 @@
   color: #777;
   line-height: 1.4;
 }
-.card1 {
-  width: 320px;
-  height: 240px;
-  background-color: #f2f2f200;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  perspective: 1000px;
-  box-shadow: 0 0 0 5px #ffffff80;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  min-width: 15rem;
-}
 
+/* Highlighted sponsor styling */
 .highlighted-sponsor {
   border: 3px solid #7b2ff7;
   border-radius: 12px;
@@ -183,18 +175,17 @@
   margin: 0 auto;
 }
 
-
 .highlighted-sponsor:hover {
   transform: scale(1.05);
   box-shadow: 0 0 30px rgba(123, 47, 247, 0.9);
 }
 
-
-
 .lighter-sponsor:hover {
   transform: scale(1.03);
   box-shadow: 0 0 20px rgba(216, 180, 254, 0.6);
 }
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .highlighted-sponsor {
     width: 90vw;
