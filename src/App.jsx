@@ -37,7 +37,7 @@ function App() {
             <Route path="/dash" exact Component={DashInd} />
             <Route path="/ideaSumbit" exact Component={IdeaSubmission} />
             <Route path="/resetPassword" exact Component={ResetPass} />
-            <Route path="/404" element={<NotFound />} /> {/* 404 route */}
+            <Route path="/404" exact Component={NotFound} />
 
           </Routes>
         </BrowserRouter>
