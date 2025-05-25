@@ -88,10 +88,17 @@ section h1{
     transition: border-color 0.2s;
   }
   
-  .form__field::placeholder {
-    color: transparent;
-  }
-  
+/* Hide placeholder by default */
+.form__field::placeholder {
+  color: transparent;
+  transition: color 0.3s ease;
+}
+
+/* Show placeholder when input is focused */
+.form__field:focus::placeholder {
+  color: #999; /* or any visible color you want */
+}
+
   .form__field:placeholder-shown ~ .form__label {
     font-size: 17px;
     cursor: text;
