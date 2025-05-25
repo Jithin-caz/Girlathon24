@@ -145,14 +145,16 @@ export default function Contact() {
               </label>
             </div>
             <div className="form__group field" style={{ maxWidth: "25rem" }}>
-              <input
-                type="input"
-                className="form__field"
-                placeholder="subject"
-                name="subject"
-                required
-                style={{ maxWidth: "25rem" }}
-              />
+           <input
+  type="input"
+  className="form__field"
+  placeholder="What's the 7th letter of IRRATIONAL? Combine it with 2^7-1."
+
+  name="subject"
+  required
+  style={{ maxWidth: "25rem" }}
+/>
+
               <label htmlFor="subject" className="form__label">
                 Subject
               </label>

@@ -1,13 +1,49 @@
 import React, { useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { ParallaxProvider, Parallax } from 'react-scroll-parallax'
+import { ParallaxProvider, Parallax } from "react-scroll-parallax";
+
+// ===== Add this style string at the top =====
+const style = `
+.about::before {
+  content: "01101000 01100101 01111000 00110100 01100101 01110110 01100101 01110010 ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-family: monospace;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.08);
+  white-space: pre-wrap;
+  overflow: hidden;
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+  background-repeat: repeat;
+  background-position: 0 0;
+  padding: 2rem;
+  display: block;
+}
+`;
+
 export default function About() {
+  // ===== Add this useEffect inside the component =====
+  useEffect(() => {
+    const styleTag = document.createElement("style");
+    styleTag.innerHTML = style;
+    document.head.appendChild(styleTag);
+
+    return () => {
+      document.head.removeChild(styleTag);
+    };
+  }, []);
+
   return (
     <section
       className="about"
       id="ABOUT"
-      style={{ position: "relative", zIndex: "20", background: "#2b2b2b" }}
+      style={{ position: "relative", zIndex: 20, background: "#2b2b2b", overflow: "hidden" }} // added overflow: hidden
     >
       <img
         style={{
@@ -17,7 +53,6 @@ export default function About() {
           width: "100%",
         }}
         src="images/backgroundAbstarct.png"
-
       />
       <div
         style={{
@@ -30,19 +65,31 @@ export default function About() {
           color: "white",
         }}
       >
-        <h1 className="about-bg-text" >about</h1>{" "}
+        <h1 className="about-bg-text">about</h1>{" "}
       </div>
-      <Container
-        style={{ color: "white", paddingTop: "5rem", paddingBottom: "5rem" }}
-      >
-        <Row className="fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true" >
+      <Container style={{ color: "white", paddingTop: "5rem", paddingBottom: "5rem" }}>
+        <Row className="fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true">
           <Col lg={6}>
             <p>
               <span style={{ fontSize: "2rem" }}>
                 <b>About DSC MACE</b>
-                <br></br>
+                <br />
               </span>
-              <br></br>Welcome to DSC MACE, the dynamic Developer Student Club chapter at Mar Athanasius College of Engineering. Established in 2020, we've rapidly evolved into a vibrant platform for student innovation. Our mission is to enhance potential abilities through hands-on workshops, coding competitions, and engaging tech talks.
+              <br />
+              Welcome to DSC MACE, the dynamic Developer Student Club chapter at Mar Athanasius College of Engineering.
+              <span
+                style={{
+                  fontSize: "10px",
+                  color: "rgba(255, 255, 255, 0.05)", // almost invisible white on dark background
+                  cursor: "pointer",
+                  marginLeft: "5px",
+                }}
+                onClick={() => alert("Cookie: session=eyJwYXNzd29yZCI6ImxvY2tkb3duIn0= decodes to something valuable.")}
+              >
+                ●
+              </span>
+
+              Established in 2020, we've rapidly evolved into a vibrant platform for student innovation. Our mission is to enhance potential abilities through hands-on workshops, coding competitions, and engaging tech talks.
               DSC MACE is more than a club; it's a gateway to the latest in technology, fostering a mindset of continuous learning. Join us as we shape the tech leaders of tomorrow, making an impact at Mar Athanasius College of Engineering. Innovation meets opportunity here!
             </p>
           </Col>{" "}
@@ -51,7 +98,10 @@ export default function About() {
           </Col>
         </Row>
         <Row
-          className="fade-up" data-aos="zoom-out-up" data-aos-duration="1300" data-aos-once="true"
+          className="fade-up"
+          data-aos="zoom-out-up"
+          data-aos-duration="1300"
+          data-aos-once="true"
           style={{ paddingTop: "10dvw", rowGap: "3rem" }}
         >
           <Col lg={6} style={{ display: "flex", justifyContent: "center" }}>
@@ -62,8 +112,9 @@ export default function About() {
               <span style={{ fontSize: "2rem" }}>
                 <b>About Girlathon</b>
               </span>
-              <br></br>
-              <br></br>Welcome to Girlathon 2025, an inclusive hackathon exclusively designed for women. Organized by the Developers Student Club (DSC)
+              <br />
+              <br />
+              Welcome to Girlathon 2025, an inclusive hackathon exclusively designed for women. Organized by the Developers Student Club (DSC)
               at Mar Athanasius College of Engineering (MACE), Girlathon aims to advance and excel women in technology by fostering innovation and problem-solving. Taking place from
               June 1st - July 26th, 2025, this beginner-friendly event provides proficient mentorship, guidance, and support to
               encourage and celebrate women's participation in STEM fields. Engage in hands-on projects that encourage innovation, address real-world challenges, and showcase the incredible
