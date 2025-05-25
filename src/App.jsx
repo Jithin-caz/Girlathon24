@@ -4,7 +4,7 @@ import "./App.css";
 import Navbar from "./components/Navbar/navbar";
 import { useEffect, useState } from "react";
 import ScrollReveal from "scrollreveal";
-
+import NotFound from "./components/NotFound/NotFound";
 import Signin from "./components/SIgnIn/signin";
 import IdeaSubmission from "./components/IdeaSubmission/IdeaSubmission";
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -37,6 +37,8 @@ function App() {
             <Route path="/dash" exact Component={DashInd} />
             <Route path="/ideaSumbit" exact Component={IdeaSubmission} />
             <Route path="/resetPassword" exact Component={ResetPass} />
+            <Route path="*" element={<NotFound />} /> {/* 404 route */}
+
           </Routes>
         </BrowserRouter>
 
