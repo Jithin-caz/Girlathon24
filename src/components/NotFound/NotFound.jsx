@@ -17,7 +17,15 @@ const NotFound = () => {
       <h1 style={{ fontSize: "4rem" }}>Error 404</h1>
       <p style={{ fontSize: "1.5rem" }}>Page not found.</p>
       <p style={{ fontSize: "1.1rem", color: "#aaa", marginTop: "2rem" }}>
-        Try rearranging to [5, 14, 17, 22, 0, 17, 3]
+Puzzle 3: To find what lies beneath, know this:
+      </p>
+      <p style={{ fontSize: "1.1rem", color: "#aaa", marginTop: "2rem" }}>
+7 and 5 stand beneath R      </p>
+      <p style={{ fontSize: "1.1rem", color: "#aaa", marginTop: "2rem" }}>
+6 hides under G
+      </p>
+      <p style={{ fontSize: "1.1rem", color: "#aaa", marginTop: "2rem" }}>
+Use them where they belong — your key to unlock what the image does not show at first glance.
       </p>
     </div>
   );

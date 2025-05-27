@@ -6,7 +6,7 @@ import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 // ===== Add this style string at the top =====
 const style = `
 .about::before {
-  content: "01101000 01100101 01111000 00110100 01100101 01110110 01100101 01110010 ";
+  content: "Puzzle 1 : VGhlcmUgaXMgbm90aGluZyBpbXBvc3NpYmxlIHRvIGhpbSB3aG8gd2lsbCB0cnku (Seek him — not by face, but by phrase.)";
   position: absolute;
   top: 0;
   left: 0;
@@ -84,7 +84,7 @@ export default function About() {
                   cursor: "pointer",
                   marginLeft: "5px",
                 }}
-                onClick={() => alert("Cookie: session=eyJwYXNzd29yZCI6ImxvY2tkb3duIn0= decodes to something valuable.")}
+                onClick={() => alert("Puzzle 5 : \n You've found the recurring number — now finish the calculation : \n The year of Star Trek's first episode, 1966.\n Add the mysterious number to it.\n What does it reveal?")}
               >
                 ●
               </span>

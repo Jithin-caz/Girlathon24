@@ -7,7 +7,7 @@ export default function Footer() {
     <div className="Footer row" style={{ margin: "0px" }}>
       <div className="Footer-Top">
         <a href="#">
-          <img src="/images/GDSCfooter.png" alt=""   data-clue="The key to the ancient cipher lies with the man who discovered displacement while taking a bath."
+          <img src="/images/GDSCfooter.png" alt=""   data-clue="Puzzle 4 : Reverse the founding year of DSC MACE"
 />
           <span>DSC MACE</span>
           

@@ -148,7 +148,12 @@ export default function Contact() {
            <input
   type="input"
   className="form__field"
-  placeholder="What's the 7th letter of IRRATIONAL? Combine it with 2^7-1."
+  placeholder="Puzzle 2 :
+  The symbol is your final key.
+
+It’s a singular mark, yet carries the weight of unity and identity.
+
+Once found, it will unlock the final secret."
 
   name="subject"
   required
