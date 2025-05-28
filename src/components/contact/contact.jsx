@@ -148,12 +148,7 @@ export default function Contact() {
            <input
   type="input"
   className="form__field"
-  placeholder="Puzzle 2 :
-  The symbol is your final key.
-
-It’s a singular mark, yet carries the weight of unity and identity.
-
-Once found, it will unlock the final secret."
+  placeholder="Subject"
 
   name="subject"
   required
